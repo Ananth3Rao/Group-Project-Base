@@ -7,7 +7,34 @@ import db from '../database/initializeDB.js';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send('Welcome to the UMD Dining API!');
+  res.send('Welcome to the Maui Hotels API!');
+});
+
+/// /////////////////////////////////
+/// ////Hotels Endpoints/////////////
+/// /////////////////////////////////
+router.get('/hotel', async (req, res) => {
+  try {
+    const hotel = await db.Hotels.findAll();
+    res.json(hotel);
+  } catch (err) {
+    console.error(err);
+    res.error('Server Error');
+  }
+});
+
+router.get('/hotel/:hotel_id', async (req, res) => {
+  try {
+    const hotel = await db.Hotels.findAll({
+      where: {
+        hotel_id: req.params.hotel_id
+      }
+    });
+    res.json(hotel);
+  } catch (err) {
+    console.error(err);
+    res.error('Server error')
+  }
 });
 
 /// /////////////////////////////////
