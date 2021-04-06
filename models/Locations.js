@@ -12,7 +12,8 @@ export default (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false,
             }
-        }
+        }, 
+        { freezeTableName: true, timestamps: false }
     );
     return Locations
 }

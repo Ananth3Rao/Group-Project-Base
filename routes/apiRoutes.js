@@ -17,11 +17,12 @@ router.get('/', (req, res) => {
 //Get all hotels
 router.get('/hotel', async (req, res) => {
   try {
-    const hotel = await db.Hotels.findAll();
-    res.json(hotel);
+    const hotel = await db.Hotels.findAll()
+    const reply = hotel.length > 0 ? { data: hotel } : { message: 'no results found' };
+    res.json(reply);
   } catch (err) {
     console.error(err);
-    res.error('Server Error');
+    res.send('Server Error');
   }
 });
 
