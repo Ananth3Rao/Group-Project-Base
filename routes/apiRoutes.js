@@ -13,6 +13,8 @@ router.get('/', (req, res) => {
 /// /////////////////////////////////
 /// ////Hotels Endpoints/////////////
 /// /////////////////////////////////
+
+//Get all hotels
 router.get('/hotel', async (req, res) => {
   try {
     const hotel = await db.Hotels.findAll();
@@ -23,6 +25,7 @@ router.get('/hotel', async (req, res) => {
   }
 });
 
+//Get one hotel from hotel
 router.get('/hotel/:hotel_id', async (req, res) => {
   try {
     const hotel = await db.Hotels.findAll({
@@ -36,6 +39,54 @@ router.get('/hotel/:hotel_id', async (req, res) => {
     res.error('Server error')
   }
 });
+
+/// /////////////////////////////////
+/// ////Comment Endpoints////////////
+/// /////////////////////////////////
+
+//Get all comments
+router.get('/comments', async (req, res) => {
+  try {
+    const comments = await db.Comments.findAll();
+    res.json(comments);
+  } catch (err) {
+    console.error(err);
+    res.error('Server error');
+  }
+});
+
+//Get one comment from id
+router.get('/comments/:comment_id', async (req, res) => {
+  try {
+    const comment = await db.Comments.findAll({
+      where: {
+        comment_id: req.params.comment_id
+      }
+    });
+    res.json(comment);
+  } catch (err) {
+    console.error(err);
+    res.error('Server error')
+  }
+});
+
+//Get comments for a specific hotel
+router.get('/comments/hotel/:hotel_id', async (req, res) => {
+  try {
+    const comments = await db.Comments.findAll({
+      where: {
+        hotel_id: req.params.hotel_id
+      }
+    });
+    res.json(comments);
+  } catch (err) {
+    console.error(err);
+    res.error('Server Error');
+  }
+});
+
+
+
 
 /// /////////////////////////////////
 /// ////Dining Hall Endpoints////////
