@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
     const Hotels = sequelize.define(
-        'Hotels',
+        'hotel_overview',
         {
             hotel_id: {
                 type: DataTypes.INTEGER,
@@ -35,9 +35,13 @@ export default (sequelize, DataTypes) => {
             state: {
                 type: DataTypes.STRING,
                 allowNull: false
+            },
+            hotel_rating: {
+                type: DataTypes.DECIMAL,
+                allowNull: false
             }
             
         }
     );
-    return Hotels
+    return Hotels;
 }

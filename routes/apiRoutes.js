@@ -36,7 +36,7 @@ router.get('/hotel/:hotel_id', async (req, res) => {
     res.json(hotel);
   } catch (err) {
     console.error(err);
-    res.error('Server error')
+    res.error('Server error');
   }
 });
 
