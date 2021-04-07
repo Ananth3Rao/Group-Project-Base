@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable linebreak-style */
 export default (sequelize, DataTypes) => {
     const Locations = sequelize.define(
         'Locations',
