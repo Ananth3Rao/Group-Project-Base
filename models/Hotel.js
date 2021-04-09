@@ -35,13 +35,9 @@ export default (sequelize, DataTypes) => {
             state: {
                 type: DataTypes.STRING,
                 allowNull: false
-            },
-            hotel_rating: {
-                type: DataTypes.DECIMAL,
-                allowNull: false
-            }
-            
-        }
+            }     
+        },
+        { freezeTableName: true, timestamps: false }
     );
     return Hotels;
 }

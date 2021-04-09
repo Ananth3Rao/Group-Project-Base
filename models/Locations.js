@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable linebreak-style */
 export default (sequelize, DataTypes) => {
     const Locations = sequelize.define(
         'Locations',
@@ -12,7 +14,8 @@ export default (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false,
             }
-        }
+        }, 
+        { freezeTableName: true, timestamps: false }
     );
     return Locations
 }
