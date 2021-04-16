@@ -1,8 +1,8 @@
 /* eslint-disable indent */
 /* eslint-disable linebreak-style */
 export default (sequelize, DataTypes) => {
-    const rooms = sequelize.define(
-        'rooms',
+    const beds = sequelize.define(
+        'beds',
         {
             bed_id: {
                 type: DataTypes.INTEGER,
@@ -17,5 +17,5 @@ export default (sequelize, DataTypes) => {
         }, 
         { freezeTableName: true, timestamps: false }
     );
-    return rooms
+    return beds;
 }
