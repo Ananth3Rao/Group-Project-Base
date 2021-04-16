@@ -40,7 +40,36 @@ router.get('/hotel/:hotel_id', async (req, res) => {
     res.error('Server error');
   }
 });
+/// /////////////////////////////////
+/// ////Amenities Endpoints/////////////
+/// /////////////////////////////////
 
+//Get all amenities
+router.get('/amenity', async (req, res) => {
+  try {
+    const amenity = await db.Amenities.findAll()
+    const reply = amenity.length > 0 ? { data: amenity } : { message: 'no results found' };
+    res.json(reply);
+  } catch (err) {
+    console.error(err);
+    res.send('Server Error');
+  }
+});
+
+//Get one amenity from amenity
+router.get('/amenity/:amenity_id', async (req, res) => {
+  try {
+    const amenity = await db.Amenities.findAll({
+      where: {
+        amenity_id: req.params.amenity_id
+      }
+    });
+    res.json(amenity);
+  } catch (err) {
+    console.error(err);
+    res.error('Server error');
+  }
+});
 /// /////////////////////////////////
 /// ////Comment Endpoints////////////
 /// /////////////////////////////////
