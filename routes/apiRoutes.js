@@ -255,6 +255,35 @@ router.get('/room/:room_id', async (req, res) => {
   }
 });
 
+/// /////////////////////////////////
+/// ////Restaurants Endpoints///////////
+/// /////////////////////////////////
+
+router.get('/restaurant', async (req, res) => {
+  try {
+    const restaurant = await db.Restaurants.findAll()
+    const reply = restaurant.length > 0 ? { data: restaurant } : { message: 'no results found' };
+    res.json(reply);
+  } catch (err) {
+    console.error(err);
+    res.send('Server Error');
+  }
+});
+
+// Get one restaurant from restaurants
+router.get('/restaurant/:restaurant_id', async (req, res) => {
+  try {
+    const restaurant = await db.Restaurants.findAll({
+      where: {
+        restaurant_id: req.params.restaurant_id
+      }
+    });
+    res.json(restaurant);
+  } catch (err) {
+    console.error(err);
+    res.error('Server error');
+  }
+});
 
 
 /// //////////////////////////////////
@@ -309,20 +338,3 @@ router.get('/custom', async (req, res) => {
 
 export default router;
 
-/// /////////////////////////////////
-/// ////restaurants Endpoints///////////
-/// /////////////////////////////////
-
-router.get('/hotel/:restaurant_id', async (req, res) => {
-  try {
-    const hotels = await db.Hotels.findAll({
-      where: {
-        restaurant_id: req.params.restaurant_id
-      }
-    });
-    res.json(hotels);
-  } catch (err) {
-    console.error(err);
-    res.error('Server error')
-  }
-});
