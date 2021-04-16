@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 /// ////Hotels Endpoints/////////////
 /// /////////////////////////////////
 
-// Get all hotels
+//Get all hotels
 router.get('/hotel', async (req, res) => {
   try {
     const hotel = await db.Hotels.findAll()
@@ -26,7 +26,7 @@ router.get('/hotel', async (req, res) => {
   }
 });
 
-// Get one hotel from hotel
+//Get one hotel from hotel
 router.get('/hotel/:hotel_id', async (req, res) => {
   try {
     const hotel = await db.Hotels.findAll({
@@ -44,7 +44,7 @@ router.get('/hotel/:hotel_id', async (req, res) => {
 /// ////Amenities Endpoints/////////////
 /// /////////////////////////////////
 
-// Get all amenities
+//Get all amenities
 router.get('/amenity', async (req, res) => {
   try {
     const amenity = await db.Amenities.findAll()
@@ -56,7 +56,7 @@ router.get('/amenity', async (req, res) => {
   }
 });
 
-// Get one amenity from amenity
+//Get one amenity from amenity
 router.get('/amenity/:amenity_id', async (req, res) => {
   try {
     const amenity = await db.Amenities.findAll({
@@ -70,12 +70,11 @@ router.get('/amenity/:amenity_id', async (req, res) => {
     res.error('Server error');
   }
 });
-
 /// /////////////////////////////////
 /// ////Comment Endpoints////////////
 /// /////////////////////////////////
 
-// Get all comments
+//Get all comments
 router.get('/comments', async (req, res) => {
   try {
     const comments = await db.Comments.findAll();
@@ -86,7 +85,7 @@ router.get('/comments', async (req, res) => {
   }
 });
 
-// Get one comment from id
+//Get one comment from id
 router.get('/comments/:comment_id', async (req, res) => {
   try {
     const comment = await db.Comments.findAll({
@@ -102,7 +101,7 @@ router.get('/comments/:comment_id', async (req, res) => {
 });
 
 // Get comments for a specific hotel
-router.get('/comments/hotel/:hotel_id', async (req, res) => {
+router.get('/hotel/:hotel_id/comments', async (req, res) => {
   try {
     const comments = await db.Comments.findAll({
       where: {
@@ -117,7 +116,7 @@ router.get('/comments/hotel/:hotel_id', async (req, res) => {
 });
 
 // Add comment
-router.post('/comments', async (req, res) => {
+router.post('/hotel/:hotel_id/comments', async (req, res) => {
   const comments = await db.Comments.findAll();
   const currentId = (await comments.length) + 1;
   try {
@@ -309,3 +308,21 @@ router.get('/custom', async (req, res) => {
 });
 
 export default router;
+
+/// /////////////////////////////////
+/// ////restaurants Endpoints///////////
+/// /////////////////////////////////
+
+router.get('/hotel/:restaurant_id', async (req, res) => {
+  try {
+    const hotels = await db.Hotels.findAll({
+      where: {
+        restaurant_id: req.params.restaurant_id
+      }
+    });
+    res.json(hotels);
+  } catch (err) {
+    console.error(err);
+    res.error('Server error')
+  }
+});
