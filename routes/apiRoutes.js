@@ -101,7 +101,7 @@ router.get('/comments/:comment_id', async (req, res) => {
 });
 
 // Get comments for a specific hotel
-router.get('/comments/hotel/:hotel_id', async (req, res) => {
+router.get('/hotel/:hotel_id/comments', async (req, res) => {
   try {
     const comments = await db.Comments.findAll({
       where: {
@@ -116,7 +116,7 @@ router.get('/comments/hotel/:hotel_id', async (req, res) => {
 });
 
 // Add comment
-router.post('/comments', async (req, res) => {
+router.post('/hotel/:hotel_id/comments', async (req, res) => {
   const comments = await db.Comments.findAll();
   const currentId = (await comments.length) + 1;
   try {
