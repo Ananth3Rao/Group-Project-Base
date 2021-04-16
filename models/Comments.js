@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable linebreak-style */
 export default (sequelize, DataTypes) => {
     const Comments = sequelize.define(
         'Comments',
@@ -10,7 +12,7 @@ export default (sequelize, DataTypes) => {
             },
             hotel_id: {
                 type: DataTypes.INTEGER,
-                allowNull: false,
+                allowNull: false
             },
             name: {
                 type: DataTypes.STRING,
@@ -20,8 +22,8 @@ export default (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false
             }
-        }, 
+        },
         { freezeTableName: true, timestamps: false }
     );
-    return Comments
+    return Comments;
 }
