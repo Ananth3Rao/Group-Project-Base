@@ -193,6 +193,172 @@ router.get('/region/:sub_region_id', async (req, res) => {
 });
 
 
+/// /////////////////////////////////
+/// ////Beds Endpoints///////////////
+/// /////////////////////////////////
+
+//Get all beds
+router.get('/bed', async (req, res) => {
+  try {
+    const amenity = await db.beds.findAll()
+    const reply = amenity.length > 0 ? { data: amenity } : { message: 'no results found' };
+    res.json(reply);
+  } catch (err) {
+    console.error(err);
+    res.send('Server Error');
+  }
+});
+
+//Get one bed from beds
+router.get('/bed/:bed_id', async (req, res) => {
+  try {
+    const bed = await db.beds.findAll({
+      where: {
+        bed_id: req.params.bed_id
+      }
+    });
+    res.json(bed);
+  } catch (err) {
+    console.error(err);
+    res.error('Server error');
+  }
+});
+
+
+/// /////////////////////////////////
+/// ////Rooms Endpoints//////////////
+/// /////////////////////////////////
+
+// Get all rooms
+router.get('/rooms', async (req, res) => {
+  try {
+    const rooms = await db.Rooms.findAll();
+    res.json(rooms);
+  } catch (err) {
+    console.error(err);
+    res.error('Server error');
+  }
+});
+
+// Get one room from room_id
+router.get('/rooms/:room_id', async (req, res) => {
+  try {
+    const rooms = await db.Rooms.findAll({
+      where: {
+        room_id: req.params.room_id
+      }
+    });
+    res.json(rooms);
+  } catch (err) {
+    console.error(err);
+    res.error('Server error')
+  }
+});
+
+// Get rooms from a specific hotel
+router.get('/rooms/hotel/:hotel_id', async (req, res) => {
+  try {
+    const rooms = await db.Rooms.findAll({
+      where: {
+        rooms: req.params.hotel_id
+      }
+    });
+    res.json(rooms);
+  } catch (err) {
+    console.error(err);
+    res.error('Server Error');
+  }
+});
+
+// Get rooms by room guest limit
+router.get('/rooms/hotel/:num_guest', async (req, res) => {
+  try {
+    const rooms = await db.Rooms.findAll({
+      where: {
+        rooms: req.params.num_guest
+      }
+    });
+    res.json(rooms);
+  } catch (err) {
+    console.error(err);
+    res.error('Server Error');
+  }
+});
+
+// Get rooms by room view
+router.get('/rooms/hotel/:room_view_id', async (req, res) => {
+  try {
+    const rooms = await db.Rooms.findAll({
+      where: {
+        rooms: req.params.room_view_id
+      }
+    });
+    res.json(rooms);
+  } catch (err) {
+    console.error(err);
+    res.error('Server Error');
+  }
+});
+
+// Get rooms by kitchenette availability
+router.get('/rooms/hotel/:kitchenette', async (req, res) => {
+  try {
+    const rooms = await db.Rooms.findAll({
+      where: {
+        rooms: req.params.kitchenette
+      }
+    });
+    res.json(rooms);
+  } catch (err) {
+    console.error(err);
+    res.error('Server Error');
+  }
+});
+
+// Get rooms by cost per night
+router.get('/rooms/hotel/:cost_per_night', async (req, res) => {
+  try {
+    const rooms = await db.Rooms.findAll({
+      where: {
+        rooms: req.params.cost_per_night
+      }
+    });
+    res.json(rooms);
+  } catch (err) {
+    console.error(err);
+    res.error('Server Error');
+  }
+});
+
+// Get rooms by balcony availability
+router.get('/rooms/hotel/:balcony', async (req, res) => {
+  try {
+    const rooms = await db.Rooms.findAll({
+      where: {
+        rooms: req.params.balcony
+      }
+    });
+    res.json(rooms);
+  } catch (err) {
+    console.error(err);
+    res.error('Server Error');
+  }
+});
+
+// Get rooms by sofa bed availability
+router.get('/rooms/hotel/:sofa_bed', async (req, res) => {
+  try {
+    const rooms = await db.Rooms.findAll({
+      where: {
+        rooms: req.params.sofa_bed
+      }
+    });
+    res.json(rooms);
+  } catch (err) {
+    console.error(err);
+    res.error('Server Error');
+  }
+});
 
 /// //////////////////////////////////
 /// ///////Custom SQL Endpoint////////
