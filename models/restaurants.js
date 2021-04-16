@@ -1,8 +1,8 @@
 /* eslint-disable indent */
 /* eslint-disable linebreak-style */
 export default (sequelize, DataTypes) => {
-    const Comments = sequelize.define(
-        'restaurants',
+    const Restaurants = sequelize.define(
+        'restaurant',
         {
             restaurant_id: {
                 type: DataTypes, INTERGER,
@@ -62,10 +62,12 @@ export default (sequelize, DataTypes) => {
                 type: DataTypes.VARCHAR,
                 allowNull: false
             },
-            { freezeTableName: true, timestamps: false }
-            );
-            return restaurants;
-        }
+        },
+        { freezeTableName: true, timestamps: false }
+        
+    );
+    return Restaurants;
+}
 
 
 
