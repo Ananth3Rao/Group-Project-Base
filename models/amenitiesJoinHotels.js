@@ -2,7 +2,7 @@
 this is my best interpreation of it */
 export default (sequelize, DataTypes) => {
   const Hotels = sequelize.define('hotel_overview', { name: DataTypes.INTEGER });
-  const Amenities = sequelize.define('hotels_amenities_join', { name: DataTypes.INTEGER });
+  const Amenities = sequelize.define('amenities', { name: DataTypes.INTEGER });
   const amenitiesJoinHotels = sequelize.define('amenitiesJoinHotels', {
     hotel_id: {
       type: DataTypes.INTEGER,
