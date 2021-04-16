@@ -2,7 +2,7 @@
 /* eslint-disable linebreak-style */
 export default (sequelize, DataTypes) => {
     const Rooms = sequelize.define(
-        'rooms',
+        'room',
         {
             room_id: {
                 type: DataTypes.INTEGER,
@@ -10,7 +10,7 @@ export default (sequelize, DataTypes) => {
                 unique: true,
                 primaryKey: true
             },
-            bed_type: {
+            room_type_id: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
             },
