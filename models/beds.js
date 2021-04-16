@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 /* eslint-disable linebreak-style */
 export default (sequelize, DataTypes) => {
-    const beds = sequelize.define(
+    const Beds = sequelize.define(
         'beds',
         {
             bed_id: {
@@ -17,5 +17,5 @@ export default (sequelize, DataTypes) => {
         }, 
         { freezeTableName: true, timestamps: false }
     );
-    return beds;
+    return Beds;
 }
