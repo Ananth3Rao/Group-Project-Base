@@ -76,11 +76,3 @@ export default (sequelize, DataTypes) => {
 
 
 
-zip_code
-varchar(45)
-state
-char(2)
-atmosphere
-varchar(45)
-accepted_payment
-varchar(45)
