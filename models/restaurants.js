@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 /* eslint-disable linebreak-style */
 export default (sequelize, DataTypes) => {
-    const Comments = sequelize.define(
+    const restaurants = sequelize.define(
         'restaurants',
         {
             restaurant_id: {
