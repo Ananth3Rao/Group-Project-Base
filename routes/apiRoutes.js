@@ -122,7 +122,7 @@ router.post('/hotel/:hotel_id/comments', async (req, res) => {
   try {
     const newComment = await db.Comments.create({
       comment_id: currentId,
-      hotel_id: req.body.hotel_id,
+      hotel_id: req.params.hotel_id,
       name: req.body.name,
       comment: req.body.comment
     });
@@ -135,24 +135,25 @@ router.post('/hotel/:hotel_id/comments', async (req, res) => {
 
 // Update or Change a comment
 
-router.put('/comments', async (req, res) => {
+router.put('/comments/:comment_id', async (req, res) => {
+  console.log(req.body);
   try {
-    await db.Comments.update(
+    const update = await db.Comments.update(
       {
         hotel_id: req.body.hotel_id,
-        name: req.body.hall_name,
+        name: req.body.name,
         comment: req.body.comment
       },
       {
         where: {
-          comment_id: req.body.comment_id
+          comment_id: req.params.comment_id
         }
       }
     );
-    res.send('Successfully Updated');
+    res.json(update);
   } catch (err) {
     console.error(err);
-    res.error('Server error');
+    res.send('Server error');
   }
 });
 
