@@ -2,10 +2,10 @@
 /* eslint-disable linebreak-style */
 export default (sequelize, DataTypes) => {
     const Restaurants = sequelize.define(
-        'restaurant',
+        'restaurants',
         {
             restaurant_id: {
-                type: DataTypes, INTERGER,
+                type: DataTypes.INTEGER,
                 allowNull: false,
                 unique: true,
                 primaryKey: true
@@ -15,7 +15,7 @@ export default (sequelize, DataTypes) => {
                 allowNull: false
             },
             price_range: {
-                type: DataTypes.VARCHAR,
+                type: DataTypes.STRING,
                 allowNull: false
             },
             cuisine_id: {
@@ -35,46 +35,35 @@ export default (sequelize, DataTypes) => {
                 allowNull: false
             },
             phone_number: {
-                type: DataTypes.VARCHAR,
+                type: DataTypes.STRING,
                 allowNull: false
             },
             street_address:{
-                type: DataTypes.VARCHAR,
+                type: DataTypes.STRING,
                 allowNull: false
             },
             city: {
-                type: DataTypes.VARCHAR,
+                type: DataTypes.STRING,
                 allowNull: false
             },
             zip_code: {
-                type: DataTypes.VARCHAR,
+                type: DataTypes.STRING,
                 allowNull: false
             },
             state: {
-                type: DataTypes.CHAR,
+                type: DataTypes.STRING,
                 allowNull: false
             },
             atmosphere: {
-                type: DataTypes.VARCHAR,
+                type: DataTypes.STRING,
                 allowNull: false
             },
-            payment_accepted: {
-                type: DataTypes.VARCHAR,
+            accepted_payment: {
+                type: DataTypes.STRING,
                 allowNull: false
             },
         },
-        { freezeTableName: true, timestamps: false }
-        
+        { freezeTableName: true, timestamps: false }  
     );
     return Restaurants;
 }
-
-
-
-        
-
-
-
-
-
-
