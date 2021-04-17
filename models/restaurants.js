@@ -12,7 +12,7 @@ export default (sequelize, DataTypes) => {
             },
             sub_region_id: {
                 type: DataTypes.INTEGER,
-                allowNull: false
+                allowNull: false,
             },
             price_range: {
                 type: DataTypes.STRING,
@@ -20,19 +20,19 @@ export default (sequelize, DataTypes) => {
             },
             cuisine_id: {
                 type: DataTypes.INTEGER,
-                allowNull: false
+                allowNull: false,
             },
             rating: {
                 type: DataTypes.INTEGER,
-                allowNull: false
+                allowNull: false,
             },
             open_time: {
                 type: DataTypes.TIME,
-                allowNull: false
+                allowNull: false,
             },
             close_time: {
                 type: DataTypes.TIME,
-                allowNull: false
+                allowNull: false,
             },
             phone_number: {
                 type: DataTypes.STRING,
