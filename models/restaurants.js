@@ -12,60 +12,61 @@ export default (sequelize, DataTypes) => {
             },
             sub_region_id: {
                 type: DataTypes.INTEGER,
-                allowNull: false
+                allowNull: false,
             },
             price_range: {
                 type: DataTypes.VARCHAR,
-                allowNull: false
+                allowNull: false,
             },
             cuisine_id: {
                 type: DataTypes.INTEGER,
-                allowNull: false
+                allowNull: false,
             },
             rating: {
                 type: DataTypes.INTEGER,
-                allowNull: false
+                allowNull: false,
             },
             open_time: {
                 type: DataTypes.TIME,
-                allowNull: false
+                allowNull: false,
             },
             close_time: {
                 type: DataTypes.TIME,
-                allowNull: false
+                allowNull: false,
             },
             phone_number: {
                 type: DataTypes.VARCHAR,
-                allowNull: false
+                allowNull: false,
             },
             street_address:{
                 type: DataTypes.VARCHAR,
-                allowNull: false
+                allowNull: false,
             },
             city: {
                 type: DataTypes.VARCHAR,
-                allowNull: false
+                allowNull: false,
             },
             zip_code: {
                 type: DataTypes.VARCHAR,
-                allowNull: false
+                allowNull: false,
             },
             state: {
                 type: DataTypes.CHAR,
-                allowNull: false
+                allowNull: false,
             },
             atmosphere: {
                 type: DataTypes.VARCHAR,
-                allowNull: false
+                allowNull: false,
             },
             payment_accepted: {
                 type: DataTypes.VARCHAR,
-                allowNull: false
-            },
-            { freezeTableName: true, timestamps: false }
-            );
-            return restaurants;
-        }
+                allowNull: false,
+            }
+        },
+        { freezeTableName: true, timestamps: false }
+    );
+    return Restaurants;
+}
 
 
 
