@@ -5,7 +5,7 @@ export default (sequelize, DataTypes) => {
         'restaurant',
         {
             restaurant_id: {
-                type: DataTypes, INTERGER,
+                type: DataTypes.INTEGER,
                 allowNull: false,
                 unique: true,
                 primaryKey: true
@@ -62,12 +62,10 @@ export default (sequelize, DataTypes) => {
                 type: DataTypes.VARCHAR,
                 allowNull: false
             },
-        },
-        { freezeTableName: true, timestamps: false }
-        
-    );
-    return Restaurants;
-}
+            { freezeTableName: true, timestamps: false }
+            );
+            return restaurants;
+        }
 
 
 
