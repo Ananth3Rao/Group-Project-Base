@@ -1,21 +1,53 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group 9 Project</title>
-    <link href = "styles.css" rel = "stylesheet" />
-</head>
-<body>
-    <h1>Group 9</h1>
-    <nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group 9 Project - Maui Masters</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Welcome to Maui Masters!</h1>
+      <h3>A one stop shop for all your Maui vacation needs</h3>
+      <nav>
         <ul>
-            <li><span>Home</span></li>
-            <li><a href="/Pages/Hotels">Hotels</a></li>
-            <li><a href="/Pages/Resturants">Resturants</a></li>
-            <li><a href="/Pages/Excursions">Excursions</a></li>
-            <li><a href="/Pages/About">About</a></li>
+          <li><span>Home</span></li>
+          <li><a href="/Pages/Hotels">Hotels</a></li>
+          <li><a href="/Pages/Restaurants">Resturants</a></li>
+          <li><a href="/Pages/Excursions">Excursions</a></li>
+          <li><a href="/Pages/About">About</a></li>
         </ul>
-    </nav>
-</body>
-<script src="script.js"></script>
+      </nav>
+    </div>
+    <div class="search">
+      <label>
+        Search
+        <input
+          type="text"
+          name="searchbar"
+          id="searchbar"
+          class="search"
+          placeholder="Search for a restaurant, hotels, excursions, or Maui regions..."
+        />
+      </label>
+    </div>
+    <div class="greeting">
+        <p>Maui is the 2nd largest of the Hawaiian Islands and a tourist hotspot for those seeking a tropical getaway</p>
+        <br>
+        <p>Luxury travel magazine, Condé Nast Traveler, has awarded Maui the title "Top Island" 23 years in a row!</p>
+        <br>
+        <p> Start your Maui vacation now by clicking on a Maui travel region or by searching for amenities!</p>
+    </div>
+    <div class="map">
+       <img src="/Images/maui logo1.png">
+       <button class="West">West Region</button>
+       <button class="South">South Region</button> 
+       <button class="Central">Central Region</button>
+    </div>
+  </body>
+  <script src="script.js"></script>
 </html>
