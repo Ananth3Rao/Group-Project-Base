@@ -1,8 +1,8 @@
 /* I found the following code online @ https://sequelize.org/master/manual/assocs.html#creating-the-standard-relationships
 this is my best interpreation of it */
 export default (sequelize, DataTypes) => {
-  const Hotels = sequelize.define('hotel_overview', { name: DataTypes.INTEGER });
-  const Amenities = sequelize.define('amenities', { name: DataTypes.INTEGER });
+  const Hotels2 = sequelize.define('hotel_overview', { name: DataTypes.STRING });
+  const Amenities2 = sequelize.define('amenities', { name: DataTypes.STRING });
   const amenitiesJoinHotels = sequelize.define('amenitiesJoinHotels', {
     hotel_id: {
       type: DataTypes.INTEGER,
@@ -22,5 +22,5 @@ export default (sequelize, DataTypes) => {
   { freezeTableName: true, timestamps: false });
   return amenitiesJoinHotels;
 };
-Hotels.belongsToMany(Hotels, { through: amenitiesJoinHotels });
-Amenities.belongsToMany(Amenities, { through: amenitiesJoinHotels });
+Hotels2.belongsToMany(Hotels2, { through: amenitiesJoinHotels });
+Amenities2.belongsToMany(Amenities2, { through: amenitiesJoinHotels });
