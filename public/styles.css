@@ -1,3 +1,61 @@
 html{
     background-color:#D3F2F5 ;
 }
+.map {
+    position: relative;
+    width: 50%;
+}
+
+.map img {
+    height: auto;
+    width: 100%;
+}
+
+.map .West {
+    position: absolute;
+    top: 28%;
+    left: 13%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: transparent;
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 160px 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.map .South {
+    position: absolute;
+    top: 72%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: transparent;
+    color: blue;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 140px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.map .Central {
+    position: absolute;
+    top: 35%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: transparent;
+    color: green;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 100px 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; 
+    padding-bottom: 70px;
+}
