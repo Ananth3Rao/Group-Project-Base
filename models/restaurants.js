@@ -10,6 +10,10 @@ export default (sequelize, DataTypes) => {
                 unique: true,
                 primaryKey: true
             },
+            restaurant_name: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
             sub_region_id: {
                 type: DataTypes.INTEGER,
                 allowNull: false,

@@ -14,12 +14,12 @@ async function dataHandler() {
     event.preventDefault();
     console.log('form submitted');
     if (search.value.length > 0) {
-      const filtered = dat.filter((record) => record.price_range.includes(search.value));
+      const filtered = dat.filter((record) => record.city.toLowerCase().includes(search.value.toLowerCase()));
       filtered.forEach((item) => {
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
         appendItem.classList.add('list-item');
-        appendItem.innerHTML = `<div class="list-header is-size-5">${item.restaurant_id}</div><address class="is-size-6">${item.street_address}</address><address class="is-size-6">${item.city}</address><address class="is-size-6">${item.state}</address><address class="is-size-6">${item.zip_code}</address>`;
+        appendItem.innerHTML = `<div class="list-header is-size-5">${item.restaurant_name}</div><address class="is-size-6">${item.street_address}</address><address class="is-size-6">${item.city}</address><address class="is-size-6">${item.state}</address><address class="is-size-6">${item.zip_code}</address>`;
         targetList.append(appendItem);
       });
     } else {

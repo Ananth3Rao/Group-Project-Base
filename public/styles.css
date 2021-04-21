@@ -1,5 +1,6 @@
 html{
     background-color:#D3F2F5 ;
+    width: 960px;
 }
 .map {
     position: relative;
@@ -59,3 +60,77 @@ html{
     border-radius: 5px; 
     padding-bottom: 70px;
 }
+/* || header layout */
+h1{
+    text-align: center;
+    flex: 5;
+    text-transform: uppercase;
+}
+.homeheader{ /*Ananth, this controls your h1*/ 
+  font-weight: bolder;
+  font-size: x-large;
+
+}
+
+.header {
+    margin-bottom: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: white;
+  }
+  .header img{
+    display: block;
+    height: 60px;
+    padding-top: 20.15px;
+  }
+  img{
+    display:block;
+    position:absolute;
+    top: 0px;
+    left: 10px;
+    height: 60px;
+    padding-top: 20.15px;
+  }
+
+  nav {
+    height: 50px;
+    flex: 100%;
+    display: flex;
+  }
+  /*needed to separate the buttons and have equal spacing*/ 
+  nav ul {
+    padding: 0;
+    list-style-type: none;
+    flex: 2;
+    display: flex;
+  }
+  
+  /*this part makes the buttons on the nav bar have equal separation */
+  nav li {
+    display: inline;
+    text-align: center;
+    flex: 1;
+  }
+
+  nav a, nav span {
+    display: inline-block;
+    font-size: 1rem;
+    height: 3rem;
+    line-height: 1.7;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+  
+  }
+  /*this is for the searc bar */
+  input[type=text] {
+    float: right;
+    height: 25px;
+    padding: 6px;
+    margin-top: 20px;
+    margin-right: 40px;
+    margin-left: 0px;
+    border: 1px solid #ccc;  
+    font-size: 17px;
+    border-radius: 10px;
+  }
