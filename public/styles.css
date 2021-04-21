@@ -1,6 +1,5 @@
 html{
     background-color:#D3F2F5 ;
-<<<<<<< Updated upstream
 }
 .map {
     position: relative;
@@ -60,11 +59,7 @@ html{
     border-radius: 5px; 
     padding-bottom: 70px;
 }
-=======
-    width: 960px;
-}
 /* || header layout */
-
 h1{
     text-align: center;
     flex: 5;
@@ -133,4 +128,3 @@ h1{
     font-size: 17px;
     border-radius: 10px;
   }
->>>>>>> Stashed changes
