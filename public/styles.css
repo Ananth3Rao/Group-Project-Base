@@ -1,5 +1,6 @@
 html{
     background-color:#D3F2F5 ;
+    width: 960px;
 }
 .map {
     position: relative;
