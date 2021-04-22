@@ -71,13 +71,13 @@ h1{
 
 }
 
-.header {
+.headerown {
     margin-bottom: 10px;
     display: flex;
     flex-flow: row wrap;
     background-color: white;
   }
-  .header img{
+.headerown img{
     display: block;
     height: 60px;
     padding-top: 20.15px;
