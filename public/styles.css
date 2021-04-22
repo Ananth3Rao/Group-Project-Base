@@ -12,27 +12,34 @@ body {
   min-width: 800px;
   margin: 0 auto;
 }
+
+.greeting-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .map {
-    position: relative;
-    width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .map img {
-    height: auto;
-    width: 100%;
+    position: relative;
 }
 
 .map .West {
     position: absolute;
     top: 28%;
-    left: 13%;
+    left: 30%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: transparent;
     color: red;
     font-size: 25px;
     font-weight: bold;
-    padding: 160px 40px;
+    padding: 150px 33px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -40,15 +47,15 @@ body {
 
 .map .South {
     position: absolute;
-    top: 72%;
-    left: 36%;
+    top: 73%;
+    left: 42.1%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: transparent;
     color: blue;
     font-size: 25px;
     font-weight: bold;
-    padding: 140px 24px;
+    padding: 135px 12px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -56,15 +63,15 @@ body {
 
 .map .Central {
     position: absolute;
-    top: 35%;
-    left: 36%;
+    top: 33%;
+    left: 42.1%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: transparent;
     color: green;
     font-size: 25px;
     font-weight: bold;
-    padding: 100px 14px;
+    padding: 100px 11px;
     border: none;
     cursor: pointer;
     border-radius: 5px; 
@@ -93,7 +100,7 @@ h1{
     height: 60px;
     padding-top: 20.15px;
   }
-  img{
+a img{
     display:block;
     position:absolute;
     top: 0px;
