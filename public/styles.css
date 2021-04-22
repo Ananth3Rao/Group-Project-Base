@@ -1,5 +1,16 @@
 html{
-    background-color:#D3F2F5 ;
+    background-color:#D3F2F5;
+    display: flex;
+    flex-direction: column;
+}
+.flex-container{
+  display: flex;
+  flex-direction: column;
+}
+body {
+  width: 90%;
+  min-width: 800px;
+  margin: 0 auto;
 }
 .map {
     position: relative;
@@ -86,7 +97,7 @@ h1{
     display:block;
     position:absolute;
     top: 0px;
-    left: 10px;
+    left: 6%;
     height: 60px;
     padding-top: 20.15px;
   }
@@ -133,3 +144,21 @@ h1{
     font-size: 17px;
     border-radius: 10px;
   }
+
+
+/* Left class filter area for Hotels page */ 
+#left{
+  width: 25%;
+  background-color: brown !important;
+}
+.select:not(.is-multiple):not(.is-loading)::after {
+  border-color: #D2F2F5;
+  position: relative;
+  border: none;
+}
+button, input, select, textarea {
+  margin: 10px;
+}
+.select select {
+ min-width: 250px;
+}
