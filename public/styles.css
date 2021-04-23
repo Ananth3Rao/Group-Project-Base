@@ -254,3 +254,8 @@ button, input, select, textarea {
 #checkBoxes6 label {
   display: block;
 }
+
+/* Right side of Hotels Page */
+.right{
+  margin-left: 40%;
+}
