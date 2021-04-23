@@ -19,6 +19,13 @@ body {
   justify-content: center;
 }
 
+/* mouse over link changes text color*/
+a:hover {
+  color: rgb(44, 114, 169);
+  font-style: italic;
+  font-weight: bold;
+}
+
 .map {
   position: relative;
   display: flex;
