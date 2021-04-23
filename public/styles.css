@@ -90,14 +90,9 @@ h1{
     flex: 5;
     text-transform: uppercase;
 }
-.homeheader .title { /*Ananth, this controls your h1*/ 
+.homeheader { 
   font-weight: bolder;
   font-size: x-large;
-}
-
-.homeheader {
-  align-items: center;
-  justify-content: center;
 }
 
 .headerown {
