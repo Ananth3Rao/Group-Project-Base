@@ -8,18 +8,22 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" />
     <link href="../../styles.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>Hotels</title>
 </head>
 <body>
 <div class="flex-container">
     <div class= "headerown">
         <h1 class="homeheader"> HOTELS</h1>
         <a href="../../"><img src="../../Images/mauilogo2.png"  alt="Maui Masters Logo "></a>
-        <input type="text" placeholder="search...">
+        <form id="search-form" action = "" class = 'block form'>
+            <label for='search-form'></label>
+            <input type='text' name='search' id='search' placeholder='search...'>
+            <label for='search'></label>
+        </form>
         <nav class="hotelnav">
             <ul class="hotelnav">
                 <li><a href="../../">Home</a></li>
-                <li><a href="/Pages/Hotels">Hotels</a></li>
+                <li><a class ='is-italic has-text-weight-bold has-text-info-dark' href="/Pages/Hotels">Hotels</a></li>
                 <li><a href="/Pages/Restaurants">Restaurants</a></li>
                 <li><a href="/Pages/Excursions">Excursions</a></li>
                 <li><a href="/Pages/About">About</a></li>
@@ -127,58 +131,54 @@
                     </label>
                     <label for="sixteenth">
                         <input type="checkbox" id="sixteenth" />
-                        Hot Tub
+                        Laundry
                     </label>
                     <label for="seventeenth">
                         <input type="checkbox" id="seventeenth" />
-                        Laundry
+                        Restaurant/Bar
                     </label>
                     <label for="eighteenth">
-                        <input type="checkbox" id=eighteenth" />
-                        Restaurant/Bar
+                        <input type="checkbox" id="eighteenth" />
+                        Wedding Venue
                     </label>
                     <label for="nineteenth">
                         <input type="checkbox" id="nineteenth" />
-                        Wedding Venue
+                        Room Service
                     </label>
                     <label for="twentieth">
                         <input type="checkbox" id="twentieth" />
-                        Room Service
+                        Breakfast
                     </label>
                     <label for="tfirst">
                         <input type="checkbox" id="tfirst" />
-                        Breakfast
+                        Valet
                     </label>
                     <label for="tsecond">
                         <input type="checkbox" id="tsecond" />
-                        Valet
+                        Airport Shuttle
                     </label>
                     <label for="tthird">
                         <input type="checkbox" id="tthird" />
-                        Airport Shuttle
+                        Front Desk Service
                     </label>
                     <label for="tfourth">
-                        <input type="checkbox" id=tfourth" />
-                        Front Desk Service
+                        <input type="checkbox" id="tfourth" />
+                        Child Care Services
                     </label>
                     <label for="tfifth">
                         <input type="checkbox" id="tfifth" />
-                        Child Care Services
+                        Business & Meeting
                     </label>
                     <label for="tsixth">
                         <input type="checkbox" id="tsixth" />
-                        Business Center/Meeting Rooms
+                        Gift Shop
                     </label>
                     <label for="tseventh">
                         <input type="checkbox" id="tseventh" />
-                        Gift Shop
+                        Golf Course
                     </label>
                     <label for="teighth">
                         <input type="checkbox" id="teighth" />
-                        Golf Course
-                    </label>
-                    <label for="tninth">
-                        <input type="checkbox" id="tninth" />
                         Free Parking
                     </label>
                 </div>
@@ -308,7 +308,8 @@
         </form>
     </div>
         <div class= "right"></div>
-</div>    
-</body>
+</div> 
 <script src="../../script.js"></script>
+<script src="scripts.js"></script>   
+</body>
 </html>

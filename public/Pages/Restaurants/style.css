@@ -1,0 +1,8 @@
+.columns>.column:first-child {
+    background-color:rgb(239, 241, 241);
+
+}
+.columns>.column {
+    color:black;
+    
+}
