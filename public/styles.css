@@ -1,27 +1,52 @@
 html{
-    background-color:#D3F2F5 ;
+    background-color:#D3F2F5;
+    display: flex;
+    flex-direction: column;
 }
+.flex-container{
+  display: flex;
+  flex-direction: column;
+}
+body {
+  width: 90%;
+  min-width: 800px;
+  margin: 0 auto;
+}
+
+.greeting-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* mouse over link changes text color*/
+a:hover {
+  color: rgb(44, 114, 169);
+  font-style: italic;
+  font-weight: bold;
+}
+
 .map {
-    position: relative;
-    width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .map img {
-    height: auto;
-    width: 100%;
+    position: relative;
 }
 
 .map .West {
     position: absolute;
     top: 28%;
-    left: 13%;
+    left: 30%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: transparent;
     color: red;
     font-size: 25px;
     font-weight: bold;
-    padding: 160px 40px;
+    padding: 150px 33px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -29,15 +54,15 @@ html{
 
 .map .South {
     position: absolute;
-    top: 72%;
-    left: 36%;
+    top: 73%;
+    left: 42.1%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: transparent;
     color: blue;
     font-size: 25px;
     font-weight: bold;
-    padding: 140px 24px;
+    padding: 135px 12px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -45,15 +70,15 @@ html{
 
 .map .Central {
     position: absolute;
-    top: 35%;
-    left: 36%;
+    top: 33%;
+    left: 42.1%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: transparent;
     color: green;
     font-size: 25px;
     font-weight: bold;
-    padding: 100px 14px;
+    padding: 100px 11px;
     border: none;
     cursor: pointer;
     border-radius: 5px; 
@@ -71,22 +96,22 @@ h1{
 
 }
 
-.header {
+.headerown {
     margin-bottom: 10px;
     display: flex;
     flex-flow: row wrap;
     background-color: white;
   }
-  .header img{
+.headerown a img{
     display: block;
     height: 60px;
     padding-top: 20.15px;
   }
-  img{
+a img{
     display:block;
     position:absolute;
     top: 0px;
-    left: 10px;
+    left: 6%;
     height: 60px;
     padding-top: 20.15px;
   }
@@ -121,7 +146,7 @@ h1{
     color: black;
   
   }
-  /*this is for the searc bar */
+  /*this is for the search bar */
   input[type=text] {
     float: right;
     height: 25px;
@@ -133,3 +158,99 @@ h1{
     font-size: 17px;
     border-radius: 10px;
   }
+
+
+/* Left class filter area for Hotels page */ 
+#left{
+  width: 25%;
+  background-color: brown !important;
+}
+.select:not(.is-multiple):not(.is-loading)::after {
+  border-color: #D2F2F5;
+  position: relative;
+  border: none;
+}
+button, input, select, textarea {
+  margin: 10px;
+}
+.select select {
+ min-width: 250px;
+}
+/*checkboxes inside the selector */
+.multipleSelection {
+  width: 300px;
+  background-color: none;
+  border: none;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkBoxes {
+  display: none;
+  border: none;
+  color: black;
+}
+
+#checkBoxes label {
+  display: block;
+}
+#checkBoxes2 {
+  display: none;
+  border: none;
+  color: black;
+}
+
+#checkBoxes2 label {
+  display: block;
+}
+#checkBoxes3 {
+  display: none;
+  border: none;
+  color: black;
+}
+
+#checkBoxes3 label {
+  display: block;
+}
+#checkBoxes4 {
+  display: none;
+  border: none;
+  color: black;
+}
+
+#checkBoxes4 label {
+  display: block;
+}
+#checkBoxes5 {
+  display: none;
+  border: none;
+  color: black;
+}
+
+#checkBoxes5 label {
+  display: block;
+}
+#checkBoxes6 {
+  display: none;
+  border: none;
+  color: black;
+}
+
+#checkBoxes6 label {
+  display: block;
+}

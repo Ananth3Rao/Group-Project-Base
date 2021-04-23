@@ -10,15 +10,17 @@
     <link href="styles.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="header">
+    <div class="headerown">
       <h1 class="homeheader">Welcome to Maui Masters!</h1>
-      <a href="../../"><img src="../../Images/mauilogo2.png"  alt="Maui Masters Logo "></a>
-      <input type="text" placeholder="search...">
-      <br>
+      <a href="../../"
+        ><img src="../../Images/mauilogo2.png" alt="Maui Masters Logo "
+      /></a>
+      <input type="text" placeholder="search..." />
+      <br />
       <h3>A one stop shop for all your Maui vacation needs</h3>
       <nav class="hotelnav">
         <ul class="hotelnav">
-          <li><span>Home</span></li>
+          <li><span>Home</span></li> <!-- CLASS TO INDICATE SELECTION: class ='is-italic has-text-weight-bold has-text-info-dark' -->
           <li><a href="/Pages/Hotels">Hotels</a></li>
           <li><a href="/Pages/Restaurants">Restaurants</a></li>
           <li><a href="/Pages/Excursions">Excursions</a></li>
@@ -26,30 +28,29 @@
         </ul>
       </nav>
     </div>
-    <div class="search">
-      <label>
-        Search
-        <input
-          type="text"
-          name="searchbar"
-          id="searchbar"
-          class="search"
-          placeholder="Search for a restaurant, hotels, excursions, or Maui regions..."
-        />
-      </label>
-    </div>
-    <div class="greeting">
-        <p>Maui is the 2nd largest of the Hawaiian Islands and a tourist hotspot for those seeking a tropical getaway</p>
-        <br>
-        <p>Luxury travel magazine, Condé Nast Traveler, has awarded Maui the title "Top Island" 23 years in a row!</p>
-        <br>
-        <p> Start your Maui vacation now by clicking on a Maui travel region or by searching for amenities!</p>
+    <div class="greeting-container">
+      <div class="greeting">
+        <p>
+          Maui is the 2nd largest of the Hawaiian Islands and a tourist hotspot
+          for those seeking a tropical getaway
+        </p>
+        <br />
+        <p>
+          Luxury travel magazine, Condé Nast Traveler, has awarded Maui the
+          title "Top Island" 23 years in a row!
+        </p>
+        <br />
+        <p>
+          Start your Maui vacation now by clicking on a Maui travel region or by
+          searching for amenities!
+        </p>
+      </div>
     </div>
     <div class="map">
-       <img src="/Images/mauilogo1.png">
-       <button class="West">West Region</button>
-       <button class="South">South Region</button> 
-       <button class="Central">Central Region</button>
+      <img src="/Images/mauilogo1.png" />
+      <button class="West">West Region</button>
+      <button class="South">South Region</button>
+      <button class="Central">Central Region</button>
     </div>
   </body>
   <script src="script.js"></script>
