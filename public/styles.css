@@ -90,10 +90,14 @@ h1{
     flex: 5;
     text-transform: uppercase;
 }
-.homeheader{ /*Ananth, this controls your h1*/ 
+.homeheader .title { /*Ananth, this controls your h1*/ 
   font-weight: bolder;
   font-size: x-large;
+}
 
+.homeheader {
+  align-items: center;
+  justify-content: center;
 }
 
 .headerown {
@@ -102,6 +106,7 @@ h1{
     flex-flow: row wrap;
     background-color: white;
   }
+
 .headerown a img{
     display: block;
     height: 60px;
