@@ -163,7 +163,6 @@ a img{
 /* Left class filter area for Hotels page */ 
 #left{
   width: 25%;
-  background-color: brown !important;
 }
 .select:not(.is-multiple):not(.is-loading)::after {
   border-color: #D2F2F5;
