@@ -101,7 +101,9 @@ async function dataHandler() {
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
         appendItem.classList.add('list-item');
-        appendItem.innerHTML = `<h1> Results </h1> <div class="list-header is-size-5">${item.restaurant_name}</div><address class="is-size-6">${item.street_address}</address><address class="is-size-6">${item.city}</address><address class="is-size-6">${item.state}</address><address class="is-size-6">${item.zip_code}</address>`;
+        appendItem.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item.restaurant_name}</div>
+        <address class="is-size-6">${item.street_address}</address><address class="is-size-6">${item.city}</address>
+        <address class="is-size-6">${item.state}</address><address class="is-size-6">${item.zip_code}</address>`;
         targetList.append(appendItem);
       });
     } else {

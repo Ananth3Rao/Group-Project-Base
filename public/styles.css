@@ -258,3 +258,14 @@ button, input, select, textarea {
 .right{
   margin-left: 40%;
 }
+.target-list{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap-reverse;
+}
+.resultheader{
+  font-size:larger;
+  display: flex;
+  font-weight: bold;
+}
