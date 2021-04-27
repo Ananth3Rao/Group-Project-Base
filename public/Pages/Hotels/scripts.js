@@ -80,7 +80,7 @@ function showCheckboxes6() {
     show6 = true;
   }
 }
-
+/* search bar in header */
 async function dataHandler() {
   // const form = document.querySelector('#search-form');
   const search = document.querySelector('#search');
