@@ -111,7 +111,7 @@ async function dataHandler() {
     }
   });
 }
-/* first checkbox for Sub Region  */
+/* first checkbox for Sub Region CENTRAL  */
 async function dataHandler2() {
   const checkBox1 = document.getElementById('first');
   const targetList1 = document.querySelector('.target-list');
@@ -136,9 +136,64 @@ async function dataHandler2() {
   }
   })
 }
+
+/* second checkbox for Sub Region SOUTH */
+async function dataHandler3() {
+  const checkBox1 = document.getElementById('second');
+  const targetList1 = document.querySelector('.target-list');
+  const form1 = document.querySelector('#SubR');
+
+  const request1 = await fetch('/api/hotel');
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  form1.addEventListener('change', async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.sub_region_id === 2);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement('li');
+        appendItem1.classList.add('block');
+        appendItem1.classList.add('list-item');
+        appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+    });
+  }
+  })
+}
+
+/* second checkbox for Sub Region WEST */
+async function dataHandler4() {
+  const checkBox1 = document.getElementById('third');
+  const targetList1 = document.querySelector('.target-list');
+  const form1 = document.querySelector('#SubR');
+
+  const request1 = await fetch('/api/hotel');
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  form1.addEventListener('change', async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.sub_region_id === 1);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement('li');
+        appendItem1.classList.add('block');
+        appendItem1.classList.add('list-item');
+        appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+    });
+  }
+  })
+}
+
 async function windowActions() {
   await dataHandler();
   await dataHandler2();
+  await dataHandler3();
+  await dataHandler4();
 }
 
 window.onload = windowActions;
