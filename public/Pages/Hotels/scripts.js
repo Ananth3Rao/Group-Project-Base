@@ -132,9 +132,9 @@ async function dataHandler2() {
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
-    });
-  }
-  })
+      });
+    }
+  });
 }
 
 /* second checkbox for Sub Region SOUTH */
@@ -158,12 +158,12 @@ async function dataHandler3() {
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
-    });
-  }
-  })
+      });
+    }
+  });
 }
 
-/* second checkbox for Sub Region WEST */
+/* third checkbox for Sub Region WEST */
 async function dataHandler4() {
   const checkBox1 = document.getElementById('third');
   const targetList1 = document.querySelector('.target-list');
@@ -184,9 +184,35 @@ async function dataHandler4() {
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
-    });
-  }
-  })
+      });
+    }
+  });
+}
+/* checkboxes for city */
+/* first checkbox CITY KAHULUI */
+async function dataHandler5() {
+  const checkBox1 = document.getElementById('fourth');
+  const targetList1 = document.querySelector('.target-list');
+  const form1 = document.querySelector('#Cities');
+
+  const request1 = await fetch('/api/hotel');
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  form1.addEventListener('change', async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.city === 'Kahului');
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement('li');
+        appendItem1.classList.add('block');
+        appendItem1.classList.add('list-item');
+        appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    }
+  });
 }
 
 async function windowActions() {
@@ -194,6 +220,7 @@ async function windowActions() {
   await dataHandler2();
   await dataHandler3();
   await dataHandler4();
+  await dataHandler5();
 }
 
 window.onload = windowActions;
