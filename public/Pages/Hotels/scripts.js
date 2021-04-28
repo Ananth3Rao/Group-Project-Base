@@ -2,7 +2,7 @@
 let show = true;
 
 function showCheckboxes() {
-  let checkboxes = document.getElementById('checkBoxes');
+  const checkboxes = document.getElementById('checkBoxes');
 
   if (show) {
     checkboxes.style.display = 'block';
@@ -16,7 +16,7 @@ function showCheckboxes() {
 let show2 = true;
 
 function showCheckboxes2() {
-  let checkboxes2 = document.getElementById('checkBoxes2');
+  const checkboxes2 = document.getElementById('checkBoxes2');
 
   if (show2) {
     checkboxes2.style.display = 'block';
@@ -30,7 +30,7 @@ function showCheckboxes2() {
 let show3 = true;
 
 function showCheckboxes3() {
-  let checkboxes3 = document.getElementById('checkBoxes3');
+  const checkboxes3 = document.getElementById('checkBoxes3');
 
   if (show3) {
     checkboxes3.style.display = 'block';
@@ -44,7 +44,7 @@ function showCheckboxes3() {
 let show4 = true;
 
 function showCheckboxes4() {
-  let checkboxes4 = document.getElementById('checkBoxes4');
+  const checkboxes4 = document.getElementById('checkBoxes4');
 
   if (show4) {
     checkboxes4.style.display = 'block';
@@ -57,7 +57,7 @@ function showCheckboxes4() {
 let show5 = true;
 
 function showCheckboxes5() {
-  let checkboxes5 = document.getElementById('checkBoxes5');
+  const checkboxes5 = document.getElementById('checkBoxes5');
 
   if (show5) {
     checkboxes5.style.display = 'block';
@@ -70,7 +70,7 @@ function showCheckboxes5() {
 let show6 = true;
 
 function showCheckboxes6() {
-  let checkboxes6 = document.getElementById('checkBoxes6');
+  const checkboxes6 = document.getElementById('checkBoxes6');
 
   if (show6) {
     checkboxes6.style.display = 'block';
@@ -89,7 +89,7 @@ async function dataHandler() {
 
   const request = await fetch('/api/restaurant');
   const d = await request.json();
-  const dat = d.data
+  const dat = d.data;
   const coords = [];
 
   form.addEventListener('submit', async (event) => {
@@ -111,8 +111,33 @@ async function dataHandler() {
     }
   });
 }
+/* first checkbox for Sub Region  */
+async function dataHandler2() {
+  const checkBox1 = document.getElementById('first');
+  const targetList1 = document.querySelector('.target-list');
+  const form1 = document.querySelector('#SubR')
+
+  const request = await fetch('/api/hotel');
+  const d = await request.json();
+  const dat = d.data;
+  form1.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (checkBox1.checked) {
+      dat.forEach((item) => {
+        const appendItem = document.createElement('li');
+        appendItem.classList.add('block');
+        appendItem.classList.add('list-item');
+        appendItem.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item.hotel_name}</div>
+        <address class="is-size-6">${item.street_address}</address><address class="is-size-6">${item.city}</address>
+        <address class="is-size-6">${item.state}</address><address class="is-size-6">${item.zip_code}</address>`;
+        targetList1.append(appendItem);
+    });
+  }
+  })
+}
 async function windowActions() {
   await dataHandler();
+  await dataHandler2();
 }
 
 window.onload = windowActions;
