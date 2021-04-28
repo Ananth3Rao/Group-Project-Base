@@ -90,7 +90,6 @@ async function dataHandler() {
   const request = await fetch("/api/restaurant");
   const d = await request.json();
   const dat = d.data;
-  const coords = [];
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -163,8 +162,6 @@ async function dataHandler3() {
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
       });
-    } else {
-      targetList1.innerHTML = "";
     }
   });
 }
@@ -223,12 +220,144 @@ async function dataHandler5() {
   });
 }
 
+/* second checkbox CITY KAPALUA */
+async function dataHandler6() {
+  const checkBox1 = document.getElementById("fifth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector('#Cities');
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  form1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.city === "Kapalua");
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    }
+  });
+}
+/* third checkbox CITY KIHEI */
+async function dataHandler7() {
+  const checkBox1 = document.getElementById("sixth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cities");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  form1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.city === "Kihei");
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    }
+  });
+}
+/* fourth checkbox CITY LAHAINA */
+async function dataHandler8() {
+  const checkBox1 = document.getElementById("seventh");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cities");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  form1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.city === "Lahaina");
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    }
+  });
+}
+/* fifth checkbox CITY PAIA */
+async function dataHandler9() {
+  const checkBox1 = document.getElementById("eighth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cities");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  form1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.city === "Paia");
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    }
+  });
+}
+
+/* sixth checkbox CITY WAILEA */
+async function dataHandler10() {
+  const checkBox1 = document.getElementById("ninth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cities");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  form1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.city === "Wailea");
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    }
+  });
+}
+
 async function windowActions() {
   await dataHandler();
   await dataHandler2();
   await dataHandler3();
   await dataHandler4();
   await dataHandler5();
+  await dataHandler6();
+  await dataHandler7();
+  await dataHandler8();
+  await dataHandler9();
+  await dataHandler10();
 }
 
 window.onload = windowActions;
