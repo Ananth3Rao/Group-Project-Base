@@ -35,7 +35,11 @@ export default (sequelize, DataTypes) => {
             state: {
                 type: DataTypes.STRING,
                 allowNull: false
-            }     
+            },
+            hotel_type_id: {
+                type: DataTypes.INTEGER,
+                allowNull: false
+            }
         },
         { freezeTableName: true, timestamps: false }
     );
