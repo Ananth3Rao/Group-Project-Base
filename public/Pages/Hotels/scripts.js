@@ -112,6 +112,14 @@ async function dataHandler() {
     }
   });
 }
+
+function removeElementsByClass(className) {
+  const elements = document.getElementsByClassName(className);
+  while (elements.length > 0) {
+    elements[0].parentNode.removeChild(elements[0]);
+  }
+}
+
 /* first checkbox for Sub Region CENTRAL  */
 async function dataHandler2() {
   const checkBox1 = document.getElementById("first");
@@ -121,7 +129,7 @@ async function dataHandler2() {
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
-  form1.addEventListener("change", async (event1) => {
+  checkBox1.addEventListener("change", async (event1) => {
     event1.preventDefault();
     if (checkBox1.checked) {
       const filtered1 = dat1.filter((record1) => record1.sub_region_id === 3);
@@ -129,17 +137,17 @@ async function dataHandler2() {
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
+        appendItem1.classList.add("central");
         appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
       });
     } else {
-      targetList1.innerHTML = "";
+      removeElementsByClass("central");
     }
   });
 }
-
 /* second checkbox for Sub Region SOUTH */
 async function dataHandler3() {
   const checkBox1 = document.getElementById("second");
@@ -149,7 +157,7 @@ async function dataHandler3() {
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
-  form1.addEventListener("change", async (event1) => {
+  checkBox1.addEventListener("change", async (event1) => {
     event1.preventDefault();
     if (checkBox1.checked) {
       const filtered1 = dat1.filter((record1) => record1.sub_region_id === 2);
@@ -157,15 +165,17 @@ async function dataHandler3() {
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
+        appendItem1.classList.add("south");
         appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
       });
+    } else {
+      removeElementsByClass("south");
     }
   });
 }
-
 /* third checkbox for Sub Region WEST */
 async function dataHandler4() {
   const checkBox1 = document.getElementById("third");
@@ -175,7 +185,7 @@ async function dataHandler4() {
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
-  form1.addEventListener("change", async (event1) => {
+  checkBox1.addEventListener("change", async (event1) => {
     event1.preventDefault();
     if (checkBox1.checked) {
       const filtered1 = dat1.filter((record1) => record1.sub_region_id === 1);
@@ -183,32 +193,35 @@ async function dataHandler4() {
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
+        appendItem1.classList.add("west")
         appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
       });
+    } else {
+      removeElementsByClass("west");
     }
   });
 }
 /* checkboxes for city */
 /* first checkbox CITY KAHULUI */
 async function dataHandler5() {
-  const checkBox1 = document.getElementById('fourth');
-  const targetList1 = document.querySelector('.target-list');
-  const form1 = document.querySelector('#Cities');
+  const checkBox1 = document.getElementById("fourth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cities");
 
-  const request1 = await fetch('/api/hotel');
+  const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
-  form1.addEventListener('change', async (event1) => {
+  form1.addEventListener("change", async (event1) => {
     event1.preventDefault();
     if (checkBox1.checked) {
-      const filtered1 = dat1.filter((record1) => record1.city === 'Kahului');
+      const filtered1 = dat1.filter((record1) => record1.city === "Kahului");
       filtered1.forEach((item1) => {
-        const appendItem1 = document.createElement('li');
-        appendItem1.classList.add('block');
-        appendItem1.classList.add('list-item');
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
         appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
@@ -224,7 +237,7 @@ async function dataHandler5() {
 async function dataHandler6() {
   const checkBox1 = document.getElementById("fifth");
   const targetList1 = document.querySelector(".target-list");
-  const form1 = document.querySelector('#Cities');
+  const form1 = document.querySelector("#Cities");
 
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
@@ -346,7 +359,6 @@ async function dataHandler10() {
     }
   });
 }
-
 async function windowActions() {
   await dataHandler();
   await dataHandler2();
