@@ -515,7 +515,6 @@ async function dataHandler12() {
 async function dataHandler13() {
   const checkBox1 = document.getElementById("thirtysecond");
   const targetList1 = document.querySelector(".target-list");
-  //const form1 = document.querySelector("#Hotel Type");
 
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
@@ -523,19 +522,19 @@ async function dataHandler13() {
   checkBox1.addEventListener("change", async (event1) => {
     event1.preventDefault();
     if (checkBox1.checked) {
-      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === "3");
+      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 3);
       filtered1.forEach((item1) => {
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("Resorts");
+        appendItem1.classList.add("resorts");
         appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
       });
-    } else{
-      removeElementsByClass("Resorts")
+    } else {
+      removeElementsByClass("resorts")
     }
   });
 }
@@ -544,7 +543,6 @@ async function dataHandler13() {
 async function dataHandler14() {
   const checkBox1 = document.getElementById("thirtythird");
   const targetList1 = document.querySelector(".target-list");
- // const form1 = document.querySelector("#Hotel Type");
 
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
@@ -552,16 +550,19 @@ async function dataHandler14() {
   checkBox1.addEventListener("change", async (event1) => {
     event1.preventDefault();
     if (checkBox1.checked) {
-      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === "4");
+      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 4);
       filtered1.forEach((item1) => {
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
+        appendItem1.classList.add("cottages");
         appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
       });
+    } else {
+      removeElementsByClass("cottages")
     }
   });
 }
@@ -570,7 +571,6 @@ async function dataHandler14() {
 async function dataHandler15() {
   const checkBox1 = document.getElementById("thirtyfourth");
   const targetList1 = document.querySelector(".target-list");
-  //const form1 = document.querySelector("#Hotel Type");
 
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
@@ -578,16 +578,19 @@ async function dataHandler15() {
   checkBox1.addEventListener("change", async (event1) => {
     event1.preventDefault();
     if (checkBox1.checked) {
-      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === "5");
+      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 5);
       filtered1.forEach((item1) => {
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
+        appendItem1.classList.add("condoss");
         appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
       });
+    } else {
+      removeElementsByClass("condoss")
     }
   });
 }
@@ -596,7 +599,6 @@ async function dataHandler15() {
 async function dataHandler16() {
   const checkBox1 = document.getElementById("thirtyfifth");
   const targetList1 = document.querySelector(".target-list");
-  //const form1 = document.querySelector("#Hotel Type");
 
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
@@ -604,16 +606,19 @@ async function dataHandler16() {
   checkBox1.addEventListener("change", async (event1) => {
     event1.preventDefault();
     if (checkBox1.checked) {
-      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === "6");
+      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 6);
       filtered1.forEach((item1) => {
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
+        appendItem1.classList.add("Inns");
         appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
       });
+    } else {
+      removeElementsByClass("Inns")
     }
   });
 }
@@ -630,14 +635,11 @@ async function windowActions(){
   await dataHandler9();
   await dataHandler10();
   await dataHandler11();
-<<<<<<< HEAD
   await dataHandler12();
   await dataHandler13();
   await dataHandler14();
   await dataHandler15();
   await dataHandler16();
-=======
->>>>>>> 7c98e7f9b1423ed25672ed2d4980b22ef9d75a80
 }
 
 
