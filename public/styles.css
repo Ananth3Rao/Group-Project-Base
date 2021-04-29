@@ -271,3 +271,8 @@ button, input, select, textarea {
   display: flex;
   font-weight: bold;
 }
+
+.right2{
+  background-color:#A0ACF2;
+  margin-left: 25%;
+}
