@@ -423,12 +423,10 @@ async function dataHandler11() {
   });
 }
 
-
 /* First checkbox Hotel Type Villas */
 async function dataHandler11() {
   const checkBox1 = document.getElementById("thirty");
   const targetList1 = document.querySelector(".target-list");
- // const form1 = document.querySelector("#Hotel Type");
 
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
@@ -452,37 +450,6 @@ async function dataHandler11() {
     }
   });
 }
-
-
-
-/* Second checkbox Hotel Type Tranditional Hotel */
-/*async function dataHandler12() {
-  const checkBox1 = document.getElementById("thrityfirst");
-  const targetList1 = document.querySelector(".target-list");
-  //const form1 = document.querySelector("#Hotel Type");
-
-  const request1 = await fetch("/api/hotel");
-  const d1 = await request1.json();
-  const dat1 = d1.data;
-  checkBox1.addEventListener("change", async (event1) => {
-    event1.preventDefault();
-    if (checkBox1.checked) {
-      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 2);
-      filtered1.forEach((item1) => {
-        const appendItem1 = document.createElement("li");
-        appendItem1.classList.add("block");
-        appendItem1.classList.add("list-item");
-        appendItem1.classList.add("traditional");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
-        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
-        targetList1.append(appendItem1);
-      });
-    } else {
-      removeElementsByClass("traditional")
-    }
-  });
-}*/
 
 /*second checkbox for Traditional Hotel */ 
 async function dataHandler12() {
@@ -630,14 +597,11 @@ async function windowActions(){
   await dataHandler9();
   await dataHandler10();
   await dataHandler11();
-<<<<<<< HEAD
   await dataHandler12();
   await dataHandler13();
   await dataHandler14();
   await dataHandler15();
   await dataHandler16();
-=======
->>>>>>> 7c98e7f9b1423ed25672ed2d4980b22ef9d75a80
 }
 
 
