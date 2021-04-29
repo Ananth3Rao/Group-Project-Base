@@ -138,7 +138,7 @@ async function dataHandler2() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("central");
-        appendItem1.innerHTML = `<div class="list-header is-size-5">${item1.hotel_name}</div>
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
@@ -166,7 +166,7 @@ async function dataHandler3() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("south");
-        appendItem1.innerHTML = `<div class="list-header is-size-5">${item1.hotel_name}</div>
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
@@ -193,8 +193,8 @@ async function dataHandler4() {
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("west")
-        appendItem1.innerHTML = `<div class="list-header is-size-5">${item1.hotel_name}</div>
+        appendItem1.classList.add("west");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
