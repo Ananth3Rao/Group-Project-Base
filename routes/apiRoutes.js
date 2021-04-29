@@ -135,7 +135,7 @@ router.post('/hotel/:hotel_id/comments', async (req, res) => {
 
 // Update or Change a comment
 
-router.put('/comments/:comment_id', async (req, res) => {
+router.put('/comments', async (req, res) => {
   console.log(req.body);
   try {
     const update = await db.Comments.update(
@@ -146,7 +146,7 @@ router.put('/comments/:comment_id', async (req, res) => {
       },
       {
         where: {
-          comment_id: req.params.comment_id
+          comment_id: req.body.comment_id
         }
       }
     );

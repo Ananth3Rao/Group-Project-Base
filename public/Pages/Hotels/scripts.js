@@ -87,7 +87,7 @@ async function dataHandler() {
   const form = document.querySelector("#search-form");
   const targetList = document.querySelector(".target-list");
 
-  const request = await fetch("/api/restaurant");
+  const request = await fetch("/api/hotel");
   const d = await request.json();
   const dat = d.data;
 
@@ -102,7 +102,7 @@ async function dataHandler() {
         const appendItem = document.createElement("li");
         appendItem.classList.add("block");
         appendItem.classList.add("list-item");
-        appendItem.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item.restaurant_name}</div>
+        appendItem.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item.hotel_name}</div>
         <address class="is-size-6">${item.street_address}</address><address class="is-size-6">${item.city}</address>
         <address class="is-size-6">${item.state}</address><address class="is-size-6">${item.zip_code}</address>`;
         targetList.append(appendItem);
@@ -138,7 +138,7 @@ async function dataHandler2() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("central");
-        appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
+        appendItem1.innerHTML = `<div class="list-header is-size-5">${item1.hotel_name}</div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
@@ -166,7 +166,7 @@ async function dataHandler3() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("south");
-        appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
+        appendItem1.innerHTML = `<div class="list-header is-size-5">${item1.hotel_name}</div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
@@ -194,7 +194,7 @@ async function dataHandler4() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("west")
-        appendItem1.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item1.hotel_name}</div>
+        appendItem1.innerHTML = `<div class="list-header is-size-5">${item1.hotel_name}</div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
