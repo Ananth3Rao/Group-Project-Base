@@ -395,34 +395,6 @@ async function dataHandler10() {
 }
 
 /*checkboxes for hotel type */
-/*first checkbox for Villas */ 
-async function dataHandler11() {
-  const checkBox1 = document.getElementById("thirty");
-  const targetList1 = document.querySelector(".target-list");
-
-  const request1 = await fetch("/api/hotel");
-  const d1 = await request1.json();
-  const dat1 = d1.data;
-  checkBox1.addEventListener("change", async (event1) => {
-    event1.preventDefault();
-    if (checkBox1.checked) {
-      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 1);
-      filtered1.forEach((item1) => {
-        const appendItem1 = document.createElement("li");
-        appendItem1.classList.add("block");
-        appendItem1.classList.add("list-item");
-        appendItem1.classList.add("villas");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
-        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
-        targetList1.append(appendItem1);
-      });
-    } else {
-      removeElementsByClass("villas")
-    }
-  });
-}
-
 /* First checkbox Hotel Type Villas */
 async function dataHandler11() {
   const checkBox1 = document.getElementById("thirty");
@@ -450,7 +422,6 @@ async function dataHandler11() {
     }
   });
 }
-
 /*second checkbox for Traditional Hotel */ 
 async function dataHandler12() {
   const checkBox1 = document.getElementById("thirtyfirst");
@@ -589,7 +560,7 @@ async function dataHandler16() {
     }
   });
 }
-
+/*checkboxes for Hotel View */
 /* first checkbox Room View Partial Ocean */
 async function dataHandler17() {
   const checkBox1 = document.getElementById("thirtysixth");
@@ -841,8 +812,90 @@ async function dataHandler25() {
     }
   });
 }
+/*checkboxes for Hotel Ratings*/ 
+/*third checkbox for rating higher than 3 but lower than 4 */
+async function dataHandler26() {
+  const checkBox1 = document.getElementById("fseventh");
+  const targetList1 = document.querySelector(".target-list");
 
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => (record1.hotel_rating < 4) && (record1.hotel_rating > 3));
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("3star");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("3star")
+    }
+  });
+}
 
+/*fourth checkbox for rating higher than 4 but lower than 5 */
+async function dataHandler27() {
+  const checkBox1 = document.getElementById("feighth");
+  const targetList1 = document.querySelector(".target-list");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => (record1.hotel_rating < 5) && (record1.hotel_rating > 4));
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("4star");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("4star")
+    }
+  });
+}
+
+/*fifth checkbox for rating higher than 4 but lower than 5 */
+async function dataHandler28() {
+  const checkBox1 = document.getElementById("fnine");
+  const targetList1 = document.querySelector(".target-list");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.hotel_rating >= 5);/*had to use >=, would not work with triple === */
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("5star");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("5star")
+    }
+  });
+}
 
 async function windowActions(){
   await dataHandler();
@@ -870,6 +923,9 @@ async function windowActions(){
   await dataHandler23();
   await dataHandler24();
   await dataHandler25();
+  await dataHandler26();
+  await dataHandler27();
+  await dataHandler28();
 }
 
 
