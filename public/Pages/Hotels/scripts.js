@@ -590,6 +590,260 @@ async function dataHandler16() {
   });
 }
 
+/* first checkbox Room View Partial Ocean */
+async function dataHandler17() {
+  const checkBox1 = document.getElementById("thirtysixth");
+  const targetList1 = document.querySelector(".target-list");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 1);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("partials");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("partials")
+    }
+  });
+}
+
+/* second checkbox Room View Ocean Front */
+async function dataHandler18() {
+  const checkBox1 = document.getElementById("thirtyseventh");
+  const targetList1 = document.querySelector(".target-list");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 2);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("Front");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("Front")
+    }
+  });
+}
+
+/* Third checkbox Room View Parking Lot */
+async function dataHandler19() {
+  const checkBox1 = document.getElementById("thirtyeighth");
+  const targetList1 = document.querySelector(".target-list");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 3);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("parking");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("parking")
+    }
+  });
+}
+
+/* Fourth checkbox Room View Resort */
+async function dataHandler20() {
+  const checkBox1 = document.getElementById("thirtyninth");
+  const targetList1 = document.querySelector(".target-list");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 4);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("resorts");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("resorts")
+    }
+  });
+}
+
+/* Fifth checkbox Room View Mountain */
+async function dataHandler21() {
+  const checkBox1 = document.getElementById("forty");
+  const targetList1 = document.querySelector(".target-list");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 5);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("mountains");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("mountains")
+    }
+  });
+}
+
+/* Sixth checkbox Room View Garden */
+async function dataHandler22() {
+  const checkBox1 = document.getElementById("ffirst");
+  const targetList1 = document.querySelector(".target-list");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 6);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("gardens");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("gardens")
+    }
+  });
+}
+
+/* seventh checkbox Room View Parks */
+async function dataHandler23() {
+  const checkBox1 = document.getElementById("fsecond");
+  const targetList1 = document.querySelector(".target-list");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 7);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("parks");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("parks")
+    }
+  });
+}
+
+/* eighth checkbox Room View Not Specified */
+async function dataHandler24() {
+  const checkBox1 = document.getElementById("fthird");
+  const targetList1 = document.querySelector(".target-list");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 8);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("specified");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("specified")
+    }
+  });
+}
+
+/* Ninth checkbox Room View Town */
+async function dataHandler25() {
+  const checkBox1 = document.getElementById("ffourth");
+  const targetList1 = document.querySelector(".target-list");
+
+  const request1 = await fetch("/api/hotel");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.hotel_type_id === 9);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("towns");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("towns")
+    }
+  });
+}
+
+
+
 async function windowActions(){
   await dataHandler();
   await dataHandler2();
@@ -607,6 +861,15 @@ async function windowActions(){
   await dataHandler14();
   await dataHandler15();
   await dataHandler16();
+  await dataHandler17();
+  await dataHandler18();
+  await dataHandler19();
+  await dataHandler20();
+  await dataHandler21();
+  await dataHandler22();
+  await dataHandler23();
+  await dataHandler24();
+  await dataHandler25();
 }
 
 
