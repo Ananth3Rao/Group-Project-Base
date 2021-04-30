@@ -1,454 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" />
-    <link href="style.css" rel="stylesheet" />
     <link href="../../styles.css" rel="stylesheet" />
-    <title>Restaurants</title>
+    <title>Hotels</title>
 </head>
 <body>
+<div class="flex-container">
     <div class= "headerown">
-        <h1 class='title'> Maui Masters</h1>
+        <h1 class="homeheader"> HOTELS</h1>
         <a href="../../"><img src="../../Images/mauilogo2.png"  alt="Maui Masters Logo "></a>
         <form id="search-form" action = "" class = 'block form'>
-          <label for='search-form'></label>
-          <input type='text' name='search' id='search' placeholder='search for restaurants'>
-          <label for='search'></label>
-          
-      </form>
+            <label for='search-form'></label>
+            <input type='text' name='search' id='search' placeholder='search...'>
+            <label for='search'></label>
+        </form>
         <nav class="hotelnav">
             <ul class="hotelnav">
                 <li><a href="../../">Home</a></li>
-                <li><a href="/Pages/Hotels">Hotels</a></li>
-                <li><a class ='is-italic has-text-weight-bold has-text-info-dark' href="/Pages/Restaurants">Restaurants</a></li>
+                <li><a class ='is-italic has-text-weight-bold has-text-info-dark' href="/Pages/Hotels">Hotels</a></li>
+                <li><a href="/Pages/Restaurants">Restaurants</a></li>
                 <li><a href="/Pages/Excursions">Excursions</a></li>
                 <li><a href="/Pages/About">About</a></li>
             </ul>
         </nav>
     </div>
-    <section class="section">
-<!--       <h1 class="title">Restaurants</h1> -->
-      <div class="columns">
-            <div class = 'column is-one-quarter'>
-              <h1>Filters</h1>
-                   <ul class="category_filters" >
-                    <li >
-                        <p>Sub-Region</p>
-                        <ul class="sub-categories">
-                            <li>
-                              <input class="cat_type category-input" data-label="Central" id="Central" value="Central" name="checkboxes" type="checkbox" ><label for="Central" >Central</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="South" id="South" value="South" name="checkboxes" type="checkbox" ><label for="South" >South</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="West" id="West" value="West" name="checkboxes" type="checkbox" ><label for="West" >West</label>
-                            </li>
-                        </ul>
-                     
-                    </li>
-                    <li>
-                      <p>City</p>
-                      <ul class="sub-categories">
-                          <li>
-                            <input class="cat_type category-input" data-label="Wailea" id="Wailea" value="Wailea" name="checkboxes" type="checkbox" ><label for="Wailea" >Wailea</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Kihei" id="Kihei" value="Kihei" name="checkboxes" type="checkbox" ><label for="Kihei" >Kihei</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Kahului" id="Kahului" value="Kahului" name="checkboxes" type="checkbox" ><label for="Kahului" >Kahului</label>
-                          </li>
-                          <li>
-                              <input class="cat_type category-input" data-label="Wailuku" id="Wailuku" value="Wailuku" name="checkboxes" type="checkbox" ><label for="Wailuku" >Wailuku</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="Lahaina" id="Lahaina" value="Lahaina" name="checkboxes" type="checkbox" ><label for="Lahaina" >Lahaina</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="Paia" id="Paia" value="Paia" name="checkboxes" type="checkbox" ><label for="Paia" >Paia</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="Kapalua" id="Kapalua" value="Kapalua" name="checkboxes" type="checkbox" ><label for="Kapalua" >Kapalua</label>
-                            </li>
-                            
-                      </ul>
-                    </li>
-                    <li>
-                      <p>Cuisine</p>
-                      <ul class="sub-categories">
-                          <li>
-                            <input class="cat_type category-input" data-label="American" id="American" value="American" name="checkboxes" type="checkbox" ><label for="American" >American</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Chinese" id="Chinese" value="Chinese" name="checkboxes" type="checkbox" ><label for="Chinese" >Chinese</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Italian" id="Italian" value="Italian" name="checkboxes" type="checkbox" ><label for="Italian" >Italian</label>
-                          </li>
-                          <li>
-                              <input class="cat_type category-input" data-label="Turkish" id="Turkish" value="Turkish" name="checkboxes" type="checkbox" ><label for="Turkish" >Turkish</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="Seafood" id="Seafood" value="Seafood" name="checkboxes" type="checkbox" ><label for="Seafood" >Seafood</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="Hawaiian" id="Hawaiian" value="Hawaiian" name="checkboxes" type="checkbox" ><label for="Hawaiian" >Hawaiian</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="Filipino" id="Filipino" value="Filipino" name="checkboxes" type="checkbox" ><label for="Filipino" >Filipino</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="Mexican" id="Mexican" value="Mexican" name="checkboxes" type="checkbox" ><label for="Mexican" >Mexican</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="Japanese" id="Japanese" value="Japanese" name="checkboxes" type="checkbox" ><label for="Japanese" >Japanese</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="Thai" id="Thai" value="Thai" name="checkboxes" type="checkbox" ><label for="Thai" >Thai</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="Caribbean" id="Caribbean" value="Caribbean" name="checkboxes" type="checkbox" ><label for="Caribbean" >Caribbean</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="Indian" id="Indian" value="Indian" name="checkboxes" type="checkbox" ><label for="Indian" >Indian</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="Vietnamese" id="Vietnamese" value="Vietnamese" name="checkboxes" type="checkbox" ><label for="Vietnamese" >Vietnamese</label>
-                            </li>
-                            <li>
-                              <input class="cat_type category-input" data-label="Mediterranean" id="Mediterranean" value="Mediterranean" name="checkboxes" type="checkbox" ><label for="Mediterranean" >Mediterranean</label>
-                            </li>
-                            
-                      </ul>
-                    </li>
-                    <li >
-                      <p>Price Range</p>
-                      <ul class="sub-categories">
-                          <li>
-                            <input class="cat_type category-input" data-label="$" id="$" value="$" name="checkboxes" type="checkbox" ><label for="$" >$</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="$$" id="$$" value="$$" name="checkboxes" type="checkbox" ><label for="$$" >$$</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="$$$" id="$$$" value="$$$" name="checkboxes" type="checkbox" ><label for="$$$" >$$$</label>
-                          </li>
-                          <li>
-                              <input class="cat_type category-input" data-label="$$$$" id="$$$$" value="$$$$" name="checkboxes" type="checkbox" ><label for="$$$$" >$$$$</label>
-                            </li>
-                      </ul>
-                   
-                  </li>
-                    
-                   </ul>
-                   <button id="searchBtn" type="button" class="btn btn-secondary btn-search" ><span class="glyphicon glyphicon-search" >&nbsp;</span> <span class="label-icon" >Search</span></button>
-            
-            </div>
-            <div class = 'column'>
-                <h1>Results</h1>
-                <ul class='target-list'>
-
-                </ul>
-                </div>
-            
-        </div>
-        
-        
-        
-        
-        
-    </section>
-    <!-- <section class='section'>
-    <div class= "columns">
-      <div class="column">
-        <div class="row searchFilter" >
-           <div class="col-sm-12" >
-            <div class="input-group" >
-             <label for = 'category'>Restaurant</label>
-             <div class="input-group-btn" >
-              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="label-icon" >Filters</span> <span class="caret" >&nbsp;</span></button>
-              <div class="dropdown-menu dropdown-menu-right" >
-                 <ul class="category_filters" >
-                  <li >
-                      <p>Sub-Region</p>
-                      <ul class="sub-categories">
-                          <li>
-                            <input class="cat_type category-input" data-label="Central" id="Central" value="Central" name="checkboxes" type="checkbox" ><label for="Central" >Central</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="South" id="South" value="South" name="checkboxes" type="checkbox" ><label for="South" >South</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="West" id="West" value="West" name="checkboxes" type="checkbox" ><label for="West" >West</label>
-                          </li>
-                      </ul>
-                   
-                  </li>
-                  <li>
-                    <p>City</p>
-                    <ul class="sub-categories">
-                        <li>
-                          <input class="cat_type category-input" data-label="Wailea" id="Wailea" value="Wailea" name="checkboxes" type="checkbox" ><label for="Wailea" >Wailea</label>
-                        </li>
-                        <li>
-                          <input class="cat_type category-input" data-label="Kihei" id="Kihei" value="Kihei" name="checkboxes" type="checkbox" ><label for="Kihei" >Kihei</label>
-                        </li>
-                        <li>
-                          <input class="cat_type category-input" data-label="Kahului" id="Kahului" value="Kahului" name="checkboxes" type="checkbox" ><label for="Kahului" >Kahului</label>
-                        </li>
-                        <li>
-                            <input class="cat_type category-input" data-label="Wailuku" id="Wailuku" value="Wailuku" name="checkboxes" type="checkbox" ><label for="Wailuku" >Wailuku</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Lahaina" id="Lahaina" value="Lahaina" name="checkboxes" type="checkbox" ><label for="Lahaina" >Lahaina</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Paia" id="Paia" value="Paia" name="checkboxes" type="checkbox" ><label for="Paia" >Paia</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Kapalua" id="Kapalua" value="Kapalua" name="checkboxes" type="checkbox" ><label for="Kapalua" >Kapalua</label>
-                          </li>
-                          
-                    </ul>
-                  </li>
-                  <li>
-                    <p>Cuisine</p>
-                    <ul class="sub-categories">
-                        <li>
-                          <input class="cat_type category-input" data-label="American" id="American" value="American" name="checkboxes" type="checkbox" ><label for="American" >American</label>
-                        </li>
-                        <li>
-                          <input class="cat_type category-input" data-label="Chinese" id="Chinese" value="Chinese" name="checkboxes" type="checkbox" ><label for="Chinese" >Chinese</label>
-                        </li>
-                        <li>
-                          <input class="cat_type category-input" data-label="Italian" id="Italian" value="Italian" name="checkboxes" type="checkbox" ><label for="Italian" >Italian</label>
-                        </li>
-                        <li>
-                            <input class="cat_type category-input" data-label="Turkish" id="Turkish" value="Turkish" name="checkboxes" type="checkbox" ><label for="Turkish" >Turkish</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Seafood" id="Seafood" value="Seafood" name="checkboxes" type="checkbox" ><label for="Seafood" >Seafood</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Hawaiian" id="Hawaiian" value="Hawaiian" name="checkboxes" type="checkbox" ><label for="Hawaiian" >Hawaiian</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Filipino" id="Filipino" value="Filipino" name="checkboxes" type="checkbox" ><label for="Filipino" >Filipino</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Mexican" id="Mexican" value="Mexican" name="checkboxes" type="checkbox" ><label for="Mexican" >Mexican</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Japanese" id="Japanese" value="Japanese" name="checkboxes" type="checkbox" ><label for="Japanese" >Japanese</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Thai" id="Thai" value="Thai" name="checkboxes" type="checkbox" ><label for="Thai" >Thai</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Caribbean" id="Caribbean" value="Caribbean" name="checkboxes" type="checkbox" ><label for="Caribbean" >Caribbean</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Indian" id="Indian" value="Indian" name="checkboxes" type="checkbox" ><label for="Indian" >Indian</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Vietnamese" id="Vietnamese" value="Vietnamese" name="checkboxes" type="checkbox" ><label for="Vietnamese" >Vietnamese</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Mediterranean" id="Mediterranean" value="Mediterranean" name="checkboxes" type="checkbox" ><label for="Mediterranean" >Mediterranean</label>
-                          </li>
-                          
-                    </ul>
-                  </li>
-                  <li >
-                    <p>Price Range</p>
-                    <ul class="sub-categories">
-                        <li>
-                          <input class="cat_type category-input" data-label="$" id="$" value="$" name="checkboxes" type="checkbox" ><label for="$" >$</label>
-                        </li>
-                        <li>
-                          <input class="cat_type category-input" data-label="$$" id="$$" value="$$" name="checkboxes" type="checkbox" ><label for="$$" >$$</label>
-                        </li>
-                        <li>
-                          <input class="cat_type category-input" data-label="$$$" id="$$$" value="$$$" name="checkboxes" type="checkbox" ><label for="$$$" >$$$</label>
-                        </li>
-                        <li>
-                            <input class="cat_type category-input" data-label="$$$$" id="$$$$" value="$$$$" name="checkboxes" type="checkbox" ><label for="$$$$" >$$$$</label>
-                          </li>
-                    </ul>
-                 
-                </li>
-                  
-                 </ul>
+    <div class="select is-large" id="left">
+      <form id="SubR">
+          <div class="multipleSelection">
+              <div class="selectBox" onclick="showCheckboxes()">
+                  <select class="is-hovered">
+                      <option>--Sub Region--</option>
+                  </select>
+                  <div class="overSelect"></div>
               </div>
-              <button id="searchBtn" type="button" class="btn btn-secondary btn-search" ><span class="glyphicon glyphicon-search" >&nbsp;</span> <span class="label-icon" >Search</span></button>
-             </div>
-            </div>
-           </div>
-        </div>
-      </div>
+    
+              <div id="checkBoxes">
+                  <label for="first">
+                      <input type="checkbox" id="first" />
+                      Central
+                  </label>
+                    
+                  <label for="second">
+                      <input type="checkbox" id="second" />
+                      South
+                  </label>
+                  <label for="third">
+                      <input type="checkbox" id="third" />
+                      West
+                  </label>
+              </div>
+          </div>
+      </form>
+      <form id="Cities">
+          <div class="multipleSelection">
+              <div class="selectBox" onclick="showCheckboxes2()">
+                  <select>
+                      <option>--City--</option>
+                  </select>
+                  <div class="overSelect"></div>
+              </div>
+    
+              <div id="checkBoxes2">
+                  <label for="fourth">
+                      <input type="checkbox" id="fourth" />
+                      Kahului
+                  </label>
+                    
+                  <label for="fifth">
+                      <input type="checkbox" id="fifth" />
+                      Kapalua
+                  </label>
+                  <label for="sixth">
+                      <input type="checkbox" id="sixth" />
+                      Kihei
+                  </label>
+                  <label for="seventh">
+                      <input type="checkbox" id="seventh" />
+                      Lahaina
+                  </label>
+                  <label for="eighth">
+                      <input type="checkbox" id="eighth" />
+                      Paia
+                  </label>
+                  <label for="ninth">
+                      <input type="checkbox" id="ninth" />
+                      Wailea
+                  </label>
+              </div>
+          </div>
+      </form>
+      <form>
+          <div class="multipleSelection">
+              <div class="selectBox" onclick="showCheckboxes3()">
+                  <select>
+                      <option>--Cuisine--</option>
+                  </select>
+                  <div class="overSelect"></div>
+              </div>
+    
+              <div id="checkBoxes3">
+                  <label for="tenth">
+                      <input type="checkbox" id="tenth" />
+                      American
+                  </label>
+                  <label for="eleventh">
+                      <input type="checkbox" id="eleventh" />
+                      Mediterranean
+                  </label>
+                  <label for="twelth">
+                      <input type="checkbox" id="twelth" />
+                      Indian
+                  </label>
+                  <label for="thirteenth">
+                      <input type="checkbox" id="thirteenth" />
+                      Chinese
+                  </label>
+                  <label for="fourteenth">
+                      <input type="checkbox" id="fourteenth" />
+                      Turkish
+                  </label>
+                  <label for="fifteenth">
+                      <input type="checkbox" id="fifteenth" />
+                      Japanese
+                  </label>
+                  <label for="sixteenth">
+                      <input type="checkbox" id="sixteenth" />
+                      Mexican
+                  </label>
+                  <label for="seventeenth">
+                      <input type="checkbox" id="seventeenth" />
+                      Thai
+                  </label>
+                  <label for="eighteenth">
+                      <input type="checkbox" id="eighteenth" />
+                      Hawaiian
+                  </label>
+                  <label for="nineteenth">
+                      <input type="checkbox" id="nineteenth" />
+                      Italian
+                  </label>
+                  <label for="twentieth">
+                      <input type="checkbox" id="twentieth" />
+                      Seafood
+                  </label>
+                  <label for="tfirst">
+                      <input type="checkbox" id="tfirst" />
+                     Filipino
+                  </label>
+                  <label for="tsecond">
+                      <input type="checkbox" id="tsecond" />
+                      Mexican
+                  </label>
+                  <label for="tthird">
+                      <input type="checkbox" id="tthird" />
+                      Caribbean
+                  </label>
+                  <label for="tfourth">
+                      <input type="checkbox" id="tfourth" />
+                      Vietnamese
+                  </label>
+              </div>
+          </div>
+      </form>
+      <form>
+          <div class="multipleSelection">
+              <div class="selectBox" onclick="showCheckboxes4()">
+                  <select>
+                      <option>--Price Range--</option>
+                  </select>
+                  <div class="overSelect"></div>
+              </div>
+    
+              <div id="checkBoxes4">
+                  <label for="tfifth">
+                      <input type="checkbox" id="tfifth" />
+                      $
+                  </label>
+                    
+                  <label for="tsixth">
+                      <input type="checkbox" id="tsixth" />
+                      $$
+                  </label>
+                  <label for="thirtysecond">
+                      <input type= "checkbox" id="tseventh" />
+                      $$$
+                  </label>
+                  <label for="thirtythird">
+                      <input type="checkbox" id="teighth" />
+                      $$$$
+                  </label>
+      </form>
   </div>
-  <div class='column info'>
-      <div class= "column">
-        <h2>Search Results</h2>
-        <ul class='target-list'>
+      <div class= "right">
+          <div class = 'column'>
+              <div class= "target-list">
 
-        </ul>
+              </div>
+              </div>
       </div>
-      </div>
-    </section> -->
-      
-      <script src='script.js'></script>
+</div> 
+<script src="../../script.js"></script>
+<script src="script.js"></script>   
 </body>
 </html>
-
-
-    <!-- <h1>Group 9</h1>
-    <nav>
-        <ul>
-            <li><span>Home</span></li>
-            <li><a href="/Pages/Hotels">Hotels</a></li>
-            <li><a href="/Pages/Restaurants">Resturants</a></li>
-            <li><a href="/Pages/Excursions">Excursions</a></li>
-            <li><a href="/Pages/About">About</a></li>
-        </ul>
-    </nav>
-      <div class="container">
-        <div class="row searchFilter" >
-           <div class="col-sm-12" >
-            <div class="input-group" >
-             <label for = 'category'>Restaurant</label>
-             <input id="table_filter" type="text" name = 'category' class="form-control" aria-label="Text input with segmented button dropdown" placeholder="search for restaurants">
-             <div class="input-group-btn" >
-              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="label-icon" >Filters</span> <span class="caret" >&nbsp;</span></button>
-              <div class="dropdown-menu dropdown-menu-right" >
-                 <ul class="category_filters" >
-                  <li >
-                      <p>Sub-Region</p>
-                      <ul class="sub-categories">
-                          <li>
-                            <input class="cat_type category-input" data-label="Central" id="Central" value="Central" name="checkboxes" type="checkbox" ><label for="Central" >Central</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="South" id="South" value="South" name="checkboxes" type="checkbox" ><label for="South" >South</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="West" id="West" value="West" name="checkboxes" type="checkbox" ><label for="West" >West</label>
-                          </li>
-                      </ul>
-                   
-                  </li>
-                  <li>
-                    <p>City</p>
-                    <ul class="sub-categories">
-                        <li>
-                          <input class="cat_type category-input" data-label="Wailea" id="Wailea" value="Wailea" name="checkboxes" type="checkbox" ><label for="Wailea" >Wailea</label>
-                        </li>
-                        <li>
-                          <input class="cat_type category-input" data-label="Kihei" id="Kihei" value="Kihei" name="checkboxes" type="checkbox" ><label for="Kihei" >Kihei</label>
-                        </li>
-                        <li>
-                          <input class="cat_type category-input" data-label="Kahului" id="Kahului" value="Kahului" name="checkboxes" type="checkbox" ><label for="Kahului" >Kahului</label>
-                        </li>
-                        <li>
-                            <input class="cat_type category-input" data-label="Wailuku" id="Wailuku" value="Wailuku" name="checkboxes" type="checkbox" ><label for="Wailuku" >Wailuku</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Lahaina" id="Lahaina" value="Lahaina" name="checkboxes" type="checkbox" ><label for="Lahaina" >Lahaina</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Paia" id="Paia" value="Paia" name="checkboxes" type="checkbox" ><label for="Paia" >Paia</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Kapalua" id="Kapalua" value="Kapalua" name="checkboxes" type="checkbox" ><label for="Kapalua" >Kapalua</label>
-                          </li>
-                          
-                    </ul>
-                  </li>
-                  <li>
-                    <p>Cuisine</p>
-                    <ul class="sub-categories">
-                        <li>
-                          <input class="cat_type category-input" data-label="American" id="American" value="American" name="checkboxes" type="checkbox" ><label for="American" >American</label>
-                        </li>
-                        <li>
-                          <input class="cat_type category-input" data-label="Chinese" id="Chinese" value="Chinese" name="checkboxes" type="checkbox" ><label for="Chinese" >Chinese</label>
-                        </li>
-                        <li>
-                          <input class="cat_type category-input" data-label="Italian" id="Italian" value="Italian" name="checkboxes" type="checkbox" ><label for="Italian" >Italian</label>
-                        </li>
-                        <li>
-                            <input class="cat_type category-input" data-label="Turkish" id="Turkish" value="Turkish" name="checkboxes" type="checkbox" ><label for="Turkish" >Turkish</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Seafood" id="Seafood" value="Seafood" name="checkboxes" type="checkbox" ><label for="Seafood" >Seafood</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Hawaiian" id="Hawaiian" value="Hawaiian" name="checkboxes" type="checkbox" ><label for="Hawaiian" >Hawaiian</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Filipino" id="Filipino" value="Filipino" name="checkboxes" type="checkbox" ><label for="Filipino" >Filipino</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Mexican" id="Mexican" value="Mexican" name="checkboxes" type="checkbox" ><label for="Mexican" >Mexican</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Japanese" id="Japanese" value="Japanese" name="checkboxes" type="checkbox" ><label for="Japanese" >Japanese</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Thai" id="Thai" value="Thai" name="checkboxes" type="checkbox" ><label for="Thai" >Thai</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Caribbean" id="Caribbean" value="Caribbean" name="checkboxes" type="checkbox" ><label for="Caribbean" >Caribbean</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Indian" id="Indian" value="Indian" name="checkboxes" type="checkbox" ><label for="Indian" >Indian</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Vietnamese" id="Vietnamese" value="Vietnamese" name="checkboxes" type="checkbox" ><label for="Vietnamese" >Vietnamese</label>
-                          </li>
-                          <li>
-                            <input class="cat_type category-input" data-label="Mediterranean" id="Mediterranean" value="Mediterranean" name="checkboxes" type="checkbox" ><label for="Mediterranean" >Mediterranean</label>
-                          </li>
-                          
-                    </ul>
-                  </li>
-                  <li >
-                    <p>Price Range</p>
-                    <ul class="sub-categories">
-                        <li>
-                          <input class="cat_type category-input" data-label="$" id="$" value="$" name="checkboxes" type="checkbox" ><label for="$" >$</label>
-                        </li>
-                        <li>
-                          <input class="cat_type category-input" data-label="$$" id="$$" value="$$" name="checkboxes" type="checkbox" ><label for="$$" >$$</label>
-                        </li>
-                        <li>
-                          <input class="cat_type category-input" data-label="$$$" id="$$$" value="$$$" name="checkboxes" type="checkbox" ><label for="$$$" >$$$</label>
-                        </li>
-                        <li>
-                            <input class="cat_type category-input" data-label="$$$$" id="$$$$" value="$$$$" name="checkboxes" type="checkbox" ><label for="$$$$" >$$$$</label>
-                          </li>
-                    </ul>
-                 
-                </li>
-                  
-                 </ul>
-              </div>
-              <button id="searchBtn" type="button" class="btn btn-secondary btn-search" ><span class="glyphicon glyphicon-search" >&nbsp;</span> <span class="label-icon" >Search</span></button>
-             </div>
-            </div>
-           </div>
-        </div>
-      </div>
-      <div class='container2'>
-          <ul class='suggestions'>
-              
-          </ul>
-      </div>
-</body>
-<script src="script.js"></script> -->
+    

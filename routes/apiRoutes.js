@@ -339,3 +339,33 @@ router.get('/custom', async (req, res) => {
 
 export default router;
 
+/// /////////////////////////////////
+/// ////Cuisine Endpoints/////////////
+/// /////////////////////////////////
+
+//Get all cuisines
+router.get('/cuisine', async (req, res) => {
+  try {
+    const cuisine = await db.Cuisines.findAll();
+    const reply = cuisine.length > 0 ? { data: cuisine } : { message: 'no results found' };
+    res.json(reply);
+  } catch (err) {
+    console.error(err);
+    res.send('Server Error');
+  }
+});
+
+//Get one cuisine from cuisines
+router.get('/cuisine/:cuisine_id', async (req, res) => {
+  try {
+    const cuisine = await db.Cuisines.findAll({
+      where: {
+        cuisine_id: req.params.cuisine_id
+      }
+    });
+    res.json(cuisine);
+  } catch (err) {
+    console.error(err);
+    res.error('Server error');
+  }
+});
