@@ -471,7 +471,819 @@ async function dataHandler10() {
     }
   });
 }
+async function dataHandler12() {
+  const checkBox1 = document.getElementById("tenth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cuisine");
 
+  const request = await fetch('/api/cuisine');
+  const d = await request.json();
+  const dat = d.data
+  const request2 = await fetch('/api/restaurant');
+  const d2 = await request2.json();
+  const dat2 = d2.data
+  console.log(dat)
+  
+  const createObjectLookup = function( arr, key ){
+    let i, l, obj, ret = {};
+    for ( i=0, l=arr.length; i<l; i++ ) {
+      obj = arr[i];
+      ret[obj[key]] = obj;
+    }
+    return ret;
+  };
+  
+  const up = createObjectLookup(dat, 'cuisine_id');
+  console.log(up)
+  let i, l, question, user, result = [];
+for ( i=0, l=dat2.length; i<l; i++ ) {
+  if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
+    result.push({
+      cuisine_id: question.cuisine_id,
+      restaurant_name: question.restaurant_name,
+      cuisine_name: user.cuisine_name,
+      street_address: question.street_address,
+      city: question.city,
+      state: question.state,
+      zip_code: question.zip_code
+
+    });
+  }
+}
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = result.filter((record1) => record1.cuisine_id === 1);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("american");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("american");
+    }
+  });
+}
+async function dataHandler13() {
+  const checkBox1 = document.getElementById("thirteenth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cuisine");
+
+  const request = await fetch('/api/cuisine');
+  const d = await request.json();
+  const dat = d.data
+  const request2 = await fetch('/api/restaurant');
+  const d2 = await request2.json();
+  const dat2 = d2.data
+  console.log(dat)
+  
+  const createObjectLookup = function( arr, key ){
+    let i, l, obj, ret = {};
+    for ( i=0, l=arr.length; i<l; i++ ) {
+      obj = arr[i];
+      ret[obj[key]] = obj;
+    }
+    return ret;
+  };
+  
+  const up = createObjectLookup(dat, 'cuisine_id');
+  console.log(up)
+  let i, l, question, user, result = [];
+for ( i=0, l=dat2.length; i<l; i++ ) {
+  if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
+    result.push({
+      cuisine_id: question.cuisine_id,
+      restaurant_name: question.restaurant_name,
+      cuisine_name: user.cuisine_name,
+      street_address: question.street_address,
+      city: question.city,
+      state: question.state,
+      zip_code: question.zip_code
+
+    });
+  }
+}
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = result.filter((record1) => record1.cuisine_id === 2);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("chinese");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("chinese");
+    }
+  });
+}
+async function dataHandler14() {
+  const checkBox1 = document.getElementById("nineteenth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cuisine");
+
+  const request = await fetch('/api/cuisine');
+  const d = await request.json();
+  const dat = d.data
+  const request2 = await fetch('/api/restaurant');
+  const d2 = await request2.json();
+  const dat2 = d2.data
+  console.log(dat)
+  
+  const createObjectLookup = function( arr, key ){
+    let i, l, obj, ret = {};
+    for ( i=0, l=arr.length; i<l; i++ ) {
+      obj = arr[i];
+      ret[obj[key]] = obj;
+    }
+    return ret;
+  };
+  
+  const up = createObjectLookup(dat, 'cuisine_id');
+  console.log(up)
+  let i, l, question, user, result = [];
+for ( i=0, l=dat2.length; i<l; i++ ) {
+  if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
+    result.push({
+      cuisine_id: question.cuisine_id,
+      restaurant_name: question.restaurant_name,
+      cuisine_name: user.cuisine_name,
+      street_address: question.street_address,
+      city: question.city,
+      state: question.state,
+      zip_code: question.zip_code
+
+    });
+  }
+}
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = result.filter((record1) => record1.cuisine_id === 3);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("italian");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("italian");
+    }
+  });
+}
+
+async function dataHandler15() {
+  const checkBox1 = document.getElementById("fourteenth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cuisine");
+
+  const request = await fetch('/api/cuisine');
+  const d = await request.json();
+  const dat = d.data
+  const request2 = await fetch('/api/restaurant');
+  const d2 = await request2.json();
+  const dat2 = d2.data
+  console.log(dat)
+  
+  const createObjectLookup = function( arr, key ){
+    let i, l, obj, ret = {};
+    for ( i=0, l=arr.length; i<l; i++ ) {
+      obj = arr[i];
+      ret[obj[key]] = obj;
+    }
+    return ret;
+  };
+  
+  const up = createObjectLookup(dat, 'cuisine_id');
+  console.log(up)
+  let i, l, question, user, result = [];
+for ( i=0, l=dat2.length; i<l; i++ ) {
+  if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
+    result.push({
+      cuisine_id: question.cuisine_id,
+      restaurant_name: question.restaurant_name,
+      cuisine_name: user.cuisine_name,
+      street_address: question.street_address,
+      city: question.city,
+      state: question.state,
+      zip_code: question.zip_code
+
+    });
+  }
+}
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = result.filter((record1) => record1.cuisine_id === 5);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("turkish");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("turkish");
+    }
+  });
+}
+async function dataHandler16() {
+  const checkBox1 = document.getElementById("twentieth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cuisine");
+
+  const request = await fetch('/api/cuisine');
+  const d = await request.json();
+  const dat = d.data
+  const request2 = await fetch('/api/restaurant');
+  const d2 = await request2.json();
+  const dat2 = d2.data
+  console.log(dat)
+  
+  const createObjectLookup = function( arr, key ){
+    let i, l, obj, ret = {};
+    for ( i=0, l=arr.length; i<l; i++ ) {
+      obj = arr[i];
+      ret[obj[key]] = obj;
+    }
+    return ret;
+  };
+  
+  const up = createObjectLookup(dat, 'cuisine_id');
+  console.log(up)
+  let i, l, question, user, result = [];
+for ( i=0, l=dat2.length; i<l; i++ ) {
+  if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
+    result.push({
+      cuisine_id: question.cuisine_id,
+      restaurant_name: question.restaurant_name,
+      cuisine_name: user.cuisine_name,
+      street_address: question.street_address,
+      city: question.city,
+      state: question.state,
+      zip_code: question.zip_code
+
+    });
+  }
+}
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = result.filter((record1) => record1.cuisine_id === 6);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("seafood");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("seafood");
+    }
+  });
+}
+async function dataHandler17() {
+  const checkBox1 = document.getElementById("eighteenth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cuisine");
+
+  const request = await fetch('/api/cuisine');
+  const d = await request.json();
+  const dat = d.data
+  const request2 = await fetch('/api/restaurant');
+  const d2 = await request2.json();
+  const dat2 = d2.data
+  console.log(dat)
+  
+  const createObjectLookup = function( arr, key ){
+    let i, l, obj, ret = {};
+    for ( i=0, l=arr.length; i<l; i++ ) {
+      obj = arr[i];
+      ret[obj[key]] = obj;
+    }
+    return ret;
+  };
+  
+  const up = createObjectLookup(dat, 'cuisine_id');
+  console.log(up)
+  let i, l, question, user, result = [];
+for ( i=0, l=dat2.length; i<l; i++ ) {
+  if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
+    result.push({
+      cuisine_id: question.cuisine_id,
+      restaurant_name: question.restaurant_name,
+      cuisine_name: user.cuisine_name,
+      street_address: question.street_address,
+      city: question.city,
+      state: question.state,
+      zip_code: question.zip_code
+
+    });
+  }
+}
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = result.filter((record1) => record1.cuisine_id === 7);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("hawaiian");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("hawaiian");
+    }
+  });
+}
+async function dataHandler18() {
+  const checkBox1 = document.getElementById("tfirst");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cuisine");
+
+  const request = await fetch('/api/cuisine');
+  const d = await request.json();
+  const dat = d.data
+  const request2 = await fetch('/api/restaurant');
+  const d2 = await request2.json();
+  const dat2 = d2.data
+  console.log(dat)
+  
+  const createObjectLookup = function( arr, key ){
+    let i, l, obj, ret = {};
+    for ( i=0, l=arr.length; i<l; i++ ) {
+      obj = arr[i];
+      ret[obj[key]] = obj;
+    }
+    return ret;
+  };
+  
+  const up = createObjectLookup(dat, 'cuisine_id');
+  console.log(up)
+  let i, l, question, user, result = [];
+for ( i=0, l=dat2.length; i<l; i++ ) {
+  if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
+    result.push({
+      cuisine_id: question.cuisine_id,
+      restaurant_name: question.restaurant_name,
+      cuisine_name: user.cuisine_name,
+      street_address: question.street_address,
+      city: question.city,
+      state: question.state,
+      zip_code: question.zip_code
+
+    });
+  }
+}
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = result.filter((record1) => record1.cuisine_id === 8);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("filipino");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("filipino");
+    }
+  });
+}
+async function dataHandler19() {
+  const checkBox1 = document.getElementById("tsecond");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cuisine");
+
+  const request = await fetch('/api/cuisine');
+  const d = await request.json();
+  const dat = d.data
+  const request2 = await fetch('/api/restaurant');
+  const d2 = await request2.json();
+  const dat2 = d2.data
+  console.log(dat)
+  
+  const createObjectLookup = function( arr, key ){
+    let i, l, obj, ret = {};
+    for ( i=0, l=arr.length; i<l; i++ ) {
+      obj = arr[i];
+      ret[obj[key]] = obj;
+    }
+    return ret;
+  };
+  
+  const up = createObjectLookup(dat, 'cuisine_id');
+  console.log(up)
+  let i, l, question, user, result = [];
+for ( i=0, l=dat2.length; i<l; i++ ) {
+  if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
+    result.push({
+      cuisine_id: question.cuisine_id,
+      restaurant_name: question.restaurant_name,
+      cuisine_name: user.cuisine_name,
+      street_address: question.street_address,
+      city: question.city,
+      state: question.state,
+      zip_code: question.zip_code
+
+    });
+  }
+}
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = result.filter((record1) => record1.cuisine_id === 9);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("mexican");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("mexican");
+    }
+  });
+}
+async function dataHandler20() {
+  const checkBox1 = document.getElementById("fifteenth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cuisine");
+
+  const request = await fetch('/api/cuisine');
+  const d = await request.json();
+  const dat = d.data
+  const request2 = await fetch('/api/restaurant');
+  const d2 = await request2.json();
+  const dat2 = d2.data
+  console.log(dat)
+  
+  const createObjectLookup = function( arr, key ){
+    let i, l, obj, ret = {};
+    for ( i=0, l=arr.length; i<l; i++ ) {
+      obj = arr[i];
+      ret[obj[key]] = obj;
+    }
+    return ret;
+  };
+  
+  const up = createObjectLookup(dat, 'cuisine_id');
+  console.log(up)
+  let i, l, question, user, result = [];
+for ( i=0, l=dat2.length; i<l; i++ ) {
+  if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
+    result.push({
+      cuisine_id: question.cuisine_id,
+      restaurant_name: question.restaurant_name,
+      cuisine_name: user.cuisine_name,
+      street_address: question.street_address,
+      city: question.city,
+      state: question.state,
+      zip_code: question.zip_code
+
+    });
+  }
+}
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = result.filter((record1) => record1.cuisine_id === 10);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("japanese");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("japanese");
+    }
+  });
+}
+async function dataHandler21() {
+  const checkBox1 = document.getElementById("seventeenth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cuisine");
+
+  const request = await fetch('/api/cuisine');
+  const d = await request.json();
+  const dat = d.data
+  const request2 = await fetch('/api/restaurant');
+  const d2 = await request2.json();
+  const dat2 = d2.data
+  console.log(dat)
+  
+  const createObjectLookup = function( arr, key ){
+    let i, l, obj, ret = {};
+    for ( i=0, l=arr.length; i<l; i++ ) {
+      obj = arr[i];
+      ret[obj[key]] = obj;
+    }
+    return ret;
+  };
+  
+  const up = createObjectLookup(dat, 'cuisine_id');
+  console.log(up)
+  let i, l, question, user, result = [];
+for ( i=0, l=dat2.length; i<l; i++ ) {
+  if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
+    result.push({
+      cuisine_id: question.cuisine_id,
+      restaurant_name: question.restaurant_name,
+      cuisine_name: user.cuisine_name,
+      street_address: question.street_address,
+      city: question.city,
+      state: question.state,
+      zip_code: question.zip_code
+
+    });
+  }
+}
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = result.filter((record1) => record1.cuisine_id === 11);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("thai");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("thai");
+    }
+  });
+}
+async function dataHandler22() {
+  const checkBox1 = document.getElementById("tthird");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cuisine");
+
+  const request = await fetch('/api/cuisine');
+  const d = await request.json();
+  const dat = d.data
+  const request2 = await fetch('/api/restaurant');
+  const d2 = await request2.json();
+  const dat2 = d2.data
+  console.log(dat)
+  
+  const createObjectLookup = function( arr, key ){
+    let i, l, obj, ret = {};
+    for ( i=0, l=arr.length; i<l; i++ ) {
+      obj = arr[i];
+      ret[obj[key]] = obj;
+    }
+    return ret;
+  };
+  
+  const up = createObjectLookup(dat, 'cuisine_id');
+  console.log(up)
+  let i, l, question, user, result = [];
+for ( i=0, l=dat2.length; i<l; i++ ) {
+  if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
+    result.push({
+      cuisine_id: question.cuisine_id,
+      restaurant_name: question.restaurant_name,
+      cuisine_name: user.cuisine_name,
+      street_address: question.street_address,
+      city: question.city,
+      state: question.state,
+      zip_code: question.zip_code
+
+    });
+  }
+}
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = result.filter((record1) => record1.cuisine_id === 12);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("caribbean");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("caribbean");
+    }
+  });
+}
+async function dataHandler23() {
+  const checkBox1 = document.getElementById("twelth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cuisine");
+
+  const request = await fetch('/api/cuisine');
+  const d = await request.json();
+  const dat = d.data
+  const request2 = await fetch('/api/restaurant');
+  const d2 = await request2.json();
+  const dat2 = d2.data
+  console.log(dat)
+  
+  const createObjectLookup = function( arr, key ){
+    let i, l, obj, ret = {};
+    for ( i=0, l=arr.length; i<l; i++ ) {
+      obj = arr[i];
+      ret[obj[key]] = obj;
+    }
+    return ret;
+  };
+  
+  const up = createObjectLookup(dat, 'cuisine_id');
+  console.log(up)
+  let i, l, question, user, result = [];
+for ( i=0, l=dat2.length; i<l; i++ ) {
+  if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
+    result.push({
+      cuisine_id: question.cuisine_id,
+      restaurant_name: question.restaurant_name,
+      cuisine_name: user.cuisine_name,
+      street_address: question.street_address,
+      city: question.city,
+      state: question.state,
+      zip_code: question.zip_code
+
+    });
+  }
+}
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = result.filter((record1) => record1.cuisine_id === 13);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("indian");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("indian");
+    }
+  });
+}
+async function dataHandler24() {
+  const checkBox1 = document.getElementById("tfourth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cuisine");
+
+  const request = await fetch('/api/cuisine');
+  const d = await request.json();
+  const dat = d.data
+  const request2 = await fetch('/api/restaurant');
+  const d2 = await request2.json();
+  const dat2 = d2.data
+  console.log(dat)
+  
+  const createObjectLookup = function( arr, key ){
+    let i, l, obj, ret = {};
+    for ( i=0, l=arr.length; i<l; i++ ) {
+      obj = arr[i];
+      ret[obj[key]] = obj;
+    }
+    return ret;
+  };
+  
+  const up = createObjectLookup(dat, 'cuisine_id');
+  console.log(up)
+  let i, l, question, user, result = [];
+for ( i=0, l=dat2.length; i<l; i++ ) {
+  if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
+    result.push({
+      cuisine_id: question.cuisine_id,
+      restaurant_name: question.restaurant_name,
+      cuisine_name: user.cuisine_name,
+      street_address: question.street_address,
+      city: question.city,
+      state: question.state,
+      zip_code: question.zip_code
+
+    });
+  }
+}
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = result.filter((record1) => record1.cuisine_id === 14);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("vietnamnese");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("vietnamnese");
+    }
+  });
+}
+async function dataHandler25() {
+  const checkBox1 = document.getElementById("eleventh");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#Cuisine");
+
+  const request = await fetch('/api/cuisine');
+  const d = await request.json();
+  const dat = d.data
+  const request2 = await fetch('/api/restaurant');
+  const d2 = await request2.json();
+  const dat2 = d2.data
+  console.log(dat)
+  
+  const createObjectLookup = function( arr, key ){
+    let i, l, obj, ret = {};
+    for ( i=0, l=arr.length; i<l; i++ ) {
+      obj = arr[i];
+      ret[obj[key]] = obj;
+    }
+    return ret;
+  };
+  
+  const up = createObjectLookup(dat, 'cuisine_id');
+  console.log(up)
+  let i, l, question, user, result = [];
+for ( i=0, l=dat2.length; i<l; i++ ) {
+  if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
+    result.push({
+      cuisine_id: question.cuisine_id,
+      restaurant_name: question.restaurant_name,
+      cuisine_name: user.cuisine_name,
+      street_address: question.street_address,
+      city: question.city,
+      state: question.state,
+      zip_code: question.zip_code
+
+    });
+  }
+}
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = result.filter((record1) => record1.cuisine_id === 15);
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("mediterranean");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("mediterranean");
+    }
+  });
+}
 async function windowActions(){
   await dataHandler();
   await dataHandler2();
@@ -484,5 +1296,19 @@ async function windowActions(){
   await dataHandler9();
   await dataHandler10();
   await dataHandler11();
+  await dataHandler12();
+  await dataHandler13();
+  await dataHandler14();
+  await dataHandler15();
+  await dataHandler16();
+  await dataHandler17();
+  await dataHandler18();
+  await dataHandler19();
+  await dataHandler20();
+  await dataHandler21();
+  await dataHandler22();
+  await dataHandler23();
+  await dataHandler24();
+  await dataHandler25();
 }
 window.onload = windowActions;
