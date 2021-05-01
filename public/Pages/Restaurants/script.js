@@ -28,6 +28,34 @@ async function dataHandler() {
   });
 }
 
+async function dataHandler26() {
+  // const form = document.querySelector('#search-form');
+  const search = document.querySelector('#search');
+  const form = document.querySelector('#search-form');
+  const targetList = document.querySelector('.target-list');
+
+  const request = await fetch('/api/region');
+  const d = await request.json();
+  const dat = d.data
+  const coords = [];
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    console.log('form submitted');
+    if (search.value.length > 0) {
+      const filtered = dat.filter((record) => record.city.toLowerCase().includes(search.value.toLowerCase()));
+      filtered.forEach((item) => {
+        const appendItem = document.createElement('li');
+        appendItem.classList.add('block');
+        appendItem.classList.add('list-item');
+        appendItem.innerHTML = `<div class="list-header is-size-5">${item.restaurant_name}</div><address class="is-size-6">${item.street_address}</address><address class="is-size-6">${item.city}</address><address class="is-size-6">${item.state}</address><address class="is-size-6">${item.zip_code}</address>`;
+        targetList.append(appendItem);
+      });
+    } else {
+      targetList.append('');
+    }
+  });
+}
 /*data handler 11 handles tables that need to be joined*/
 async function dataHandler11() {
   // const form = document.querySelector('#search-form');
@@ -244,7 +272,7 @@ async function dataHandler3() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("south");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
         targetList1.append(appendItem1);
@@ -1284,6 +1312,114 @@ for ( i=0, l=dat2.length; i<l; i++ ) {
     }
   });
 }
+async function dataHandler26() {
+  const checkBox1 = document.getElementById("tfifth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#price");
+
+  const request1 = await fetch("/api/restaurant");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.price_range === '$');
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("$");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("$");
+    }
+  });
+}
+async function dataHandler27() {
+  const checkBox1 = document.getElementById("tsixth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#price");
+
+  const request1 = await fetch("/api/restaurant");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.price_range === '$$');
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("$$");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("$$");
+    }
+  });
+}
+async function dataHandler28() {
+  const checkBox1 = document.getElementById("tseventh");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#price");
+
+  const request1 = await fetch("/api/restaurant");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.price_range === '$$$');
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("$$$");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("$$$");
+    }
+  });
+}
+async function dataHandler29() {
+  const checkBox1 = document.getElementById("teighth");
+  const targetList1 = document.querySelector(".target-list");
+  const form1 = document.querySelector("#price");
+
+  const request1 = await fetch("/api/restaurant");
+  const d1 = await request1.json();
+  const dat1 = d1.data;
+  checkBox1.addEventListener("change", async (event1) => {
+    event1.preventDefault();
+    if (checkBox1.checked) {
+      const filtered1 = dat1.filter((record1) => record1.price_range === '$$$$');
+      filtered1.forEach((item1) => {
+        const appendItem1 = document.createElement("li");
+        appendItem1.classList.add("block");
+        appendItem1.classList.add("list-item");
+        appendItem1.classList.add("$$$$");
+        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.restaurant_name}.html">${item1.restaurant_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        targetList1.append(appendItem1);
+      });
+    } else {
+      removeElementsByClass("$$$$");
+    }
+  });
+}
 async function windowActions(){
   await dataHandler();
   await dataHandler2();
@@ -1310,5 +1446,9 @@ async function windowActions(){
   await dataHandler23();
   await dataHandler24();
   await dataHandler25();
+  await dataHandler26();
+  await dataHandler27();
+  await dataHandler28();
+  await dataHandler29();
 }
 window.onload = windowActions;

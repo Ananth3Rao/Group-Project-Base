@@ -179,6 +179,16 @@ router.delete('/comments/:comment_id', async (req, res) => {
 /// /////////////////////////////////
 
 // Get hotels in a location range
+router.get('/region', async (req, res) => {
+  try {
+    const region = await db.Locations.findAll();
+    const reply = region.length > 0 ? { data: region } : { message: 'no results found' };
+    res.json(reply);
+  } catch (err) {
+    console.error(err);
+    res.send('Server Error');
+  }
+});
 router.get('/region/:sub_region_id', async (req, res) => {
   try {
     const hotels = await db.Hotels.findAll({
