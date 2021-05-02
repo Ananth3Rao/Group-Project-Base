@@ -282,6 +282,7 @@ async function dataHandler2(mapObjectFromFunction) {
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
         appendItem.classList.add('list-item');
+        appendItem.classList.add("central");
         appendItem.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href='${item1.restaurant_id}.html'>${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -315,6 +316,7 @@ async function dataHandler3(mapObjectFromFunction) {
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
         appendItem.classList.add('list-item');
+        appendItem.classList.add("south");
         appendItem.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href='${item1.restaurant_id}.html'>${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -348,6 +350,7 @@ async function dataHandler4(mapObjectFromFunction) {
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
         appendItem.classList.add('list-item');
+        appendItem.classList.add("west");
         appendItem.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href='${item1.restaurant_id}.html'>${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -382,6 +385,7 @@ async function dataHandler5(mapObjectFromFunction) {
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
         appendItem.classList.add('list-item');
+        appendItem.classList.add("kahului");
         appendItem.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href='${item1.restaurant_id}.html'>${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -415,6 +419,7 @@ async function dataHandler6(mapObjectFromFunction) {
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
         appendItem.classList.add('list-item');
+        appendItem.classList.add("kapalua");
         appendItem.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href='${item1.restaurant_id}.html'>${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -447,6 +452,7 @@ async function dataHandler7(mapObjectFromFunction) {
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
         appendItem.classList.add('list-item');
+        appendItem.classList.add("kihei");
         appendItem.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href='${item1.restaurant_id}.html'>${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -479,6 +485,7 @@ async function dataHandler8(mapObjectFromFunction) {
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
         appendItem.classList.add('list-item');
+        appendItem.classList.add("lahaina");
         appendItem.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href='${item1.restaurant_id}.html'>${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -511,6 +518,7 @@ async function dataHandler9(mapObjectFromFunction) {
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
         appendItem.classList.add('list-item');
+        appendItem.classList.add("paia");
         appendItem.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href='${item1.restaurant_id}.html'>${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -545,6 +553,7 @@ async function dataHandler10(mapObjectFromFunction) {
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
         appendItem.classList.add('list-item');
+        appendItem.classList.add("wailea");
         appendItem.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href='${item1.restaurant_id}.html'>${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -681,7 +690,7 @@ const coords = [];
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("chinese");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -749,7 +758,7 @@ const coords = [];
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("italian");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -818,7 +827,7 @@ const coords = [];
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("turkish");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -886,7 +895,7 @@ const coords = [];
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("seafood");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -954,7 +963,7 @@ const coords = [];
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("hawaiian");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -1022,7 +1031,7 @@ const coords = [];
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("filipino");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -1090,7 +1099,7 @@ const coords =[];
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("mexican");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -1158,7 +1167,7 @@ const coords = [];
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("japanese");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -1226,7 +1235,7 @@ const coords = [];
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("thai");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -1294,7 +1303,7 @@ const coords = [];
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("caribbean");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -1362,7 +1371,7 @@ const coords = [];
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("indian");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -1430,7 +1439,7 @@ const coords =[];
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("vietnamnese");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -1498,7 +1507,7 @@ const coords = [];
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("mediterranean");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -1533,7 +1542,7 @@ async function dataHandler27(mapObjectFromFunction) {
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("$$");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -1567,7 +1576,7 @@ async function dataHandler28(mapObjectFromFunction) {
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("$$$");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
@@ -1601,7 +1610,7 @@ async function dataHandler29(mapObjectFromFunction) {
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("american");
+        appendItem1.classList.add("$$$$");
         appendItem1.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href="${item1.restaurant_id}.html">${item1.restaurant_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div><div class='column'><img src="${item1.restaurant_id}.png"/></div></div></div>`;
