@@ -66,6 +66,10 @@ export default (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false
             },
+            images: {
+                type: DataTypes.BLOB,
+                allowNull: true
+            }
         },
         { freezeTableName: true, timestamps: false }  
     );

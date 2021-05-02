@@ -6,3 +6,20 @@
     color:black;
     
 } */
+/* .right{
+    margin-left: 70%;
+  } */
+  .target-list{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    margin-left: 20%
+  }
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
