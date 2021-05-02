@@ -9,12 +9,20 @@
 /* .right{
     margin-left: 70%;
   } */
+  #mapid { height: 350px;
+    width: 600px; 
+    margin-left: 165px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;}
   .target-list{
     list-style-type: none;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap-reverse;
-    margin-left: 20%
+    margin-left: 20%;
+    margin-right:10%;
   }
 h2 {
     display: flex;

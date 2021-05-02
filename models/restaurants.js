@@ -66,9 +66,14 @@ export default (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            images: {
-                type: DataTypes.BLOB,
-                allowNull: true
+            latitude: {
+                type: DataTypes.FLOAT,
+                allowNull: false
+            
+            },
+            longitude: {
+                type: DataTypes.FLOAT,
+                allowNull: false
             }
         },
         { freezeTableName: true, timestamps: false }  
