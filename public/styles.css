@@ -2,15 +2,18 @@ html{
     background-color:#D3F2F5;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 .flex-container{
   display: flex;
   flex-direction: column;
+  height: 90%;
 }
 body {
   width: 90%;
   min-width: 800px;
   margin: 0 auto;
+  height: 100%;
 }
 
 .greeting-container {
@@ -274,4 +277,23 @@ button, input, select, textarea {
 
 .right2{
   background-color:#A0ACF2;
+}
+
+.comments {
+  background-color: rgb(219, 149, 105);
+  margin-top: auto;
+}
+
+.commentSub {
+  align-self: flex-end;
+}
+
+.currentCommments li {
+  list-style-type: none;
+}
+.field-body .field {
+  margin-left: 20px;
+}
+.field-label.is-normal {
+  padding-top: 1.2em;
 }
