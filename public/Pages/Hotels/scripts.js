@@ -3,7 +3,6 @@ let show = true;
 
 function showCheckboxes() {
   const checkboxes = document.getElementById("checkBoxes");
-
   if (show) {
     checkboxes.style.display = "block";
     show = false;
@@ -126,11 +125,14 @@ async function dataHandler2() {
   const checkBox1 = document.getElementById("first");
   const targetList1 = document.querySelector(".target-list");
   const form1 = document.querySelector("#SubR");
+  const checkboxes = document.getElementById("checkBoxes");
 
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
   if (hash === "#central") {
+    checkboxes.style.display = "block";
+    show = false;
     checkBox1.checked = true;
     const filtered1 = dat1.filter((record1) => record1.sub_region_id === 3);
     filtered1.forEach((item1) => {
@@ -171,11 +173,14 @@ async function dataHandler3() {
   const checkBox1 = document.getElementById("second");
   const targetList1 = document.querySelector(".target-list");
   const form1 = document.querySelector("#SubR");
+  const checkboxes = document.getElementById("checkBoxes");
 
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
   if (hash === "#south") {
+    checkboxes.style.display = "block";
+    show = false;
     checkBox1.checked = true;
     const filtered1 = dat1.filter((record1) => record1.sub_region_id === 2);
     filtered1.forEach((item1) => {
@@ -216,11 +221,14 @@ async function dataHandler4() {
   const checkBox1 = document.getElementById("third");
   const targetList1 = document.querySelector(".target-list");
   const form1 = document.querySelector("#SubR");
-
+  const checkboxes = document.getElementById("checkBoxes");
+  
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
   if (hash === "#west") {
+    checkboxes.style.display = "block";
+    show = false;
     checkBox1.checked = true;
     const filtered1 = dat1.filter((record1) => record1.sub_region_id === 1);
     filtered1.forEach((item1) => {
