@@ -36,6 +36,7 @@ async function dataHandler(mapObjectFromFunction) {
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
         appendItem.classList.add('list-item');
+        appendItem.classList.add(search.value.toLowerCase());
         appendItem.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href='${item.restaurant_id}.html'>${item.restaurant_name}</a></div>
         <address class="is-size-6">${item.street_address}</address><address class="is-size-6">${item.city}</address>
         <address class="is-size-6">${item.state}</address><address class="is-size-6">${item.zip_code}</address></div><div class='column'><img src="${item.restaurant_id}.png"/></div></div></div>`;
@@ -44,6 +45,7 @@ async function dataHandler(mapObjectFromFunction) {
       });
     } else {
       targetList.append('');
+      removeElementsByClass(search.value.toLowerCase())
     }
   });
 }
