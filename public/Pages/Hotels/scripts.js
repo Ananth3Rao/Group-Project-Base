@@ -1343,8 +1343,7 @@ async function windowActions() {
   await dataHandler15();
   await dataHandler16();
   await dataHandler17();
-  await dataHandler18();
-  await dataHandler19();
+  await dataHandler18();/*removed dataHandler19 no need for it anymore */
   await dataHandler20();
   await dataHandler21();
   await dataHandler22();
