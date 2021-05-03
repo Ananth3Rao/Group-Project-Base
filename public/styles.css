@@ -291,9 +291,16 @@ button, input, select, textarea {
 .currentCommments li {
   list-style-type: none;
 }
-.field-body .field {
+
+/* .field-body .field {
   margin-left: 20px;
+} */
+
+.field-label {
+  text-align: left;
 }
+
 .field-label.is-normal {
   padding-top: 1.2em;
 }
+
