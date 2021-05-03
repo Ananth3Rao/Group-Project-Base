@@ -138,9 +138,10 @@ async function dataHandler2() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("central");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -166,9 +167,10 @@ async function dataHandler3() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("south");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -194,9 +196,10 @@ async function dataHandler4() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("west");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -222,9 +225,10 @@ async function dataHandler5() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("kahului");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -250,9 +254,10 @@ async function dataHandler6() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("kapalua");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -277,9 +282,10 @@ async function dataHandler7() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("kihei");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -304,9 +310,10 @@ async function dataHandler8() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("lahaina");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -331,9 +338,10 @@ async function dataHandler9() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("paia");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -343,30 +351,6 @@ async function dataHandler9() {
 }
 
 /* sixth checkbox CITY WAILEA */
-async function dataHandler10() {
-  const checkBox1 = document.getElementById("ninth");
-  const targetList1 = document.querySelector(".target-list");
-  const form1 = document.querySelector("#Cities");
-
-  const request1 = await fetch("/api/hotel");
-  const d1 = await request1.json();
-  const dat1 = d1.data;
-  form1.addEventListener("change", async (event1) => {
-    event1.preventDefault();
-    if (checkBox1.checked) {
-      const filtered1 = dat1.filter((record1) => record1.city === "Wailea");
-      filtered1.forEach((item1) => {
-        const appendItem1 = document.createElement("li");
-        appendItem1.classList.add("block");
-        appendItem1.classList.add("list-item");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
-        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
-        targetList1.append(appendItem1);
-      });
-    }
-  });
-}
 async function dataHandler10() {
   const checkBox1 = document.getElementById("ninth");
   const targetList1 = document.querySelector(".target-list");
@@ -383,9 +367,10 @@ async function dataHandler10() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("wailea");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -412,9 +397,10 @@ async function dataHandler11() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("villas");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     }else {
@@ -439,9 +425,10 @@ async function dataHandler12() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("traditional");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -466,9 +453,10 @@ async function dataHandler13() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("resorts");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -494,9 +482,10 @@ async function dataHandler14() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("cottages");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -522,9 +511,10 @@ async function dataHandler15() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("condoss");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -550,9 +540,10 @@ async function dataHandler16() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("Inns");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -616,9 +607,10 @@ console.log(result);
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("partial")
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
    
       });
@@ -680,9 +672,10 @@ console.log(result);
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("ocean")
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
    
       });
@@ -744,9 +737,10 @@ console.log(result);
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("parking")
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
    
       });
@@ -808,9 +802,10 @@ console.log(result);
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("resort")
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
    
       });
@@ -872,9 +867,10 @@ console.log(result);
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("mountain")
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
    
       });
@@ -936,9 +932,10 @@ console.log(result);
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("garden")
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
    
       });
@@ -1000,9 +997,10 @@ console.log(result);
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("park")
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
    
       });
@@ -1064,9 +1062,10 @@ console.log(result);
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("specified")
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
    
       });
@@ -1128,9 +1127,10 @@ console.log(result);
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("town")
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
    
       });
@@ -1157,9 +1157,10 @@ async function dataHandler26() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("3star");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -1185,9 +1186,10 @@ async function dataHandler27() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("4star");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
@@ -1213,9 +1215,10 @@ async function dataHandler28() {
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
         appendItem1.classList.add("5star");
-        appendItem1.innerHTML = `<div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
-        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address>`;
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
     } else {
