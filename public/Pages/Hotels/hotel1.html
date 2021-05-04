@@ -15,9 +15,9 @@
     <div class="flex-container">
       <div class="headerown">
         <h1 class="homeheader">HOTELS</h1>
-        <a href="../../"
-          ><img src="../../Images/mauilogo2.png" alt="Maui Masters Logo "
-        /></a>
+        <a href="../../">
+          <img src="../../Images/mauilogo2.png" alt="Maui Masters Logo "/>
+        </a>
         <form id="search-form" action="" class="block form">
           <label for="search-form"></label>
           <input
@@ -76,7 +76,7 @@
       <div class = "comments">
         <div class="newComment">
             <h1>Add a new comment</h1>
-            <form action="POST">
+            <form method = "post" action="/api/hotel/1/comments">
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
                       <label class="label">Name</label>
@@ -84,7 +84,7 @@
                     <div class="field-body">
                       <div class="field">
                        <p class = "control">
-                          <input class="input" type="text" placeholder="Name">
+                          <input class="input" type="text" placeholder="Name" name = "name">
                         </p>
                       </div>
                     </div>
@@ -97,38 +97,15 @@
                     <div class="field-body">
                       <div class="field">
                         <p class="control">
-                          <input class="input" type="text" placeholder="Comment">
+                          <input class="input" type="text" placeholder="Comment" name = "comment">
                         </p>
                       </div>
                     </div>
                   </div>
+                  <input class="button" type="submit" value="Submit" onclick="location.reload()" >
             </form>
         </div>
-        <div class ="currentComments">
-           <li class = "block list-item">
-            <div class = "box">
-            <article class="message">
-                <div class="message-header">
-                  <p>Comment Author</p>
-                  <button class="delete" aria-label="delete"></button>
-                </div>
-                <div class="message-body">
-                  Comment content
-                </div>
-            </article>
-          </div>
-          <div class = "box">
-            <article class="message">
-                <div class="message-header">
-                  <p>Comment Author</p>
-                  <button class="delete" aria-label="delete"></button>
-                </div>
-                <div class="message-body">
-                  Comment content
-                </div>
-            </article>
-          </div>
-           </li>
+        <div class ="currentComments" style = "list-style-type: none;">
 
         </div>
     </div>
