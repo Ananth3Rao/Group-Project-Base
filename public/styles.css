@@ -288,7 +288,7 @@ button, input, select, textarea {
 }
 
 .comments {
-  background-color: rgb(219, 149, 105);
+  background-color: rgb(64, 161, 185);
   margin-top: auto;
 }
 
@@ -306,5 +306,9 @@ button, input, select, textarea {
 
 .field-label.is-normal {
   padding-top: 1.2em;
+}
+
+.spacer {
+  margin-top: 10px;
 }
 
