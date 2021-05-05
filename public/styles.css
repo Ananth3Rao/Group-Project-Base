@@ -289,16 +289,13 @@ button, input, select, textarea {
 
 .comments {
   background-color: rgb(64, 161, 185);
-  margin-top: auto;
+  margin-top: 10px;
 }
 
 .commentSub {
   align-self: flex-end;
 }
 
-.currentCommments li {
-  list-style-type: none;
-}
 
 .field-label {
   text-align: left;
@@ -308,7 +305,4 @@ button, input, select, textarea {
   padding-top: 1.2em;
 }
 
-.spacer {
-  margin-top: 10px;
-}
 
