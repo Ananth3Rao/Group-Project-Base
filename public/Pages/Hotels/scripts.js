@@ -40,19 +40,7 @@ function showCheckboxes3() {
   }
 }
 
-let show4 = true;
-
-function showCheckboxes4() {
-  const checkboxes4 = document.getElementById("checkBoxes4");
-
-  if (show4) {
-    checkboxes4.style.display = "block";
-    show4 = false;
-  } else {
-    checkboxes4.style.display = "none";
-    show4 = true;
-  }
-}
+/* removed checkboxes 3 because of circular dependencies problems */
 let show5 = true;
 
 function showCheckboxes5() {
