@@ -26,21 +26,22 @@ function showCheckboxes2() {
   }
 }
 
-let show3 = true;
+/* removed checkboxes 3 because of circular dependencies problems */
+let show4 = true;
 
-function showCheckboxes3() {
-  const checkboxes3 = document.getElementById("checkBoxes3");
+function showCheckboxes4() {
+  const checkboxes4 = document.getElementById("checkBoxes4");
 
-  if (show3) {
-    checkboxes3.style.display = "block";
-    show3 = false;
+  if (show4) {
+    checkboxes4.style.display = "block";
+    show4 = false;
   } else {
-    checkboxes3.style.display = "none";
-    show3 = true;
+    checkboxes4.style.display = "none";
+    show4 = true;
   }
 }
 
-/* removed checkboxes 3 because of circular dependencies problems */
+
 let show5 = true;
 
 function showCheckboxes5() {
