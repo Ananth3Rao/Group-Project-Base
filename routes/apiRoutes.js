@@ -166,6 +166,11 @@ router.delete('/comments/:comment_id', async (req, res) => {
         comment_id: req.params.comment_id
       }
     });
+    const updateQuery = `UPDATE Comments
+    SET comment_id = comment_id - 1
+    WHERE comment_id > ${req.params.comment_id}`
+    // eslint-disable-next-line max-len
+    await db.sequelizeDB.query(updateQuery); // decrements comment_ids of comments after the one deleted
     res.send('Successfully Deleted');
   } catch (err) {
     console.error(err);
