@@ -1,4 +1,5 @@
-/* search bar in header */
+/* eslint-disable max-len */
+/* search bar in header to search by city */
 async function dataHandler() {
   const search = document.querySelector('#search');
   const form = document.querySelector('#search-form');
@@ -23,12 +24,12 @@ async function dataHandler() {
         targetList.append(appendItem);
       });
     } else {
-      targetList.append('');
+      removeElementsByClass("box");
     }
   });
 }
 
-/* search bar in header */
+/* search bar in header to search by hotel name */
 async function dataHandler1() {
   const search = document.querySelector('#search');
   const form = document.querySelector('#search-form');
