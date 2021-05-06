@@ -115,8 +115,9 @@ h1{
 
 .headerown a img{
     display: block;
-    height: 60px;
+    height: 70px;
     padding-top: 20.15px;
+    margin-left: -15px;
   }
 a img{
     display:block;
