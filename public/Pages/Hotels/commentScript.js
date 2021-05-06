@@ -1,7 +1,10 @@
 async function commentDataHandler() {
-  const request = await fetch("/api/hotel/1/comments");
+  const URLlocation = window.location.pathname;
+  const hotelNum = URLlocation.match(/\d+/)[0];
+  const request = await fetch(`/api/hotel/${hotelNum}/comments`);
   const comments = await request.json();
   const commentArea = document.querySelector('.currentComments');
+  const newCommentArea = document.getElementById("newComm");
 
   comments.forEach((comment) => {
     const commentAdd = document.createElement("li");
@@ -23,6 +26,17 @@ async function commentDataHandler() {
     </article>
   </div>`;
     commentArea.append(commentAdd);
+  });
+
+  newCommentArea.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    await fetch(`/api/hotel/${hotelNum}/comments`, {
+      method: 'POST',
+      body: `name=${newCommentArea.elements["name"].value}&comment=${newCommentArea.elements["comment"].value}`,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    });
   });
 }
 
