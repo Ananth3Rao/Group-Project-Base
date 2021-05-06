@@ -6,8 +6,8 @@
 ### Link to our Heroku APP 
 [Maui Masters App](https://pure-beyond-09585.herokuapp.com/)
 
-### Description of the Porject 
-Our application would most likely help potential first time vacation goers headed to Maui find essential information for their stay. The application would help users find hotels in three of the five regions in Maui, Hawaii. Those three regions consist of West, South and Central Maui. The purpose of our application  is to help these users find a hotel that they would like to stay at based on certain factors such as raitings, types of rooms, and location. In addition to information pertaining to the hotel, the users would also be able to search for different types of dining options. When users are searching for different restaurants in the area, they will be able to find data that tells them the location of the restaurant, the type of cuisine and price range. Traveling can be a difficult task in itself, therefore we hope our application would make things a bit easier by putting all information in one place. 
+### Description of the Project 
+Our application is helpful for any potential first time Maui vacationers to find information that can ease the burden of planning a vacation. The application would help users find hotels in the primary vacation regions of the Hawaiian island. These regions consist of the West, South, and Central portions of Maui. The purpose of our application  is to help these users find a hotel that they would like to stay at based on certain factors such as raitings, types of rooms, and location. In addition to information pertaining to the hotel, users will also be able to search for different types of dining options. When users are searching for different restaurants in the area, they will be able to find information by restaurant location, cuisine types, and price ranges. Planning the perfect vacation can be a difficult task in itself, therefore we hope our application would make things a bit easier by putting all information in one convenient package so you can spend less time stressing and more time relaxing. 
 
 
 ### Target Browser 
