@@ -2,7 +2,7 @@
 /* eslint-disable linebreak-style */
 export default (sequelize, DataTypes) => {
     const Locations = sequelize.define(
-        'Locations',
+        'locations',
         {
             sub_region_id: {
                 type: DataTypes.INTEGER,
@@ -17,5 +17,5 @@ export default (sequelize, DataTypes) => {
         }, 
         { freezeTableName: true, timestamps: false }
     );
-    return Locations
+    return Locations;
 }
