@@ -44,9 +44,7 @@
         </nav>
       </div>
       <div class="right2">
-        <h1 class="is-italic has-text-weight-bold">
-          Montage Kapalua Bay
-        </h1>
+        <h1 class="is-italic has-text-weight-bold">Montage Kapalua Bay</h1>
         <h3 class="is-italic has-text-weight-bold">Address:</h3>
         <h3>1 Bay Drive</h3>
         <h3>Lahaina, 96761 HI</h3>
@@ -66,52 +64,55 @@
           <div class="target-list"></div>
         </div>
       </div>
-      <div class = "comments">
+      <div class="comments">
         <div class="newComment">
-            <h1>Add a new comment</h1>
-            <form action="POST">
-                <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                      <label class="label">Name</label>
-                    </div>
-                    <div class="field-body">
-                      <div class="field">
-                       <p class = "control">
-                          <input class="input" type="text" placeholder="Name">
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                      <label class="label">Comment</label>
-                    </div>
-                    <div class="field-body">
-                      <div class="field">
-                        <p class="control">
-                          <input class="input" type="text" placeholder="Comment">
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-            </form>
-        </div>
-        <div class ="currentComments">
-           <li class = "block list-item">
-            <article class="message">
-                <div class="message-header">
-                  <p>Comment Author</p>
-                  <button class="delete" aria-label="delete"></button>
+          <h1>Add a new comment</h1>
+          <form method="post" action="/api/hotel/3/comments">
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Name</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <p class="control">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="Name"
+                      name="name"
+                    />
+                  </p>
                 </div>
-                <div class="message-body">
-                  Comment content
-                </div>
-            </article>
-           </li>
+              </div>
+            </div>
 
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Comment</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <p class="control">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="Comment"
+                      name="comment"
+                    />
+                  </p>
+                </div>
+              </div>
+            </div>
+            <input
+              class="button"
+              type="submit"
+              value="Submit"
+              onclick="location.reload()"
+            />
+          </form>
         </div>
-    </div>
+        <div class="currentComments" style="list-style-type: none"></div>
+      </div>
     </div>
     <script src="../../script.js"></script>
     <script src="scripts.js"></script>

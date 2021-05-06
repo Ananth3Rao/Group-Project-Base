@@ -306,4 +306,8 @@ button, input, select, textarea {
   padding-top: 1.2em;
 }
 
+.message-header .delete {
+  margin-top: 20px;
+}
+
 
