@@ -18,7 +18,6 @@ async function dataHandler() {
   };
 
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up);
   let i; let l; let question; let user; const
     result = [];
   for (i = 0, l = dat2.length; i < l; i++) {
@@ -43,7 +42,6 @@ async function dataHandler() {
   appendItem.classList.add = 'container';
   appendItem.innerHTML = `<div class="box"><h3 class="title is-3">${result[0].restaurant_name}</h3><div class="image"><img src="${result[0].restaurant_id}.png"/></div></div>`;
   targetList1.append(appendItem);
-  console.log(result[0].restaurant_id)
 
 }
 

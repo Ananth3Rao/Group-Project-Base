@@ -24,14 +24,12 @@ async function dataHandler(mapObjectFromFunction) {
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    console.log('form submitted');
     if (search.value.length > 0) {
       const filtered = dat.filter((record) => record.city.toLowerCase().includes(search.value.toLowerCase())&& record.latitude && record.longitude);
       filtered.forEach((item) => {
         const lat = item.latitude;
         const long = item.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
@@ -63,7 +61,6 @@ async function dataHandler26() {
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    console.log('form submitted');
     if (search.value.length > 0) {
       const filtered = dat.filter((record) => record.city.toLowerCase().includes(search.value.toLowerCase()));
       filtered.forEach((item) => {
@@ -93,7 +90,6 @@ async function dataHandler11(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -105,7 +101,6 @@ async function dataHandler11(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -124,19 +119,16 @@ for ( i=0, l=dat2.length; i<l; i++ ) {
     });
   }
 }
-console.log(result);
 
 const coords = [];
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
-  console.log('form submitted');
   if (search.value.length > 0) {
     const filtered = result.filter((record) => record.cuisine_name.toLowerCase().includes(search.value.toLowerCase())&& record.latitude && record.longitude);
     filtered.forEach((item) => {
       const lat = item.latitude;
       const long = item.longitude
       coords.push(lat, long);
-      console.log(coords);
       const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
       const appendItem = document.createElement('li');
       appendItem.classList.add('block');
@@ -166,14 +158,11 @@ form.addEventListener('submit', async (event) => {
 //   const dat2 = d2.data
 //   const coords = [];
 //   const authormap = {};
-//   console.log(dat)
 
 //   form.addEventListener('submit', async (event) => {
 //     event.preventDefault();
-//     console.log('form submitted');
 //     if (search.value.length > 0) {
 //       const filtered = dat.filter((record) => record.cuisine_name.toLowerCase().includes(search.value.toLowerCase()));
-//       console.log(filtered)
 //       filtered.forEach((function(author) {authormap[author.cuisine_id] = author;}));
 //       dat2.forEach(function(book) {
 //         book.restaurant = authormap[book.restaurant_id];
@@ -186,7 +175,6 @@ form.addEventListener('submit', async (event) => {
 //     } else {
 //       targetList.append('');
 //     }
-//     console.log(authormap)
 //   });
 // }
 // const authormap = {};
@@ -279,7 +267,6 @@ async function dataHandler2(mapObjectFromFunction) {
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
@@ -313,7 +300,6 @@ async function dataHandler3(mapObjectFromFunction) {
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
@@ -347,7 +333,6 @@ async function dataHandler4(mapObjectFromFunction) {
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
@@ -382,7 +367,6 @@ async function dataHandler5(mapObjectFromFunction) {
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
@@ -416,7 +400,6 @@ async function dataHandler6(mapObjectFromFunction) {
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
@@ -449,7 +432,6 @@ async function dataHandler7(mapObjectFromFunction) {
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
@@ -482,7 +464,6 @@ async function dataHandler8(mapObjectFromFunction) {
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
@@ -515,7 +496,6 @@ async function dataHandler9(mapObjectFromFunction) {
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
@@ -550,7 +530,6 @@ async function dataHandler10(mapObjectFromFunction) {
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem = document.createElement('li');
         appendItem.classList.add('block');
@@ -579,7 +558,6 @@ async function dataHandler12(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -591,7 +569,6 @@ async function dataHandler12(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -619,7 +596,6 @@ const coords = [];
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -647,7 +623,6 @@ async function dataHandler13(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -659,7 +634,6 @@ async function dataHandler13(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -687,7 +661,6 @@ const coords = [];
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -715,7 +688,6 @@ async function dataHandler14(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -727,7 +699,6 @@ async function dataHandler14(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -755,7 +726,6 @@ const coords = [];
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -784,7 +754,6 @@ async function dataHandler15(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -796,7 +765,6 @@ async function dataHandler15(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -824,7 +792,6 @@ const coords = [];
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -852,7 +819,6 @@ async function dataHandler16(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -864,7 +830,6 @@ async function dataHandler16(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -892,7 +857,6 @@ const coords = [];
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -920,7 +884,6 @@ async function dataHandler17(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -932,7 +895,6 @@ async function dataHandler17(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -960,7 +922,6 @@ const coords = [];
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -988,7 +949,6 @@ async function dataHandler18(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -1000,7 +960,6 @@ async function dataHandler18(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -1028,7 +987,6 @@ const coords = [];
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -1056,7 +1014,6 @@ async function dataHandler19(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -1068,7 +1025,6 @@ async function dataHandler19(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -1096,7 +1052,6 @@ const coords =[];
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -1124,7 +1079,6 @@ async function dataHandler20(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -1136,7 +1090,6 @@ async function dataHandler20(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -1164,7 +1117,6 @@ const coords = [];
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -1192,7 +1144,6 @@ async function dataHandler21(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -1204,7 +1155,6 @@ async function dataHandler21(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -1232,7 +1182,6 @@ const coords = [];
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -1260,7 +1209,6 @@ async function dataHandler22(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -1272,7 +1220,6 @@ async function dataHandler22(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -1300,7 +1247,6 @@ const coords = [];
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -1328,7 +1274,6 @@ async function dataHandler23(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -1340,7 +1285,6 @@ async function dataHandler23(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -1368,7 +1312,6 @@ const coords = [];
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -1396,7 +1339,6 @@ async function dataHandler24(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -1408,7 +1350,6 @@ async function dataHandler24(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -1436,7 +1377,6 @@ const coords =[];
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -1464,7 +1404,6 @@ async function dataHandler25(mapObjectFromFunction) {
   const request2 = await fetch('/api/restaurant');
   const d2 = await request2.json();
   const dat2 = d2.data
-  console.log(dat)
   
   const createObjectLookup = function( arr, key ){
     let i, l, obj, ret = {};
@@ -1476,7 +1415,6 @@ async function dataHandler25(mapObjectFromFunction) {
   };
   
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up)
   let i, l, question, user, result = [];
 for ( i=0, l=dat2.length; i<l; i++ ) {
   if ( (question = dat2[i]) && (user = up[question.cuisine_id]) ) {
@@ -1504,7 +1442,6 @@ const coords = [];
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -1539,7 +1476,6 @@ async function dataHandler27(mapObjectFromFunction) {
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -1573,7 +1509,6 @@ async function dataHandler28(mapObjectFromFunction) {
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -1607,7 +1542,6 @@ async function dataHandler29(mapObjectFromFunction) {
         const lat = item1.latitude;
         const long = item1.longitude
         coords.push(lat, long);
-        console.log(coords);
         const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
