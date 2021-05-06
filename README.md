@@ -1,6 +1,14 @@
-# This is your readme
-You are required to fill it in with documentation similar to that found in the Sequelize example for the course as part of your final project.
 
-### How to use Markdown
-Markdown is a text notation system used in Discord, Whatsapp and similar to structure pages without writing HTML at all. You'll be using it for your documentation.
-* [Markdown guide](https://www.markdownguide.org/cheat-sheet/)
+# Maui Masters 
+
+### Link to our Heroku APP 
+[Maui Masters App](https://pure-beyond-09585.herokuapp.com/)
+
+### Description of the Porject 
+
+
+### Target Browser 
+Our application is able to run Android Platforms such as Pixel 2 and Pixel 2XL.
+Also, Iphone 6/7/8/Plus and X. Yet, we want to point out that our applicatin works better on 
+a full browser on Windods or Mac OS. 
+
