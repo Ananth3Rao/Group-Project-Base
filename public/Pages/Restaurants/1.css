@@ -21,7 +21,7 @@ h5 {
 .checked {
     color: orange;
   }
-  .addy2 {
+  .addy2,p {
       font-weight: bold;
   }
   #mapid { height: 600px;

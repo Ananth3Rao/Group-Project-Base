@@ -68,6 +68,8 @@ async function dataHandler(mapObjectFromFunction) {
   <span class="fa fa-star checked"></span>
   <span class="fa fa-star checked"></span></h5>
   <div class="image"><img src="${x.restaurant_id}.png"/></div>
+  <div class='columns'>
+  <div class='column'>
   <span class='addy'><div class=addy2>Address</div>
   ${x.street_address}, ${x.city} ${x.state}, ${x.zip_code}</span>
   <hr>
@@ -76,6 +78,11 @@ async function dataHandler(mapObjectFromFunction) {
   <hr>
   <span class='addy'><div class=addy2>Hours</div>
   ${x.open_time} - ${x.close_time}</span>
+  </div>
+  <div class='column'> <p>Location</p>
+  
+  </div></div>
+  </div>
   </div>`;};
   if (x.rating > 3 && x.rating <= 4) {
     appendItem.innerHTML = `<div class="box"><h3 class="title is-3">${x.restaurant_name}</h3>

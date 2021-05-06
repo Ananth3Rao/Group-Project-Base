@@ -6,3 +6,26 @@
     width: 80%;
     margin: 0 auto;
   }
+
+  .target-list{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+  }
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.right1{
+    width: 80%;
+    margin: 0 auto;
+  }
+.foto{
+  width: 250px;
+  height: 150px;
+}

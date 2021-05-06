@@ -3,7 +3,6 @@ let show = true;
 
 function showCheckboxes() {
   const checkboxes = document.getElementById("checkBoxes");
-
   if (show) {
     checkboxes.style.display = "block";
     show = false;
@@ -27,20 +26,7 @@ function showCheckboxes2() {
   }
 }
 
-let show3 = true;
-
-function showCheckboxes3() {
-  const checkboxes3 = document.getElementById("checkBoxes3");
-
-  if (show3) {
-    checkboxes3.style.display = "block";
-    show3 = false;
-  } else {
-    checkboxes3.style.display = "none";
-    show3 = true;
-  }
-}
-
+/* removed checkboxes 3 because of circular dependencies problems */
 let show4 = true;
 
 function showCheckboxes4() {
@@ -54,6 +40,8 @@ function showCheckboxes4() {
     show4 = true;
   }
 }
+
+
 let show5 = true;
 
 function showCheckboxes5() {
@@ -81,6 +69,7 @@ function showCheckboxes6() {
   }
 }
 /* search bar in header */
+/* search bar in header to search by city */
 async function dataHandler() {
   // const form = document.querySelector('#search-form');
   const search = document.querySelector("#search");
@@ -102,17 +91,46 @@ async function dataHandler() {
         const appendItem = document.createElement("li");
         appendItem.classList.add("block");
         appendItem.classList.add("list-item");
-        appendItem.innerHTML = `<h1 class="resultheader"> Results </h1> <div class="list-header is-size-5">${item.hotel_name}</div>
+        appendItem.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href='hotel${item.hotel_id}.html'>${item.hotel_name}</a></div>
         <address class="is-size-6">${item.street_address}</address><address class="is-size-6">${item.city}</address>
-        <address class="is-size-6">${item.state}</address><address class="is-size-6">${item.zip_code}</address>`;
+        <address class="is-size-6">${item.state}</address><address class="is-size-6">${item.zip_code}</address></div><div class='column'><img src="${item.hotel_id}.png"/></div></div></div>`;
         targetList.append(appendItem);
       });
     } else {
-      targetList.append("");
+      removeElementsByClass("columns");
     }
   });
 }
+/* search bar in header to search by hotel name */
+async function dataHandler1() {
+  const search = document.querySelector('#search');
+  const form = document.querySelector('#search-form');
+  const targetList = document.querySelector('.target-list');
 
+  const request = await fetch('/api/hotel');
+  const d = await request.json();
+  const dat = d.data;
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    console.log('form submitted');
+    if (search.value.length > 0) {
+      const filtered = dat.filter((record) => record.hotel_name.toLowerCase().includes(search.value.toLowerCase()));
+      filtered.forEach((item) => {
+        const appendItem = document.createElement('li');
+        appendItem.classList.add('block');
+        appendItem.classList.add('list-item');
+        appendItem.innerHTML = `<div class='box'><div class='columns'><div class='column'><div class="list-header is-size-5"><a href='hotel${item.hotel_id}.html'>${item.hotel_name}</a></div>
+          <address class="is-size-6">${item.street_address}</address><address class="is-size-6">${item.city}</address>
+          <address class="is-size-6">${item.state}</address><address class="is-size-6">${item.zip_code}</address></div><div class='column'><img src="../Hotels/${item.hotel_id}.png" class="foto"/></div></div></div>`;
+        targetList.append(appendItem);
+      });
+    } else {
+      removeElementsByClass("box");
+    }
+  });
+}
+/* function to remove results */
 function removeElementsByClass(className) {
   const elements = document.getElementsByClassName(className);
   while (elements.length > 0) {
@@ -122,13 +140,32 @@ function removeElementsByClass(className) {
 
 /* first checkbox for Sub Region CENTRAL  */
 async function dataHandler2() {
+  const { hash } = location;
   const checkBox1 = document.getElementById("first");
   const targetList1 = document.querySelector(".target-list");
   const form1 = document.querySelector("#SubR");
+  const checkboxes = document.getElementById("checkBoxes");
 
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
+  if (hash === "#central") {
+    checkboxes.style.display = "block";
+    show = false;
+    checkBox1.checked = true;
+    const filtered1 = dat1.filter((record1) => record1.sub_region_id === 3);
+    filtered1.forEach((item1) => {
+      const appendItem1 = document.createElement("li");
+      appendItem1.classList.add("block");
+      appendItem1.classList.add("list-item");
+      appendItem1.classList.add("central");
+      appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
+      targetList1.append(appendItem1);
+    });
+  }
   checkBox1.addEventListener("change", async (event1) => {
     event1.preventDefault();
     if (checkBox1.checked) {
@@ -151,13 +188,32 @@ async function dataHandler2() {
 }
 /* second checkbox for Sub Region SOUTH */
 async function dataHandler3() {
+  const { hash } = location;
   const checkBox1 = document.getElementById("second");
   const targetList1 = document.querySelector(".target-list");
   const form1 = document.querySelector("#SubR");
+  const checkboxes = document.getElementById("checkBoxes");
 
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
+  if (hash === "#south") {
+    checkboxes.style.display = "block";
+    show = false;
+    checkBox1.checked = true;
+    const filtered1 = dat1.filter((record1) => record1.sub_region_id === 2);
+    filtered1.forEach((item1) => {
+      const appendItem1 = document.createElement("li");
+      appendItem1.classList.add("block");
+      appendItem1.classList.add("list-item");
+      appendItem1.classList.add("south");
+      appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
+      targetList1.append(appendItem1);
+    });
+  }
   checkBox1.addEventListener("change", async (event1) => {
     event1.preventDefault();
     if (checkBox1.checked) {
@@ -180,13 +236,32 @@ async function dataHandler3() {
 }
 /* third checkbox for Sub Region WEST */
 async function dataHandler4() {
+  const {hash} = location;
   const checkBox1 = document.getElementById("third");
   const targetList1 = document.querySelector(".target-list");
   const form1 = document.querySelector("#SubR");
-
+  const checkboxes = document.getElementById("checkBoxes");
+  
   const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
+  if (hash === "#west") {
+    checkboxes.style.display = "block";
+    show = false;
+    checkBox1.checked = true;
+    const filtered1 = dat1.filter((record1) => record1.sub_region_id === 1);
+    filtered1.forEach((item1) => {
+      const appendItem1 = document.createElement("li");
+      appendItem1.classList.add("block");
+      appendItem1.classList.add("list-item");
+      appendItem1.classList.add("west");
+      appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
+        <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
+        <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
+        <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
+      targetList1.append(appendItem1);
+    });
+  }
   checkBox1.addEventListener("change", async (event1) => {
     event1.preventDefault();
     if (checkBox1.checked) {
@@ -232,7 +307,7 @@ async function dataHandler5() {
         targetList1.append(appendItem1);
       });
     } else {
-      removeElementsByClass("kahului")
+      removeElementsByClass("kahului");
     }
   });
 }
@@ -261,7 +336,7 @@ async function dataHandler6() {
         targetList1.append(appendItem1);
       });
     } else {
-      removeElementsByClass("kapalua")
+      removeElementsByClass("kapalua");
     }
   });
 }
@@ -289,7 +364,7 @@ async function dataHandler7() {
         targetList1.append(appendItem1);
       });
     } else {
-      removeElementsByClass("kihei")
+      removeElementsByClass("kihei");
     }
   });
 }
@@ -317,7 +392,7 @@ async function dataHandler8() {
         targetList1.append(appendItem1);
       });
     } else {
-      removeElementsByClass("lahaina")
+      removeElementsByClass("lahaina");
     }
   });
 }
@@ -345,7 +420,7 @@ async function dataHandler9() {
         targetList1.append(appendItem1);
       });
     } else {
-      removeElementsByClass("paia")
+      removeElementsByClass("paia");
     }
   });
 }
@@ -374,7 +449,7 @@ async function dataHandler10() {
         targetList1.append(appendItem1);
       });
     } else {
-      removeElementsByClass("wailea")
+      removeElementsByClass("wailea");
     }
   });
 }
@@ -403,12 +478,12 @@ async function dataHandler11() {
         <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
       });
-    }else {
-      removeElementsByClass("villas")
+    } else {
+      removeElementsByClass("villas");
     }
   });
 }
-/*second checkbox for Traditional Hotel */ 
+/*second checkbox for Traditional Hotel */
 async function dataHandler12() {
   const checkBox1 = document.getElementById("thirtyfirst");
   const targetList1 = document.querySelector(".target-list");
@@ -432,7 +507,7 @@ async function dataHandler12() {
         targetList1.append(appendItem1);
       });
     } else {
-      removeElementsByClass("traditional")
+      removeElementsByClass("traditional");
     }
   });
 }
@@ -460,7 +535,7 @@ async function dataHandler13() {
         targetList1.append(appendItem1);
       });
     } else {
-      removeElementsByClass("resorts")
+      removeElementsByClass("resorts");
     }
   });
 }
@@ -489,7 +564,7 @@ async function dataHandler14() {
         targetList1.append(appendItem1);
       });
     } else {
-      removeElementsByClass("cottages")
+      removeElementsByClass("cottages");
     }
   });
 }
@@ -518,7 +593,7 @@ async function dataHandler15() {
         targetList1.append(appendItem1);
       });
     } else {
-      removeElementsByClass("condoss")
+      removeElementsByClass("condoss");
     }
   });
 }
@@ -547,7 +622,7 @@ async function dataHandler16() {
         targetList1.append(appendItem1);
       });
     } else {
-      removeElementsByClass("Inns")
+      removeElementsByClass("Inns");
     }
   });
 }
@@ -555,64 +630,68 @@ async function dataHandler16() {
 /*checkbox for Room view these checkboxes
 will need a join between tables Hotel Overview and 
 Room */
-/* first checkbox Partial Ocean */ 
+/* first checkbox Partial Ocean */
 async function dataHandler17() {
-  const checkBox1 = document.getElementById("thirtysixth")
-  const targetList1 = document.querySelector('.target-list');
+  const checkBox1 = document.getElementById("thirtysixth");
+  const targetList1 = document.querySelector(".target-list");
 
-  const request1 = await fetch('/api/hotel');
+  const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
-  const request2 = await fetch('/api/room');
+  const request2 = await fetch("/api/room");
   const d2 = await request2.json();
-  const dat2 = d2.data
-  console.log(dat1)
-  console.log(dat2)
-  
-  const createObjectLookup = function( arr, key ){
-    let i, l, obj, ret = {};
-    for ( i=0, l=arr.length; i<l; i++ ) {
+  const dat2 = d2.data;
+  console.log(dat1);
+  console.log(dat2);
+
+  const createObjectLookup = function (arr, key) {
+    let i,
+      l,
+      obj,
+      ret = {};
+    for (i = 0, l = arr.length; i < l; i++) {
       obj = arr[i];
       ret[obj[key]] = obj;
     }
     return ret;
   };
-  
-  const up = createObjectLookup(dat1, 'hotel_id');
-  console.log(up)
-  let i, l, question, user, result = [];
-for ( i=0, l=dat2.length; i<l; i++ ) {
-  if ( (question = dat2[i]) && (user = up[question.hotel_id]) ) {
-    result.push({
-      hotel_id: question.hotel_id,
-      room_view_id: question.room_view_id,
-      hotel_name: user.hotel_name,
-      street_address: user.street_address,
-      city: user.city,
-      state: user.state,
-      zip_code: user.zip_code
 
-    });
+  const up = createObjectLookup(dat1, "hotel_id");
+  console.log(up);
+  let i,
+    l,
+    question,
+    user,
+    result = [];
+  for (i = 0, l = dat2.length; i < l; i++) {
+    if ((question = dat2[i]) && (user = up[question.hotel_id])) {
+      result.push({
+        hotel_id: question.hotel_id,
+        room_view_id: question.room_view_id,
+        hotel_name: user.hotel_name,
+        street_address: user.street_address,
+        city: user.city,
+        state: user.state,
+        zip_code: user.zip_code,
+      });
+    }
   }
-}
-console.log(result);
+  console.log(result);
 
-
-  checkBox1.addEventListener('change', async (event) => {
+  checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
     if (checkBox1.checked) {
       const filtered1 = result.filter((record1) => record1.room_view_id === 1);
       filtered1.forEach((item1) => {
-        const appendItem1 = document.createElement('li');
+        const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("partial")
+        appendItem1.classList.add("partial");
         appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
         <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
-   
       });
     } else {
       removeElementsByClass("partial");
@@ -620,64 +699,68 @@ console.log(result);
   });
 }
 
-/* second checkbox Room View Ocean Front */ 
+/* second checkbox Room View Ocean Front */
 async function dataHandler18() {
-  const checkBox1 = document.getElementById("thirtyseventh")
-  const targetList1 = document.querySelector('.target-list');
+  const checkBox1 = document.getElementById("thirtyseventh");
+  const targetList1 = document.querySelector(".target-list");
 
-  const request1 = await fetch('/api/hotel');
+  const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
-  const request2 = await fetch('/api/room');
+  const request2 = await fetch("/api/room");
   const d2 = await request2.json();
-  const dat2 = d2.data
-  console.log(dat1)
-  console.log(dat2)
-  
-  const createObjectLookup = function( arr, key ){
-    let i, l, obj, ret = {};
-    for ( i=0, l=arr.length; i<l; i++ ) {
+  const dat2 = d2.data;
+  console.log(dat1);
+  console.log(dat2);
+
+  const createObjectLookup = function (arr, key) {
+    let i,
+      l,
+      obj,
+      ret = {};
+    for (i = 0, l = arr.length; i < l; i++) {
       obj = arr[i];
       ret[obj[key]] = obj;
     }
     return ret;
   };
-  
-  const up = createObjectLookup(dat1, 'hotel_id');
-  console.log(up)
-  let i, l, question, user, result = [];
-for ( i=0, l=dat2.length; i<l; i++ ) {
-  if ( (question = dat2[i]) && (user = up[question.hotel_id]) ) {
-    result.push({
-      hotel_id: question.hotel_id,
-      room_view_id: question.room_view_id,
-      hotel_name: user.hotel_name,
-      street_address: user.street_address,
-      city: user.city,
-      state: user.state,
-      zip_code: user.zip_code
 
-    });
+  const up = createObjectLookup(dat1, "hotel_id");
+  console.log(up);
+  let i,
+    l,
+    question,
+    user,
+    result = [];
+  for (i = 0, l = dat2.length; i < l; i++) {
+    if ((question = dat2[i]) && (user = up[question.hotel_id])) {
+      result.push({
+        hotel_id: question.hotel_id,
+        room_view_id: question.room_view_id,
+        hotel_name: user.hotel_name,
+        street_address: user.street_address,
+        city: user.city,
+        state: user.state,
+        zip_code: user.zip_code,
+      });
+    }
   }
-}
-console.log(result);
+  console.log(result);
 
-
-  checkBox1.addEventListener('change', async (event) => {
+  checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
     if (checkBox1.checked) {
       const filtered1 = result.filter((record1) => record1.room_view_id === 2);
       filtered1.forEach((item1) => {
-        const appendItem1 = document.createElement('li');
+        const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("ocean")
+        appendItem1.classList.add("ocean");
         appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
         <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
-   
       });
     } else {
       removeElementsByClass("ocean");
@@ -687,62 +770,66 @@ console.log(result);
 
 /* Third checkbox Room View Parking Lot */
 async function dataHandler19() {
-  const checkBox1 = document.getElementById("thirtyeighth")
-  const targetList1 = document.querySelector('.target-list');
+  const checkBox1 = document.getElementById("thirtyeighth");
+  const targetList1 = document.querySelector(".target-list");
 
-  const request1 = await fetch('/api/hotel');
+  const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
-  const request2 = await fetch('/api/room');
+  const request2 = await fetch("/api/room");
   const d2 = await request2.json();
-  const dat2 = d2.data
-  console.log(dat1)
-  console.log(dat2)
-  
-  const createObjectLookup = function( arr, key ){
-    let i, l, obj, ret = {};
-    for ( i=0, l=arr.length; i<l; i++ ) {
+  const dat2 = d2.data;
+  console.log(dat1);
+  console.log(dat2);
+
+  const createObjectLookup = function (arr, key) {
+    let i,
+      l,
+      obj,
+      ret = {};
+    for (i = 0, l = arr.length; i < l; i++) {
       obj = arr[i];
       ret[obj[key]] = obj;
     }
     return ret;
   };
-  
-  const up = createObjectLookup(dat1, 'hotel_id');
-  console.log(up)
-  let i, l, question, user, result = [];
-for ( i=0, l=dat2.length; i<l; i++ ) {
-  if ( (question = dat2[i]) && (user = up[question.hotel_id]) ) {
-    result.push({
-      hotel_id: question.hotel_id,
-      room_view_id: question.room_view_id,
-      hotel_name: user.hotel_name,
-      street_address: user.street_address,
-      city: user.city,
-      state: user.state,
-      zip_code: user.zip_code
 
-    });
+  const up = createObjectLookup(dat1, "hotel_id");
+  console.log(up);
+  let i,
+    l,
+    question,
+    user,
+    result = [];
+  for (i = 0, l = dat2.length; i < l; i++) {
+    if ((question = dat2[i]) && (user = up[question.hotel_id])) {
+      result.push({
+        hotel_id: question.hotel_id,
+        room_view_id: question.room_view_id,
+        hotel_name: user.hotel_name,
+        street_address: user.street_address,
+        city: user.city,
+        state: user.state,
+        zip_code: user.zip_code,
+      });
+    }
   }
-}
-console.log(result);
+  console.log(result);
 
-
-  checkBox1.addEventListener('change', async (event) => {
+  checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
     if (checkBox1.checked) {
       const filtered1 = result.filter((record1) => record1.room_view_id === 3);
       filtered1.forEach((item1) => {
-        const appendItem1 = document.createElement('li');
+        const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("parking")
+        appendItem1.classList.add("parking");
         appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
         <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
-   
       });
     } else {
       removeElementsByClass("parking");
@@ -752,62 +839,66 @@ console.log(result);
 
 /* Fourth checkbox Room View Resort */
 async function dataHandler20() {
-  const checkBox1 = document.getElementById("thirtyninth")
-  const targetList1 = document.querySelector('.target-list');
+  const checkBox1 = document.getElementById("thirtyninth");
+  const targetList1 = document.querySelector(".target-list");
 
-  const request1 = await fetch('/api/hotel');
+  const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
-  const request2 = await fetch('/api/room');
+  const request2 = await fetch("/api/room");
   const d2 = await request2.json();
-  const dat2 = d2.data
-  console.log(dat1)
-  console.log(dat2)
-  
-  const createObjectLookup = function( arr, key ){
-    let i, l, obj, ret = {};
-    for ( i=0, l=arr.length; i<l; i++ ) {
+  const dat2 = d2.data;
+  console.log(dat1);
+  console.log(dat2);
+
+  const createObjectLookup = function (arr, key) {
+    let i,
+      l,
+      obj,
+      ret = {};
+    for (i = 0, l = arr.length; i < l; i++) {
       obj = arr[i];
       ret[obj[key]] = obj;
     }
     return ret;
   };
-  
-  const up = createObjectLookup(dat1, 'hotel_id');
-  console.log(up)
-  let i, l, question, user, result = [];
-for ( i=0, l=dat2.length; i<l; i++ ) {
-  if ( (question = dat2[i]) && (user = up[question.hotel_id]) ) {
-    result.push({
-      hotel_id: question.hotel_id,
-      room_view_id: question.room_view_id,
-      hotel_name: user.hotel_name,
-      street_address: user.street_address,
-      city: user.city,
-      state: user.state,
-      zip_code: user.zip_code
 
-    });
+  const up = createObjectLookup(dat1, "hotel_id");
+  console.log(up);
+  let i,
+    l,
+    question,
+    user,
+    result = [];
+  for (i = 0, l = dat2.length; i < l; i++) {
+    if ((question = dat2[i]) && (user = up[question.hotel_id])) {
+      result.push({
+        hotel_id: question.hotel_id,
+        room_view_id: question.room_view_id,
+        hotel_name: user.hotel_name,
+        street_address: user.street_address,
+        city: user.city,
+        state: user.state,
+        zip_code: user.zip_code,
+      });
+    }
   }
-}
-console.log(result);
+  console.log(result);
 
-
-  checkBox1.addEventListener('change', async (event) => {
+  checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
     if (checkBox1.checked) {
       const filtered1 = result.filter((record1) => record1.room_view_id === 4);
       filtered1.forEach((item1) => {
-        const appendItem1 = document.createElement('li');
+        const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("resort")
+        appendItem1.classList.add("resort");
         appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
         <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
-   
       });
     } else {
       removeElementsByClass("resort");
@@ -817,62 +908,66 @@ console.log(result);
 
 /* Fifth checkbox Room View Mountain */
 async function dataHandler21() {
-  const checkBox1 = document.getElementById("forty")
-  const targetList1 = document.querySelector('.target-list');
+  const checkBox1 = document.getElementById("forty");
+  const targetList1 = document.querySelector(".target-list");
 
-  const request1 = await fetch('/api/hotel');
+  const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
-  const request2 = await fetch('/api/room');
+  const request2 = await fetch("/api/room");
   const d2 = await request2.json();
-  const dat2 = d2.data
-  console.log(dat1)
-  console.log(dat2)
-  
-  const createObjectLookup = function( arr, key ){
-    let i, l, obj, ret = {};
-    for ( i=0, l=arr.length; i<l; i++ ) {
+  const dat2 = d2.data;
+  console.log(dat1);
+  console.log(dat2);
+
+  const createObjectLookup = function (arr, key) {
+    let i,
+      l,
+      obj,
+      ret = {};
+    for (i = 0, l = arr.length; i < l; i++) {
       obj = arr[i];
       ret[obj[key]] = obj;
     }
     return ret;
   };
-  
-  const up = createObjectLookup(dat1, 'hotel_id');
-  console.log(up)
-  let i, l, question, user, result = [];
-for ( i=0, l=dat2.length; i<l; i++ ) {
-  if ( (question = dat2[i]) && (user = up[question.hotel_id]) ) {
-    result.push({
-      hotel_id: question.hotel_id,
-      room_view_id: question.room_view_id,
-      hotel_name: user.hotel_name,
-      street_address: user.street_address,
-      city: user.city,
-      state: user.state,
-      zip_code: user.zip_code
 
-    });
+  const up = createObjectLookup(dat1, "hotel_id");
+  console.log(up);
+  let i,
+    l,
+    question,
+    user,
+    result = [];
+  for (i = 0, l = dat2.length; i < l; i++) {
+    if ((question = dat2[i]) && (user = up[question.hotel_id])) {
+      result.push({
+        hotel_id: question.hotel_id,
+        room_view_id: question.room_view_id,
+        hotel_name: user.hotel_name,
+        street_address: user.street_address,
+        city: user.city,
+        state: user.state,
+        zip_code: user.zip_code,
+      });
+    }
   }
-}
-console.log(result);
+  console.log(result);
 
-
-  checkBox1.addEventListener('change', async (event) => {
+  checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
     if (checkBox1.checked) {
       const filtered1 = result.filter((record1) => record1.room_view_id === 5);
       filtered1.forEach((item1) => {
-        const appendItem1 = document.createElement('li');
+        const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("mountain")
+        appendItem1.classList.add("mountain");
         appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
         <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
-   
       });
     } else {
       removeElementsByClass("mountain");
@@ -882,62 +977,66 @@ console.log(result);
 
 /* Sixth checkbox Room View Garden */
 async function dataHandler22() {
-  const checkBox1 = document.getElementById("ffirst")
-  const targetList1 = document.querySelector('.target-list');
+  const checkBox1 = document.getElementById("ffirst");
+  const targetList1 = document.querySelector(".target-list");
 
-  const request1 = await fetch('/api/hotel');
+  const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
-  const request2 = await fetch('/api/room');
+  const request2 = await fetch("/api/room");
   const d2 = await request2.json();
-  const dat2 = d2.data
-  console.log(dat1)
-  console.log(dat2)
-  
-  const createObjectLookup = function( arr, key ){
-    let i, l, obj, ret = {};
-    for ( i=0, l=arr.length; i<l; i++ ) {
+  const dat2 = d2.data;
+  console.log(dat1);
+  console.log(dat2);
+
+  const createObjectLookup = function (arr, key) {
+    let i,
+      l,
+      obj,
+      ret = {};
+    for (i = 0, l = arr.length; i < l; i++) {
       obj = arr[i];
       ret[obj[key]] = obj;
     }
     return ret;
   };
-  
-  const up = createObjectLookup(dat1, 'hotel_id');
-  console.log(up)
-  let i, l, question, user, result = [];
-for ( i=0, l=dat2.length; i<l; i++ ) {
-  if ( (question = dat2[i]) && (user = up[question.hotel_id]) ) {
-    result.push({
-      hotel_id: question.hotel_id,
-      room_view_id: question.room_view_id,
-      hotel_name: user.hotel_name,
-      street_address: user.street_address,
-      city: user.city,
-      state: user.state,
-      zip_code: user.zip_code
 
-    });
+  const up = createObjectLookup(dat1, "hotel_id");
+  console.log(up);
+  let i,
+    l,
+    question,
+    user,
+    result = [];
+  for (i = 0, l = dat2.length; i < l; i++) {
+    if ((question = dat2[i]) && (user = up[question.hotel_id])) {
+      result.push({
+        hotel_id: question.hotel_id,
+        room_view_id: question.room_view_id,
+        hotel_name: user.hotel_name,
+        street_address: user.street_address,
+        city: user.city,
+        state: user.state,
+        zip_code: user.zip_code,
+      });
+    }
   }
-}
-console.log(result);
+  console.log(result);
 
-
-  checkBox1.addEventListener('change', async (event) => {
+  checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
     if (checkBox1.checked) {
       const filtered1 = result.filter((record1) => record1.room_view_id === 6);
       filtered1.forEach((item1) => {
-        const appendItem1 = document.createElement('li');
+        const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("garden")
+        appendItem1.classList.add("garden");
         appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
         <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
-   
       });
     } else {
       removeElementsByClass("garden");
@@ -947,62 +1046,66 @@ console.log(result);
 
 /* seventh checkbox Room View Parks */
 async function dataHandler23() {
-  const checkBox1 = document.getElementById("fsecond")
-  const targetList1 = document.querySelector('.target-list');
+  const checkBox1 = document.getElementById("fsecond");
+  const targetList1 = document.querySelector(".target-list");
 
-  const request1 = await fetch('/api/hotel');
+  const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
-  const request2 = await fetch('/api/room');
+  const request2 = await fetch("/api/room");
   const d2 = await request2.json();
-  const dat2 = d2.data
-  console.log(dat1)
-  console.log(dat2)
-  
-  const createObjectLookup = function( arr, key ){
-    let i, l, obj, ret = {};
-    for ( i=0, l=arr.length; i<l; i++ ) {
+  const dat2 = d2.data;
+  console.log(dat1);
+  console.log(dat2);
+
+  const createObjectLookup = function (arr, key) {
+    let i,
+      l,
+      obj,
+      ret = {};
+    for (i = 0, l = arr.length; i < l; i++) {
       obj = arr[i];
       ret[obj[key]] = obj;
     }
     return ret;
   };
-  
-  const up = createObjectLookup(dat1, 'hotel_id');
-  console.log(up)
-  let i, l, question, user, result = [];
-for ( i=0, l=dat2.length; i<l; i++ ) {
-  if ( (question = dat2[i]) && (user = up[question.hotel_id]) ) {
-    result.push({
-      hotel_id: question.hotel_id,
-      room_view_id: question.room_view_id,
-      hotel_name: user.hotel_name,
-      street_address: user.street_address,
-      city: user.city,
-      state: user.state,
-      zip_code: user.zip_code
 
-    });
+  const up = createObjectLookup(dat1, "hotel_id");
+  console.log(up);
+  let i,
+    l,
+    question,
+    user,
+    result = [];
+  for (i = 0, l = dat2.length; i < l; i++) {
+    if ((question = dat2[i]) && (user = up[question.hotel_id])) {
+      result.push({
+        hotel_id: question.hotel_id,
+        room_view_id: question.room_view_id,
+        hotel_name: user.hotel_name,
+        street_address: user.street_address,
+        city: user.city,
+        state: user.state,
+        zip_code: user.zip_code,
+      });
+    }
   }
-}
-console.log(result);
+  console.log(result);
 
-
-  checkBox1.addEventListener('change', async (event) => {
+  checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
     if (checkBox1.checked) {
       const filtered1 = result.filter((record1) => record1.room_view_id === 7);
       filtered1.forEach((item1) => {
-        const appendItem1 = document.createElement('li');
+        const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("park")
+        appendItem1.classList.add("park");
         appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
         <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
-   
       });
     } else {
       removeElementsByClass("park");
@@ -1012,62 +1115,66 @@ console.log(result);
 
 /* eighth checkbox Room View Not Specified */
 async function dataHandler24() {
-  const checkBox1 = document.getElementById("fthird")
-  const targetList1 = document.querySelector('.target-list');
+  const checkBox1 = document.getElementById("fthird");
+  const targetList1 = document.querySelector(".target-list");
 
-  const request1 = await fetch('/api/hotel');
+  const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
-  const request2 = await fetch('/api/room');
+  const request2 = await fetch("/api/room");
   const d2 = await request2.json();
-  const dat2 = d2.data
-  console.log(dat1)
-  console.log(dat2)
-  
-  const createObjectLookup = function( arr, key ){
-    let i, l, obj, ret = {};
-    for ( i=0, l=arr.length; i<l; i++ ) {
+  const dat2 = d2.data;
+  console.log(dat1);
+  console.log(dat2);
+
+  const createObjectLookup = function (arr, key) {
+    let i,
+      l,
+      obj,
+      ret = {};
+    for (i = 0, l = arr.length; i < l; i++) {
       obj = arr[i];
       ret[obj[key]] = obj;
     }
     return ret;
   };
-  
-  const up = createObjectLookup(dat1, 'hotel_id');
-  console.log(up)
-  let i, l, question, user, result = [];
-for ( i=0, l=dat2.length; i<l; i++ ) {
-  if ( (question = dat2[i]) && (user = up[question.hotel_id]) ) {
-    result.push({
-      hotel_id: question.hotel_id,
-      room_view_id: question.room_view_id,
-      hotel_name: user.hotel_name,
-      street_address: user.street_address,
-      city: user.city,
-      state: user.state,
-      zip_code: user.zip_code
 
-    });
+  const up = createObjectLookup(dat1, "hotel_id");
+  console.log(up);
+  let i,
+    l,
+    question,
+    user,
+    result = [];
+  for (i = 0, l = dat2.length; i < l; i++) {
+    if ((question = dat2[i]) && (user = up[question.hotel_id])) {
+      result.push({
+        hotel_id: question.hotel_id,
+        room_view_id: question.room_view_id,
+        hotel_name: user.hotel_name,
+        street_address: user.street_address,
+        city: user.city,
+        state: user.state,
+        zip_code: user.zip_code,
+      });
+    }
   }
-}
-console.log(result);
+  console.log(result);
 
-
-  checkBox1.addEventListener('change', async (event) => {
+  checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
     if (checkBox1.checked) {
       const filtered1 = result.filter((record1) => record1.room_view_id === 8);
       filtered1.forEach((item1) => {
-        const appendItem1 = document.createElement('li');
+        const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("specified")
+        appendItem1.classList.add("specified");
         appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
         <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
-   
       });
     } else {
       removeElementsByClass("specified");
@@ -1077,69 +1184,73 @@ console.log(result);
 
 /* Ninth checkbox Room View Town */
 async function dataHandler25() {
-  const checkBox1 = document.getElementById("ffourth")
-  const targetList1 = document.querySelector('.target-list');
+  const checkBox1 = document.getElementById("ffourth");
+  const targetList1 = document.querySelector(".target-list");
 
-  const request1 = await fetch('/api/hotel');
+  const request1 = await fetch("/api/hotel");
   const d1 = await request1.json();
   const dat1 = d1.data;
-  const request2 = await fetch('/api/room');
+  const request2 = await fetch("/api/room");
   const d2 = await request2.json();
-  const dat2 = d2.data
-  console.log(dat1)
-  console.log(dat2)
-  
-  const createObjectLookup = function( arr, key ){
-    let i, l, obj, ret = {};
-    for ( i=0, l=arr.length; i<l; i++ ) {
+  const dat2 = d2.data;
+  console.log(dat1);
+  console.log(dat2);
+
+  const createObjectLookup = function (arr, key) {
+    let i,
+      l,
+      obj,
+      ret = {};
+    for (i = 0, l = arr.length; i < l; i++) {
       obj = arr[i];
       ret[obj[key]] = obj;
     }
     return ret;
   };
-  
-  const up = createObjectLookup(dat1, 'hotel_id');
-  console.log(up)
-  let i, l, question, user, result = [];
-for ( i=0, l=dat2.length; i<l; i++ ) {
-  if ( (question = dat2[i]) && (user = up[question.hotel_id]) ) {
-    result.push({
-      hotel_id: question.hotel_id,
-      room_view_id: question.room_view_id,
-      hotel_name: user.hotel_name,
-      street_address: user.street_address,
-      city: user.city,
-      state: user.state,
-      zip_code: user.zip_code
 
-    });
+  const up = createObjectLookup(dat1, "hotel_id");
+  console.log(up);
+  let i,
+    l,
+    question,
+    user,
+    result = [];
+  for (i = 0, l = dat2.length; i < l; i++) {
+    if ((question = dat2[i]) && (user = up[question.hotel_id])) {
+      result.push({
+        hotel_id: question.hotel_id,
+        room_view_id: question.room_view_id,
+        hotel_name: user.hotel_name,
+        street_address: user.street_address,
+        city: user.city,
+        state: user.state,
+        zip_code: user.zip_code,
+      });
+    }
   }
-}
-console.log(result);
+  console.log(result);
 
-
-  checkBox1.addEventListener('change', async (event) => {
+  checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
     if (checkBox1.checked) {
       const filtered1 = result.filter((record1) => record1.room_view_id === 9);
       filtered1.forEach((item1) => {
-        const appendItem1 = document.createElement('li');
+        const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
         appendItem1.classList.add("list-item");
-        appendItem1.classList.add("town")
+        appendItem1.classList.add("town");
         appendItem1.innerHTML = `<div class="box"><div class="columns"><div class="column"><div class="list-header is-size-5"><a href="hotel${item1.hotel_id}.html">${item1.hotel_name}</a></div>
         <address class="is-size-6">${item1.street_address}</address><address class="is-size-6">${item1.city}</address>
         <address class="is-size-6">${item1.state}</address><address class="is-size-6">${item1.zip_code}</address></div>
         <div class='column'><img src="${item1.hotel_id}.png"/></div></div></div>`;
         targetList1.append(appendItem1);
-   
       });
     } else {
       removeElementsByClass("town");
     }
   });
 }
-/*checkboxes for Hotel Ratings*/ 
+/*checkboxes for Hotel Ratings*/
 /*third checkbox for rating higher than 3 but lower than 4 */
 async function dataHandler26() {
   const checkBox1 = document.getElementById("fseventh");
@@ -1151,7 +1262,9 @@ async function dataHandler26() {
   checkBox1.addEventListener("change", async (event1) => {
     event1.preventDefault();
     if (checkBox1.checked) {
-      const filtered1 = dat1.filter((record1) => (record1.hotel_rating < 4) && (record1.hotel_rating > 3));
+      const filtered1 = dat1.filter(
+        (record1) => record1.hotel_rating < 4 && record1.hotel_rating > 3
+      );
       filtered1.forEach((item1) => {
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -1164,7 +1277,7 @@ async function dataHandler26() {
         targetList1.append(appendItem1);
       });
     } else {
-      removeElementsByClass("3star")
+      removeElementsByClass("3star");
     }
   });
 }
@@ -1180,7 +1293,9 @@ async function dataHandler27() {
   checkBox1.addEventListener("change", async (event1) => {
     event1.preventDefault();
     if (checkBox1.checked) {
-      const filtered1 = dat1.filter((record1) => (record1.hotel_rating < 5) && (record1.hotel_rating > 4));
+      const filtered1 = dat1.filter(
+        (record1) => record1.hotel_rating < 5 && record1.hotel_rating > 4
+      );
       filtered1.forEach((item1) => {
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -1193,7 +1308,7 @@ async function dataHandler27() {
         targetList1.append(appendItem1);
       });
     } else {
-      removeElementsByClass("4star")
+      removeElementsByClass("4star");
     }
   });
 }
@@ -1209,7 +1324,9 @@ async function dataHandler28() {
   checkBox1.addEventListener("change", async (event1) => {
     event1.preventDefault();
     if (checkBox1.checked) {
-      const filtered1 = dat1.filter((record1) => record1.hotel_rating >= 5);/*had to use >=, would not work with triple === */
+      const filtered1 = dat1.filter(
+        (record1) => record1.hotel_rating >= 5
+      ); /*had to use >=, would not work with triple === */
       filtered1.forEach((item1) => {
         const appendItem1 = document.createElement("li");
         appendItem1.classList.add("block");
@@ -1222,13 +1339,14 @@ async function dataHandler28() {
         targetList1.append(appendItem1);
       });
     } else {
-      removeElementsByClass("5star")
+      removeElementsByClass("5star");
     }
   });
 }
 
-async function windowActions(){
+async function windowActions() {
   await dataHandler();
+  await dataHandler1();
   await dataHandler2();
   await dataHandler3();
   await dataHandler4();
@@ -1245,8 +1363,7 @@ async function windowActions(){
   await dataHandler15();
   await dataHandler16();
   await dataHandler17();
-  await dataHandler18();
-  await dataHandler19();
+  await dataHandler18();/*removed dataHandler19 no need for it anymore */
   await dataHandler20();
   await dataHandler21();
   await dataHandler22();
@@ -1257,6 +1374,5 @@ async function windowActions(){
   await dataHandler27();
   await dataHandler28();
 }
-
 
 window.onload = windowActions;

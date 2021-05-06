@@ -43,7 +43,15 @@ export default (sequelize, DataTypes) => {
       hotel_type_id: {
         type: DataTypes.INTEGER,
         allowNull: false
-      }
+      },
+      longitude: {
+        type: DataTypes.FLOAT,
+        allowNull: false
+      },
+      latitude: {
+        type: DataTypes.FLOAT,
+        allowNull: false
+      },
     },
     { freezeTableName: true, timestamps: false }
   );
