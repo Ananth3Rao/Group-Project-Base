@@ -1,5 +1,17 @@
-async function dataHandler() {
-  const request = await fetch('/api/restaurant');
+function mapInit() {
+  const mymap = L.map('mapid').setView([20.7984, 156.3319], 13);
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1Ijoia3Zlc3RlcmJ5MjIiLCJhIjoiY2ttY3Fvcmg5MXMwbTJ3cDlha3g2ZXh0cSJ9.26HvIeYiNVZpVdmNDt2-vA'
+  }).addTo(mymap);
+  return mymap;
+}
+async function dataHandler(mapObjectFromFunction) {
+  const request = await fetch('/api/cuisine');
   const d = await request.json();
   const dat = d.data;
   const request2 = await fetch('/api/restaurant');
@@ -34,17 +46,91 @@ async function dataHandler() {
         restaurant_id: question.restaurant_id,
         latitude: question.latitude,
         longitude: question.longitude,
-        rating: question.rating
+        rating: question.rating,
+        price: question.price_range,
+        phone_number: question.phone_number,
+        open_time: question.open_time,
+        close_time: question.close_time
 
       });
     }
   }
+  const x = result[0];
+  console.log(x)
   const appendItem = document.createElement('div');
   appendItem.classList.add = 'container';
-  appendItem.innerHTML = `<div class="box"><h3 class="title is-3">${result[0].restaurant_name}</h3><div class="image"><img src="${result[0].restaurant_id}.png"/></div></div>`;
+  if (x.rating > 4 && x.rating <= 5) {
+  appendItem.innerHTML = `<div class="box"><h3 class="title is-3">${x.restaurant_name}</h3>
+  <h5 class='title is-5'>${x.price} ${x.cuisine_name} 
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span></h5>
+  <div class="image"><img src="${x.restaurant_id}.png"/></div>
+  <span class='addy'><div class=addy2>Address</div>
+  ${x.street_address}, ${x.city} ${x.state}, ${x.zip_code}</span>
+  <hr>
+  <span class='addy'><div class=addy2><p>Phone Number</p></div>
+  ${x.phone_number}</span>
+  <hr>
+  <span class='addy'><div class=addy2>Hours</div>
+  ${x.open_time} - ${x.close_time}</span>
+  </div>`;};
+  if (x.rating > 3 && x.rating <= 4) {
+    appendItem.innerHTML = `<div class="box"><h3 class="title is-3">${x.restaurant_name}</h3>
+    <h5 class='title is-5'>${x.price} ${x.cuisine_name} 
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star "></span></h5>
+    <div class="image"><img src="${x.restaurant_id}.png"/>
+    </div></div>`;};
+    if (x.rating > 2 && x.rating <= 3) {
+      appendItem.innerHTML = `<div class="box"><h3 class="title is-3">${x.restaurant_name}</h3>
+      <div class="image"><h5 class='title is-5'>${x.price} ${x.cuisine_name} 
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star"></span></h5>
+      <img src="${x.restaurant_id}.png"/>
+      </div></div>`;};
+      if (x.rating > 1 && x.rating <= 2) {
+        appendItem.innerHTML = `<div class="box"><h3 class="title is-3">${x.restaurant_name}</h3>
+        <div class="image"><h5 class='title is-5'>${x.price} ${x.cuisine_name} 
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star "></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span></h5>
+        <img src="${x.restaurant_id}.png"/>
+        
+        </div></div>`;};
+        if (x.rating > 0 && x.rating <= 1) {
+          appendItem.innerHTML = `<div class="box"><h3 class="title is-3">${x.restaurant_name}</h3>
+          <div class="image"><h5 class='title is-5'>${x.price} ${x.cuisine_name} 
+          </h5> <h4 class='title is-4'> <span class="fa fa-star checked"></span>
+          <span class="fa fa-star "></span>
+          <span class="fa fa-star "></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <img src="${x.restaurant_id}.png"/> </h4>
+          </div></div>`;};
   targetList1.append(appendItem);
-  console.log(result[0].restaurant_id)
-
+  console.log(x.restaurant_id)
+  const coords = [];
+  const lat = x.latitude;
+  const long = x.longitude;
+  coords.push(lat, long);
+  console.log(coords);
+  const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
+  
 }
 
-dataHandler();
+async function windowActions() {
+  const map = mapInit();
+  await dataHandler(map);
+}
+window.onload = windowActions;
