@@ -109,8 +109,16 @@ h2 {
   margin-top: 40px;
 }
 
-#foto26, #foto27, #foto28, #foto29, #foto30{
+#foto26, #foto27, #foto28, #foto29, #foto30,
+#foto36, #foto37, #foto38, #foto39, #foto40{
   height: 250px;
+  flex: auto;
+  margin-bottom: 100px;
+  margin-top: 40px;
+}
+
+#foto31, #foto32, #foto33, #foto34, #foto35{
+  height: 330px;
   flex: auto;
   margin-bottom: 100px;
   margin-top: 40px;
