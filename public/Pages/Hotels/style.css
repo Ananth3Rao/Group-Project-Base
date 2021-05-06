@@ -20,7 +20,7 @@ h2 {
     text-align: center;
     width: 100%;
 }
-
+/* the code below controls the carousel */
 .carousel {
   position: absolute;
   width: 500px;
@@ -101,7 +101,15 @@ h2 {
   margin: auto;
 }
 
+/* some pictures had different size therefore had to use slightly different settings */ 
 #foto11, #foto12, #foto13, #foto14, #foto15{
+  height: 250px;
+  flex: auto;
+  margin-bottom: 100px;
+  margin-top: 40px;
+}
+
+#foto26, #foto27, #foto28, #foto29, #foto30{
   height: 250px;
   flex: auto;
   margin-bottom: 100px;
