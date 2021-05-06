@@ -1,6 +1,8 @@
 
 # Maui Masters 
 
+![screenshot of front page](maui_masters.PNG)
+
 ### Link to our Heroku APP 
 [Maui Masters App](https://pure-beyond-09585.herokuapp.com/)
 
