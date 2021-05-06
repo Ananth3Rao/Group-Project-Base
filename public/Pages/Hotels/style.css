@@ -100,3 +100,10 @@ h2 {
 #arrowr{
   margin: auto;
 }
+
+#foto11, #foto12, #foto13, #foto14, #foto15{
+  height: 250px;
+  flex: auto;
+  margin-bottom: 100px;
+  margin-top: 40px;
+}
