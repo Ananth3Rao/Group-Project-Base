@@ -7,6 +7,7 @@
 [Maui Masters App](https://pure-beyond-09585.herokuapp.com/)
 
 ### Description of the Porject 
+Our application would most likely help potential first time vacation goers headed to Maui find essential information for their stay. The application would help users find hotels in three of the five regions in Maui, Hawaii. Those three regions consist of West, South and Central Maui. The purpose of our application  is to help these users find a hotel that they would like to stay at based on certain factors such as raitings, types of rooms, and location. In addition to information pertaining to the hotel, the users would also be able to search for different types of dining options. When users are searching for different restaurants in the area, they will be able to find data that tells them the location of the restaurant, the type of cuisine and price range. Traveling can be a difficult task in itself, therefore we hope our application would make things a bit easier by putting all information in one place. 
 
 
 ### Target Browser 
@@ -78,5 +79,6 @@ There are no prewritten tests in the source repository, but you can use Cypress 
 
 ### Future Development:
 
-In the future our application would benefit from more interactivity. For example adding a map on all pages, using the search bar for restaurants, hotels, amenities, type of room etc...  
+In the future our application would benefit from more interactivity. For example adding a map on all pages, using the search bar for restaurants, hotels, amenities, type of room etc... Also, it could benefit from direct interaction with the hotels where the application can 
+provide information on the availabilty of rooms.  
 
