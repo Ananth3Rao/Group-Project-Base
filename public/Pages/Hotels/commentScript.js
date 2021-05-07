@@ -57,6 +57,7 @@ async function deleteElement(elementId) {
 async function editComment(elementId) {
   const elementEdit = document.getElementById(elementId);
   const editSection = document.createElement("div");
+  console.log("Edit Attempt");
   editSection.classList.add("box");
   editSection.classList.add("edit");
   editSection.innerHTML = `<form id = "editForm" name = "editForm" action = "/api/comments/${elementId}" method ="POST">
@@ -85,7 +86,7 @@ async function editComment(elementId) {
                       </div>
                     </div>
                   </div>
-                  <input class="button" type="submit" value="Submit" >
+                  <input class="button" type="submit" value="Submit" onclick = "location.reload()">
             </form>`
   elementEdit.append(editSection);
   const editContent = document.getElementById("editForm");
