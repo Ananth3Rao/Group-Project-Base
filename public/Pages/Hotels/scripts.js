@@ -118,7 +118,7 @@ async function dataHandler1() {
   form.addEventListener('click', (event) => {
     event.preventDefault();
     removeElementsByClass("box");
-  })
+  });
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
