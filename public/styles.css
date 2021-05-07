@@ -115,8 +115,9 @@ h1{
 
 .headerown a img{
     display: block;
-    height: 60px;
+    height: 70px;
     padding-top: 20.15px;
+    margin-left: -15px;
   }
 a img{
     display:block;
@@ -304,6 +305,10 @@ button, input, select, textarea {
 
 .field-label.is-normal {
   padding-top: 1.2em;
+}
+
+.message-header .delete {
+  margin-top: 20px;
 }
 
 

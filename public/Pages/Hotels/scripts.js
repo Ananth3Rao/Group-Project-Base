@@ -82,7 +82,6 @@ async function dataHandler() {
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    console.log("form submitted");
     if (search.value.length > 0) {
       const filtered = dat.filter((record) =>
         record.city.toLowerCase().includes(search.value.toLowerCase())
@@ -113,7 +112,6 @@ async function dataHandler1() {
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    console.log('form submitted');
     if (search.value.length > 0) {
       const filtered = dat.filter((record) => record.hotel_name.toLowerCase().includes(search.value.toLowerCase()));
       filtered.forEach((item) => {
@@ -641,8 +639,6 @@ async function dataHandler17() {
   const request2 = await fetch("/api/room");
   const d2 = await request2.json();
   const dat2 = d2.data;
-  console.log(dat1);
-  console.log(dat2);
 
   const createObjectLookup = function (arr, key) {
     let i,
@@ -657,7 +653,6 @@ async function dataHandler17() {
   };
 
   const up = createObjectLookup(dat1, "hotel_id");
-  console.log(up);
   let i,
     l,
     question,
@@ -676,7 +671,6 @@ async function dataHandler17() {
       });
     }
   }
-  console.log(result);
 
   checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
@@ -710,8 +704,6 @@ async function dataHandler18() {
   const request2 = await fetch("/api/room");
   const d2 = await request2.json();
   const dat2 = d2.data;
-  console.log(dat1);
-  console.log(dat2);
 
   const createObjectLookup = function (arr, key) {
     let i,
@@ -726,7 +718,6 @@ async function dataHandler18() {
   };
 
   const up = createObjectLookup(dat1, "hotel_id");
-  console.log(up);
   let i,
     l,
     question,
@@ -745,7 +736,6 @@ async function dataHandler18() {
       });
     }
   }
-  console.log(result);
 
   checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
@@ -779,8 +769,6 @@ async function dataHandler19() {
   const request2 = await fetch("/api/room");
   const d2 = await request2.json();
   const dat2 = d2.data;
-  console.log(dat1);
-  console.log(dat2);
 
   const createObjectLookup = function (arr, key) {
     let i,
@@ -795,7 +783,6 @@ async function dataHandler19() {
   };
 
   const up = createObjectLookup(dat1, "hotel_id");
-  console.log(up);
   let i,
     l,
     question,
@@ -814,7 +801,6 @@ async function dataHandler19() {
       });
     }
   }
-  console.log(result);
 
   checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
@@ -848,8 +834,6 @@ async function dataHandler20() {
   const request2 = await fetch("/api/room");
   const d2 = await request2.json();
   const dat2 = d2.data;
-  console.log(dat1);
-  console.log(dat2);
 
   const createObjectLookup = function (arr, key) {
     let i,
@@ -864,7 +848,7 @@ async function dataHandler20() {
   };
 
   const up = createObjectLookup(dat1, "hotel_id");
-  console.log(up);
+
   let i,
     l,
     question,
@@ -883,7 +867,6 @@ async function dataHandler20() {
       });
     }
   }
-  console.log(result);
 
   checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
@@ -917,8 +900,7 @@ async function dataHandler21() {
   const request2 = await fetch("/api/room");
   const d2 = await request2.json();
   const dat2 = d2.data;
-  console.log(dat1);
-  console.log(dat2);
+
 
   const createObjectLookup = function (arr, key) {
     let i,
@@ -933,7 +915,6 @@ async function dataHandler21() {
   };
 
   const up = createObjectLookup(dat1, "hotel_id");
-  console.log(up);
   let i,
     l,
     question,
@@ -952,7 +933,6 @@ async function dataHandler21() {
       });
     }
   }
-  console.log(result);
 
   checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
@@ -986,8 +966,6 @@ async function dataHandler22() {
   const request2 = await fetch("/api/room");
   const d2 = await request2.json();
   const dat2 = d2.data;
-  console.log(dat1);
-  console.log(dat2);
 
   const createObjectLookup = function (arr, key) {
     let i,
@@ -1002,7 +980,6 @@ async function dataHandler22() {
   };
 
   const up = createObjectLookup(dat1, "hotel_id");
-  console.log(up);
   let i,
     l,
     question,
@@ -1021,7 +998,6 @@ async function dataHandler22() {
       });
     }
   }
-  console.log(result);
 
   checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
@@ -1055,8 +1031,6 @@ async function dataHandler23() {
   const request2 = await fetch("/api/room");
   const d2 = await request2.json();
   const dat2 = d2.data;
-  console.log(dat1);
-  console.log(dat2);
 
   const createObjectLookup = function (arr, key) {
     let i,
@@ -1071,7 +1045,6 @@ async function dataHandler23() {
   };
 
   const up = createObjectLookup(dat1, "hotel_id");
-  console.log(up);
   let i,
     l,
     question,
@@ -1090,7 +1063,6 @@ async function dataHandler23() {
       });
     }
   }
-  console.log(result);
 
   checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
@@ -1124,8 +1096,6 @@ async function dataHandler24() {
   const request2 = await fetch("/api/room");
   const d2 = await request2.json();
   const dat2 = d2.data;
-  console.log(dat1);
-  console.log(dat2);
 
   const createObjectLookup = function (arr, key) {
     let i,
@@ -1140,7 +1110,6 @@ async function dataHandler24() {
   };
 
   const up = createObjectLookup(dat1, "hotel_id");
-  console.log(up);
   let i,
     l,
     question,
@@ -1159,7 +1128,6 @@ async function dataHandler24() {
       });
     }
   }
-  console.log(result);
 
   checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();
@@ -1193,8 +1161,6 @@ async function dataHandler25() {
   const request2 = await fetch("/api/room");
   const d2 = await request2.json();
   const dat2 = d2.data;
-  console.log(dat1);
-  console.log(dat2);
 
   const createObjectLookup = function (arr, key) {
     let i,
@@ -1209,7 +1175,6 @@ async function dataHandler25() {
   };
 
   const up = createObjectLookup(dat1, "hotel_id");
-  console.log(up);
   let i,
     l,
     question,
@@ -1228,7 +1193,6 @@ async function dataHandler25() {
       });
     }
   }
-  console.log(result);
 
   checkBox1.addEventListener("change", async (event) => {
     event.preventDefault();

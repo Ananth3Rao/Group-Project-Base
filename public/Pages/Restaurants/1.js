@@ -18,6 +18,7 @@ async function dataHandler(mapObjectFromFunction) {
   const d2 = await request2.json();
   const dat2 = d2.data;
   const targetList1 = document.querySelector('.target-list');
+  const targetList2 = document.querySelector('.target-list1');
 
   const createObjectLookup = function(arr, key) {
     let i; let l; let obj; const
@@ -30,7 +31,6 @@ async function dataHandler(mapObjectFromFunction) {
   };
 
   const up = createObjectLookup(dat, 'cuisine_id');
-  console.log(up);
   let i; let l; let question; let user; const
     result = [];
   for (i = 0, l = dat2.length; i < l; i++) {
@@ -58,9 +58,11 @@ async function dataHandler(mapObjectFromFunction) {
   const x = result[0];
   console.log(x)
   const appendItem = document.createElement('div');
-  appendItem.classList.add = 'container';
+  appendItem.classList.add = 'con';
+  const appendItem2 = document.createElement('div');
+  appendItem2.classList.add = 'con';
   if (x.rating > 4 && x.rating <= 5) {
-  appendItem.innerHTML = `<div class="box"><h3 class="title is-3">${x.restaurant_name}</h3>
+  appendItem.innerHTML = `<h3 class="title is-3">${x.restaurant_name}</h3>
   <h5 class='title is-5'>${x.price} ${x.cuisine_name} 
   <span class="fa fa-star checked"></span>
   <span class="fa fa-star checked"></span>
@@ -68,64 +70,94 @@ async function dataHandler(mapObjectFromFunction) {
   <span class="fa fa-star checked"></span>
   <span class="fa fa-star checked"></span></h5>
   <div class="image"><img src="${x.restaurant_id}.png"/></div>
-  <div class='columns'>
-  <div class='column'>
-  <span class='addy'><div class=addy2>Address</div>
+  `;
+  appendItem2.innerHTML = `<div class='columns'><div class='column'><span class='addy'><div class=addy2>Address</div>
   ${x.street_address}, ${x.city} ${x.state}, ${x.zip_code}</span>
   <hr>
   <span class='addy'><div class=addy2><p>Phone Number</p></div>
   ${x.phone_number}</span>
   <hr>
   <span class='addy'><div class=addy2>Hours</div>
-  ${x.open_time} - ${x.close_time}</span>
-  </div>
-  <div class='column'> <p>Location</p>
-  
-  </div></div>
-  </div>
-  </div>`;};
+  ${x.open_time} - ${x.close_time}</span></div>
+  </div>`};
   if (x.rating > 3 && x.rating <= 4) {
-    appendItem.innerHTML = `<div class="box"><h3 class="title is-3">${x.restaurant_name}</h3>
-    <h5 class='title is-5'>${x.price} ${x.cuisine_name} 
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star "></span></h5>
-    <div class="image"><img src="${x.restaurant_id}.png"/>
-    </div></div>`;};
+    appendItem.innerHTML = `<h3 class="title is-3">${x.restaurant_name}</h3>
+  <h5 class='title is-5'>${x.price} ${x.cuisine_name} 
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star "></span></h5>
+  <div class="image"><img src="${x.restaurant_id}.png"/></div>
+  `;
+  appendItem2.innerHTML = `<div class='columns'><div class='column'><span class='addy'><div class=addy2>Address</div>
+  ${x.street_address}, ${x.city} ${x.state}, ${x.zip_code}</span>
+  <hr>
+  <span class='addy'><div class=addy2><p>Phone Number</p></div>
+  ${x.phone_number}</span>
+  <hr>
+  <span class='addy'><div class=addy2>Hours</div>
+  ${x.open_time} - ${x.close_time}</span></div>
+  </div>`;};
     if (x.rating > 2 && x.rating <= 3) {
-      appendItem.innerHTML = `<div class="box"><h3 class="title is-3">${x.restaurant_name}</h3>
-      <div class="image"><h5 class='title is-5'>${x.price} ${x.cuisine_name} 
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star "></span>
-      <span class="fa fa-star"></span></h5>
-      <img src="${x.restaurant_id}.png"/>
-      </div></div>`;};
+      appendItem.innerHTML = `<h3 class="title is-3">${x.restaurant_name}</h3>
+  <h5 class='title is-5'>${x.price} ${x.cuisine_name} 
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star "></span>
+  <span class="fa fa-star "></span></h5>
+  <div class="image"><img src="${x.restaurant_id}.png"/></div>
+  `;
+  appendItem2.innerHTML = `<div class='columns'><div class='column'><span class='addy'><div class=addy2>Address</div>
+  ${x.street_address}, ${x.city} ${x.state}, ${x.zip_code}</span>
+  <hr>
+  <span class='addy'><div class=addy2><p>Phone Number</p></div>
+  ${x.phone_number}</span>
+  <hr>
+  <span class='addy'><div class=addy2>Hours</div>
+  ${x.open_time} - ${x.close_time}</span></div>
+  </div>`;};
       if (x.rating > 1 && x.rating <= 2) {
-        appendItem.innerHTML = `<div class="box"><h3 class="title is-3">${x.restaurant_name}</h3>
-        <div class="image"><h5 class='title is-5'>${x.price} ${x.cuisine_name} 
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star "></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span></h5>
-        <img src="${x.restaurant_id}.png"/>
-        
-        </div></div>`;};
+        appendItem.innerHTML = `<h3 class="title is-3">${x.restaurant_name}</h3>
+  <h5 class='title is-5'>${x.price} ${x.cuisine_name} 
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star "></span>
+  <span class="fa fa-star "></span>
+  <span class="fa fa-star "></span></h5>
+  <div class="image"><img src="${x.restaurant_id}.png"/></div>
+  `;
+  appendItem2.innerHTML = `<div class='columns'><div class='column'><span class='addy'><div class=addy2>Address</div>
+  ${x.street_address}, ${x.city} ${x.state}, ${x.zip_code}</span>
+  <hr>
+  <span class='addy'><div class=addy2><p>Phone Number</p></div>
+  ${x.phone_number}</span>
+  <hr>
+  <span class='addy'><div class=addy2>Hours</div>
+  ${x.open_time} - ${x.close_time}</span></div>
+  </div>`;};
         if (x.rating > 0 && x.rating <= 1) {
-          appendItem.innerHTML = `<div class="box"><h3 class="title is-3">${x.restaurant_name}</h3>
-          <div class="image"><h5 class='title is-5'>${x.price} ${x.cuisine_name} 
-          </h5> <h4 class='title is-4'> <span class="fa fa-star checked"></span>
-          <span class="fa fa-star "></span>
-          <span class="fa fa-star "></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <img src="${x.restaurant_id}.png"/> </h4>
-          </div></div>`;};
+          appendItem.innerHTML = `<h3 class="title is-3">${x.restaurant_name}</h3>
+  <h5 class='title is-5'>${x.price} ${x.cuisine_name} 
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star "></span>
+  <span class="fa fa-star "></span>
+  <span class="fa fa-star "></span>
+  <span class="fa fa-star "></span></h5>
+  <div class="image"><img src="${x.restaurant_id}.png"/></div>
+  `;
+  appendItem2.innerHTML = `<div class='columns'><div class='column'><span class='addy'><div class=addy2>Address</div>
+  ${x.street_address}, ${x.city} ${x.state}, ${x.zip_code}</span>
+  <hr>
+  <span class='addy'><div class=addy2><p>Phone Number</p></div>
+  ${x.phone_number}</span>
+  <hr>
+  <span class='addy'><div class=addy2>Hours</div>
+  ${x.open_time} - ${x.close_time}</span></div>
+  </div>`;};
   targetList1.append(appendItem);
+  targetList2.append(appendItem2);
   console.log(x.restaurant_id)
   const coords = [];
   const lat = x.latitude;
@@ -133,7 +165,7 @@ async function dataHandler(mapObjectFromFunction) {
   coords.push(lat, long);
   console.log(coords);
   const marker = L.marker([lat, long]).addTo(mapObjectFromFunction);
-  
+  mapObjectFromFunction.panTo([lat, long]);
 }
 
 async function windowActions() {

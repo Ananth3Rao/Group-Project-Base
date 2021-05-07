@@ -1,5 +1,11 @@
-.box {
-    height:600px;
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0;
+}
+
+.box:first-of-type {
+    height:1000px;
     width:1000px;
     margin-left:80px;
     
@@ -10,5 +16,19 @@
     width: 750px;
 }
 h3 {
-    margin-left:40%;
+    margin-left:36%;
 }
+h5 {
+    word-spacing: 40px;
+    color: rgb(160, 159, 159) !important;
+    font-style: italic;
+    margin-left: 24%;
+}
+.checked {
+    color: orange;
+  }
+  .addy2,p {
+      font-weight: bold;
+  }
+  #mapid { height: 350px;
+    width: 600px; }
