@@ -20,3 +20,106 @@ h2 {
     text-align: center;
     width: 100%;
 }
+/* the code below controls the carousel */
+.carousel {
+  position: absolute;
+  width: 500px;
+  height: 450px;
+  padding: 10px 40px;
+  border-radius: 15px;
+  top: 46%;
+  left: 60%;
+  /*margin-top: -70px;
+  margin-left: -250px */
+  transform: translate(-50%, -50%)
+}
+
+.carousel img {
+  width: 420px;
+  height: 400px;
+  /* make it block to remove space around images */
+  display: flex;
+}
+
+.arrow {
+  position: absolute;
+  top: 170px;
+  padding: 0;
+  background: #393E46;
+  border-radius: 15px;
+  border: 1px solid gray;
+  font-size: 30px;
+  line-height: 50px;
+  color: #EEEEEE;
+  display: block;
+}
+
+.arrow:focus {
+  outline: none;
+}
+
+.arrow:hover {
+  background: #00ADB5;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0px;
+}
+
+.next {
+  right: 18px;
+}
+
+.gallery {
+  width: 400px;
+  overflow: hidden;
+  height: 400px;
+}
+
+.gallery ul {
+  height: 500px;
+  width: 9999px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: margin-left 250ms;
+  /* remove white-space between inline-block'ed li */
+  /* http://davidwalsh.name/remove-whitespace-inline-block */
+  font-size: 0;
+}
+
+.gallery li {
+  display: inline-block;
+}
+
+#arrowl{
+  margin: auto;
+}
+
+#arrowr{
+  margin: auto;
+}
+
+/* some pictures had different size therefore had to use slightly different settings */ 
+#foto11, #foto12, #foto13, #foto14, #foto15{
+  height: 250px;
+  flex: auto;
+  margin-bottom: 100px;
+  margin-top: 40px;
+}
+
+#foto26, #foto27, #foto28, #foto29, #foto30,
+#foto36, #foto37, #foto38, #foto39, #foto40{
+  height: 250px;
+  flex: auto;
+  margin-bottom: 100px;
+  margin-top: 40px;
+}
+
+#foto31, #foto32, #foto33, #foto34, #foto35{
+  height: 330px;
+  flex: auto;
+  margin-bottom: 100px;
+  margin-top: 40px;
+}

@@ -9,6 +9,7 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"
     />
     <link href="../../styles.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
     <title> The Westin Maui Resort & Spa</title>
   </head>
   <body>
@@ -58,8 +59,18 @@
           <li>-Business Center/Meeting Rooms</li>
           <li>-Gift Shop</li>
         </ul>
-        <div class="column">
-          <div class="target-list"></div>
+        <div id="carousel" class="carousel">
+          <button class ="arrow prev" id="arrowl">⇦</button>
+          <div class="gallery">
+            <ul class="images">
+              <li><img id="foto1" class="foto" src="pics/hotel1_1.png" alt="picture of hotel westin"></li>
+              <li><img id="foto2" class="foto" src="pics/hotel1_2.png" alt="picture of hotel westin"></li>
+              <li><img id="foto3" class="foto" src="pics/hotel1_3.png" alt="picture of hotel westin"></li>
+              <li><img id="foto4" class="foto" src="pics/hotel1_4.png" alt="picture of hotel westin"></li>
+              <li><img id="foto5" class="foto" src="pics/hotel1_5.png" alt="picture of hotel westin"></li>
+            </ul>
+          </div>
+          <button class="arrow next" id="arrowr">⇨</button>
         </div>
       </div>
       <div class="comments">
