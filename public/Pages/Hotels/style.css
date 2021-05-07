@@ -110,7 +110,9 @@ h2 {
 }
 
 #foto26, #foto27, #foto28, #foto29, #foto30,
-#foto36, #foto37, #foto38, #foto39, #foto40{
+#foto36, #foto37, #foto38, #foto39, #foto40,
+#foto51, #foto52, #foto53, #foto54, #foto55,
+#foto61, #foto62, #foto63, #foto64, #foto65{
   height: 250px;
   flex: auto;
   margin-bottom: 100px;
@@ -122,4 +124,13 @@ h2 {
   flex: auto;
   margin-bottom: 100px;
   margin-top: 40px;
+}
+
+#foto56, #foto57, #foto58, #foto59, #foto60,
+#foto66, #foto67, #foto68, #foto69, #foto70,
+#foto71, #foto72, #foto73, #foto74, #foto75{
+  height: 250px;
+  flex: auto;
+  margin-bottom: 100px;
+  margin-top: 15px;
 }
