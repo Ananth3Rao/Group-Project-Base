@@ -80,6 +80,11 @@ async function dataHandler() {
   const d = await request.json();
   const dat = d.data;
 
+  form.addEventListener('click', (event) => {
+    event.preventDefault();
+    removeElementsByClass("columns");
+  })
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (search.value.length > 0) {
@@ -109,6 +114,11 @@ async function dataHandler1() {
   const request = await fetch('/api/hotel');
   const d = await request.json();
   const dat = d.data;
+
+  form.addEventListener('click', (event) => {
+    event.preventDefault();
+    removeElementsByClass("box");
+  })
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
