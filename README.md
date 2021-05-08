@@ -77,6 +77,8 @@ There are no prewritten tests in the source repository, but you can use Cypress 
 
 - When using multiple selections there can be repeated results if criteria is matched. We think this is due to the fact that each checkbox has its own function. 
 
+- When making a submition for a comment, sometimes after the comment is submitted the form remains filled out with the content that was just submitted. 
+
 ### Future Development:
 
 In the future our application would benefit from more interactivity. For example adding a map on all pages, using the search bar for restaurants, hotels, amenities, type of room etc... Also, it could benefit from direct interaction with the hotels where the application can 
